@@ -1,7 +1,15 @@
 import os
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, flash
+
+from os import path
+
+if path.exists('env.py'):
+    import env
 
 app = Flask(__name__)
+app.secret_key = os.environ.get("flash_secret")
+#app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
+#app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 
 
 @app.route('/')
@@ -34,7 +42,9 @@ def play():
 @app.route('/contact', methods=["GET", "POST"])
 def contact():
     if request.method == "POST":
-        print(request.form)
+        flash("Thank-you {}, we will be in contact shortly".format(
+            request.form["name"]
+        ))
     return render_template("contact.html", page_title="Contact")
 
 if __name__ == '__main__':

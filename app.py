@@ -25,11 +25,17 @@ def index():
 def about():
     return render_template("about.html")
 
+@app.route('/allRecipes')
+def allRecipes():
+    return render_template("allRecipes.html")
 
-@app.route('/recipes')
-def recipes():
-    return render_template("recipes.html")
-
+@app.route('/yourRecipes')
+def yourRecipes():
+    return render_template("yourRecipes.html")
+    
+@app.route('/addRecipes')
+def addRecipes():
+    return render_template("addRecipes.html")
 
 @app.route('/nutrition')
 def nutrition():

@@ -1,3 +1,22 @@
-{% extends 'base.html' %} {% block content %}
-<h1>About Page</h1>
-{% endblock %}
+<html>
+
+<head>
+    <title>Lockdown</title>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
+            <li><a href="{{ url_for('nutrition') }}">Nutrition</a></li>
+            <li><a href="{{ url_for('calm') }}">Calm</a></li>
+            <li><a href="{{ url_for('play') }}">Play</a></li>
+        </ul>
+    </nav>
+
+    {% block content %} {% endblock %}
+</body>
+
+</html>

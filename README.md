@@ -1,3 +1,11 @@
+Frameworks Bootstrap
+
+Template from Start Bootstrap https://startbootstrap.com/templates/modern-business/ David T. Miller
+
+Python libraries flask flask_pymongo bson
+
+Content from https://www.jamieoliver.com/recipes/category/books/keep-cooking-and-carry-on/ https://fiveminutemum.com/ https://www.youtube.com/channel/UC295-Dw_tDNtZXFeAPAW6Aw
+
 <img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
 
 Welcome davidjbuchanan,

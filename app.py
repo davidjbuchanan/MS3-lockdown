@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -30,6 +30,12 @@ def calm():
 @app.route('/play')
 def play():
     return render_template("play.html")
+
+@app.route('/contact', methods=["GET", "POST"])
+def contact():
+    if request.method == "POST":
+        print(request.form)
+    return render_template("contact.html", page_title="Contact")
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

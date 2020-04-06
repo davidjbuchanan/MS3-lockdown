@@ -13,21 +13,56 @@
 		</li>
 		<li class="breadcrumb-item active">Blog Home 2</li>
 	</ol>
+<!--https://stackoverflow.com/questions/4766941/dynamically-adding-textboxes-to-a-form-by-the-click-of-a-button
+    <form method='GET'>
+        <input id='' type='button' value='Add Medical History'>
+            <div id=''></div>
+        <input type='submit' value='Submit'>
+    </form> -->
+
+    <button id="addRow">+ Add</button>
 
 	<!-- Blog Post -->
 	<div class="card mb-4">
 		<div class="card-body">
-			<form>
+			<form action="{{ url_for('insert_recipe') }}" method="POST">
 				<div class="form-group row">
-					<label for="name" class="col-sm-2 col-form-label">Dish name</label>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" id="">
+                    <label for="exampleFormControlSelect1" class="col-sm-2 col-form-label">Category</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" id="category_name" name="category_name">
+                            {% for cat in categories %}
+                            <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+                            {% endfor %}
+                        </select>
                     </div>
-				</div>
+                </div>
                 <div class="form-group row">
+                    <label for="name" class="col-sm-2 col-form-label">Dish name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="" name="name">
+                    </div>
+                </div>                
+                <div class="form-group row">
+                    <label for="name" class="col-sm-2 col-form-label">Description</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="" name="description">
+                    </div>
+                </div>
+                
+                <div class="form-group row new-ingredient" id="ingredients-item">
+                <!-- <div class="form-group row"> -->
                     <label for="ingredients" class="col-sm-2 col-form-label">Ingredient</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="">
+                        <input type="text" class="form-control" name="ingredients">
+                        <!-- <input type="text" class="form-control" name="ingredients_' + i + '"> -->
+                    </div>
+                </div>
+                <div id="theForm"></div>
+
+                <div class="form-group row">
+                    <label for="procedure" class="col-sm-2 col-form-label">Procedure</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="" name="procedure">
                     </div>
                 </div>
                 <fieldset class="form-group">
@@ -46,12 +81,6 @@
                                     Vegetarian
                                 </label>
                             </div>
-                            <div class="form-check disabled">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="" value="option3" disabled>
-                                <label class="form-check-label" for="gridRadios3">
-                                    Gluten free
-                                </label>
-                            </div>
                         </div>
                     </div>
                 </fieldset>
@@ -59,94 +88,21 @@
                     <div class="col-sm-2">Checkbox</div>
                     <div class="col-sm-10">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                            <input class="form-check-input" type="checkbox" id="gluten_free" name="gluten_free">
                             <label class="form-check-label" for="gridCheck1">
-                                Example checkbox
+                                Gluten free
                             </label>
 						</div>
 					</div>
 				</div>
 				<div class="form-group row">
 					<div class="col-sm-10">
-						<button type="submit" class="btn btn-primary">Sign in</button>
+						<button type="submit" class="btn btn-primary" name="action">Preview</button>
 					</div>
 				</div>
 			</form>
 		</div>
 	</div>
-
-	<!-- Blog Post -->
-	<div class="card mb-4">
-		<div class="card-body">
-			<div class="row">
-				<div class="col-lg-6">
-					<a href="#">
-						<img class="img-fluid rounded" src="http://placehold.it/750x300" alt="">
-            </a>
-				</div>
-				<div class="col-lg-6">
-					<h2 class="card-title">Post Title</h2>
-					<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid
-						atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero
-						voluptate voluptatibus possimus, veniam magni quis!</p>
-					<a href="#" class="btn btn-primary">Read More &rarr;</a>
-				</div>
-			</div>
-		</div>
-		<div class="card-footer text-muted">
-			Posted on January 1, 2017 by
-			<a href="#">Start Bootstrap</a>
-		</div>
-	</div>
-
-	<!-- Blog Post -->
-	<div class="card mb-4">
-		<div class="card-body">
-			<div class="row">
-				<div class="col-lg-6">
-					<a href="#">
-						<img class="img-fluid rounded" src="http://placehold.it/750x300" alt="">
-            </a>
-				</div>
-				<div class="col-lg-6">
-					<h2 class="card-title">Post Title</h2>
-					<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid
-						atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero
-						voluptate voluptatibus possimus, veniam magni quis!</p>
-					<a href="#" class="btn btn-primary">Read More &rarr;</a>
-				</div>
-			</div>
-		</div>
-		<div class="card-footer text-muted">
-			Posted on January 1, 2017 by
-			<a href="#">Start Bootstrap</a>
-		</div>
-	</div>
-
-	<!-- Blog Post -->
-	<div class="card mb-4">
-		<div class="card-body">
-			<div class="row">
-				<div class="col-lg-6">
-					<a href="#">
-						<img class="img-fluid rounded" src="http://placehold.it/750x300" alt="">
-            </a>
-				</div>
-				<div class="col-lg-6">
-					<h2 class="card-title">Post Title</h2>
-					<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid
-						atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero
-						voluptate voluptatibus possimus, veniam magni quis!</p>
-					<a href="#" class="btn btn-primary">Read More &rarr;</a>
-				</div>
-			</div>
-		</div>
-		<div class="card-footer text-muted">
-			Posted on January 1, 2017 by
-			<a href="#">Start Bootstrap</a>
-		</div>
-	</div>
-
 	<!-- Pagination -->
 	<ul class="pagination justify-content-center mb-4">
 		<li class="page-item">
@@ -156,9 +112,6 @@
 			<a class="page-link" href="#">Newer &rarr;</a>
 		</li>
 	</ul>
-
-</div>
-
 </div>
 <!-- /.container -->
 {% endblock %}

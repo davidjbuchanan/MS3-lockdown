@@ -6,6 +6,21 @@ Python libraries flask flask_pymongo bson
 
 Content from https://www.jamieoliver.com/recipes/category/books/keep-cooking-and-carry-on/ https://fiveminutemum.com/ https://www.youtube.com/channel/UC295-Dw_tDNtZXFeAPAW6Aw
 
+
+Add_recioes:
+
+The ability to add ingredients in a one-at-a-time fashion was effected by making the form interactive: the 'add ingredoent' button  generated a new input field on user's demand thus allowing the inputing of data to be made easy and thus enhancing the user's experience. Initial development using JQuery's 'append' method furnished the correct effect on the webpage; however, the new input fields failed to acheive uniqueness i.e. faied to increment in numerical value within the 'name' attribute. This led to MongoDB Atlas' failure to pick up the entered data, a solution was sought. The JQuery was revised to include the 'clone' method but this returned the same outcome as previously described. It was then on review of the Python3 code within the ap.py file, that it was noticed that the 'ingredient.insert_one(request.form.to_dict())' command did not allow the addition of multiple data objects to MongoDB Atlas. Once this was updated to produce an array the problem was solved.    
+
+
+
+
+
+
+
+
+
+
+
 <img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
 
 Welcome davidjbuchanan,

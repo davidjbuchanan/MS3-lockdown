@@ -7,9 +7,17 @@ Python libraries flask flask_pymongo bson
 Content from https://www.jamieoliver.com/recipes/category/books/keep-cooking-and-carry-on/ https://fiveminutemum.com/ https://www.youtube.com/channel/UC295-Dw_tDNtZXFeAPAW6Aw
 
 
-Add_recioes:
+Add_recipes:
 
-The ability to add ingredients in a one-at-a-time fashion was effected by making the form interactive: the 'add ingredoent' button  generated a new input field on user's demand thus allowing the inputing of data to be made easy and thus enhancing the user's experience. Initial development using JQuery's 'append' method furnished the correct effect on the webpage; however, the new input fields failed to acheive uniqueness i.e. faied to increment in numerical value within the 'name' attribute. This led to MongoDB Atlas' failure to pick up the entered data, a solution was sought. The JQuery was revised to include the 'clone' method but this returned the same outcome as previously described. It was then on review of the Python3 code within the ap.py file, that it was noticed that the 'ingredient.insert_one(request.form.to_dict())' command did not allow the addition of multiple data objects to MongoDB Atlas. Once this was updated to produce an array the problem was solved.    
+The ability to add ingredients in a one-at-a-time fashion was effected by making the form interactive: the 'add ingredoent' button was included in the form and it generated a new input field on user's demand. Thus allowing the inputing of data to be made easy; enhancing the user's experience. Initial development using JQuery's 'append' method furnished the correct effect on the webpage; however, the new input fields failed to acheive uniqueness i.e. failed to increment in numerical value within the 'name' attribute. This led to MongoDB Atlas' failure to pick up the entered data; a solution was sought. The JQuery was revised to include the 'clone' method but this returned the same outcome as previously described. It was then on review of the Python3 code within the app.py file, that it was noticed that the 'ingredient.insert_one(request.form.to_dict())' command did not allow the addition of multiple data objects to MongoDB Atlas. Once this was updated to produce an array the problem was solved: see code snippet 'submit = {"ingredients": request.form.getlist("ingredients"),}' in the app.py file.   
+
+To compliment the 'add ingredient' button a 'delete ingredient' button was also sought to improve users' UX. This was far more rapidly constructed by employment of JQuery's remove() method. However the original design was of little practical use as it resulted in the stepwise deletion of input fields including the original. To remedy this an if statement was introduced: see code snipet 'if (div.length > 1)'. This stopped deletion of the original input field. 
+
+The add and delete button feature was then implemented for the 'procedures' field in both the 'add recipe' and 'edit recipe' pages.
+  
+
+Edit recipes:
+A webpage to enable the editing of existing records was made possible by recycling most of the 'all records' page. Input of Jinja code allowed for the records held on MngoDB Atlas to be iterated through and displayed as required.
 
 
 

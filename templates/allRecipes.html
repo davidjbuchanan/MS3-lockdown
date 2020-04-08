@@ -27,7 +27,13 @@
           <div class="col-lg-6">
             <h2 class="card-title">{{item.name}}</h2>
             <p class="card-text">{{item.description}}</p>
+            <p class="card-text">{{item.ingredient}}</p>
+            <p class="card-text">{{item.ingredients}}</p>
+            <p class="card-text">{{item.procedures}}</p>
+            <!--<p class="card-text">{{item.description}}</p>
+            <p class="card-text">{{item.description}}</p>-->
             <a href="#" class="btn btn-primary">Read More &rarr;</a>
+            <a href="{{ url_for('edit_recipe', recipe_id=item._id) }}" class="btn btn-primary">Edit &rarr;</a>
           </div>
         </div>
       </div>

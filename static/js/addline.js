@@ -1,4 +1,66 @@
-var html = '<div class="form-group row"><label for="ingredients" class="col-sm-2 col-form-label">Ingredient</label><div class="col-sm-10"><input type="text" class="form-control" id="ingredients" name="ingredients"></div></div>';
+$("#add_row_ingredient").click(function() {
+  $("#ingredients-item").clone().insertAfter($(".new-ingredients:last")).find("input[type='text']").val("");
+});
+
+
+$("#delete_row_ingredient").click(function () {
+   var div = $('.new-ingredients');
+   if (div.length > 1)
+    $(".new-ingredients:last").remove();
+});
+
+
+$("#add_row_procedure").click(function() {
+   $("#procedures-item").clone().insertAfter($(".new-procedures:last")).find("input[type='text']").val("");
+});
+
+$("#delete_row_procedure").click(function () {
+   var div = $('.new-procedures');
+   if (div.length > 1)
+    $(".new-procedures:last").remove();
+});
+
+
+
+//$('.test').on('click', '#deleteRow', function() {
+//    $('#deleteRow').closest('.test').find('.new-ingredients').not(':first').last().remove();
+//});
+
+//$(document).ready(function(e) {
+//    e.preventDefault();
+//  $("#deleteRow").click(function(){
+//    $(".new-ingredients").not(':first').last().remove();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//var html = '<div class="form-group row"><label for="ingredients" class="col-sm-2 col-form-label">Ingredient</label><div class="col-sm-10"><input type="text" class="form-control" id="ingredients" name="ingredients"></div></div>';
 
 // document.getElementById("addRow").addEventListener("click", function(){
 //     document.getElementById("trial").appendChild(html);
@@ -44,16 +106,3 @@ var html = '<div class="form-group row"><label for="ingredients" class="col-sm-2
 //     $("#theForm").append("<div class='form-group row'><label for='ingredients' class='col-sm-2 col-form-label'>Ingredient</label><div class='col-sm-10'><input type='text' class='form-control' id='' name='ingredients_" + i + "'></div></div>");
 //     i++;
 // }
-
-$("#addRow").click(function() {
-   $("#ingredients-item").clone().insertAfter($(".new-ingredient:last")).find("input[type='text']").val("");
-});
-
-
-
-//<div class="form-group row">
-//    <label for="ingredients" class="col-sm-2 col-form-label">Ingredient</label>
-//    <div class="col-sm-10">
-//        <input type="text" class="form-control" id="" name="ingredients">
-//    </div>
-//<div id="theForm"></div> <!--added--></div>

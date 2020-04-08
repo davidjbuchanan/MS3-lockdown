@@ -45,12 +45,31 @@ def insert_recipe():
         "name": request.form.get("name"),
         "description": request.form.get("description"),
         "ingredients": request.form.getlist("ingredients"),
-        "procedure": request.form.get("procedure"),
+        "procedures": request.form.getlist("procedures"),
         "gridRadios": request.form.get("gridRadios"),
-        "action": request.form.get("action"),
+        "gluten_free": request.form.get("gluten_free"),
     }
     recipe.insert_one(submit)
     return redirect(url_for('allRecipes'))
+
+@app.route('/edit_recipe/<recipe_id>')
+def edit_recipe(recipe_id):
+    the_recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
+    all_categories = mongo.db.categories.find()
+    return render_template("edit_recipe.html", recipe=the_recipe, categories=all_categories)
+    
+
+
+@app.route('/contact', methods=["GET", "POST"])
+def contact():
+    if request.method == "POST":
+        flash("Thank-you {}, we will be in contact shortly".format(
+            request.form["name"]
+        ))
+    return render_template("contact.html", page_title="Contact")
+
+
+
 
 @app.route('/nutrition')
 def nutrition():
@@ -64,13 +83,9 @@ def calm():
 def play():
     return render_template("play.html")
 
-@app.route('/contact', methods=["GET", "POST"])
-def contact():
-    if request.method == "POST":
-        flash("Thank-you {}, we will be in contact shortly".format(
-            request.form["name"]
-        ))
-    return render_template("contact.html", page_title="Contact")
+
+
+
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

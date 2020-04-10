@@ -25,11 +25,9 @@
             </a>
           </div>
           <div class="col-lg-6">
-            <h2 class="card-title">{{item.name}}</h2>
+            <h2 class="card-title">{{item.dish_name}}</h2>
             <p class="card-text">{{item.description}}</p>
-            <p class="card-text">{{item.ingredient}}</p>
-            <p class="card-text">{{item.ingredients}}</p>
-            <p class="card-text">{{item.procedures}}</p>
+            
             <!--<p class="card-text">{{item.description}}</p>
             <p class="card-text">{{item.description}}</p>-->
             <a href="#" class="btn btn-primary">Read More &rarr;</a>
@@ -38,8 +36,8 @@
         </div>
       </div>
       <div class="card-footer text-muted">
-        Posted on January 1, 2017 by
-        <a href="#">Start Bootstrap</a>
+        Posted on {{item.timestamp}} by {{item.username}}
+        <!--<a href="#">Start Bootstrap</a>-->
       </div>
     </div>
     {% endfor %}

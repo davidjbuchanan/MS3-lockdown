@@ -2,6 +2,7 @@ import os
 from flask import Flask, render_template, request, flash, render_template, url_for, redirect
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId 
+from datetime import datetime
 from os import path
 
 if path.exists('env.py'):
@@ -37,7 +38,32 @@ def yourRecipes():
 def addRecipes():
     return render_template("addRecipes.html", categories=mongo.db.categories.find(), key_information=mongo.db.key_information.find())
 
+
+
+
+
 @app.route('/insert_recipe', methods=['POST'])
+def insert_recipe():
+    now = datetime.now().strftime("%B %-d, %Y")
+    recipe = mongo.db.recipe
+    submit = {
+        "username": request.form.get("username"),
+        "category_name": request.form.get("category_name"),
+        "dish_name": request.form.get("dish_name"),
+        "description": request.form.get("description"),
+        "ingredients": request.form.getlist("ingredients"),
+        "procedures": request.form.getlist("procedures"),
+        "dietry_name": request.form.get("dietry_name"),
+        "is_gluten_free": request.form.get("is_gluten_free"),
+        "is_nut_free": request.form.get("is_nut_free"),
+        "is_dairy_free": request.form.get("is_dairy_free"),
+        "timestamp": now,
+    }
+    recipe.insert_one(submit)
+    return redirect(url_for('allRecipes'))
+
+
+"""@app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
     recipe = mongo.db.recipe
     submit = {
@@ -53,7 +79,7 @@ def insert_recipe():
     }
     recipe.insert_one(submit)
     return redirect(url_for('allRecipes'))
-
+"""
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
     the_recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})

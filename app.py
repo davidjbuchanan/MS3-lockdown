@@ -35,7 +35,7 @@ def yourRecipes():
     
 @app.route('/addRecipes')
 def addRecipes():
-    return render_template("addRecipes.html", categories=mongo.db.categories.find())
+    return render_template("addRecipes.html", categories=mongo.db.categories.find(), key_information=mongo.db.key_information.find())
 
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
@@ -46,8 +46,10 @@ def insert_recipe():
         "description": request.form.get("description"),
         "ingredients": request.form.getlist("ingredients"),
         "procedures": request.form.getlist("procedures"),
-        "gridRadios": request.form.get("gridRadios"),
-        "gluten_free": request.form.get("gluten_free"),
+        "dietry_name": request.form.get("dietry_name"),
+        "is_gluten_free": request.form.get("is_gluten_free"),
+        "is_nut_free": request.form.get("is_nut_free"),
+        "is_dairy_free": request.form.get("is_nut_free"),
     }
     recipe.insert_one(submit)
     return redirect(url_for('allRecipes'))
@@ -56,7 +58,8 @@ def insert_recipe():
 def edit_recipe(recipe_id):
     the_recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
     all_categories = mongo.db.categories.find()
-    return render_template("edit_recipe.html", recipe=the_recipe, categories=all_categories)
+    all_key_information = mongo.db.key_information.find()
+    return render_template("edit_recipe.html", recipe=the_recipe, categories=all_categories, key_information=all_key_information)
     
 
 

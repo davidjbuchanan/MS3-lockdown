@@ -26,17 +26,17 @@ def index():
 def about():
     return render_template("about.html")
 
-@app.route('/allRecipes')
-def allRecipes():
-    return render_template("allRecipes.html", recipe=mongo.db.recipe.find())
+@app.route('/all_recipes')
+def all_recipes():
+    return render_template("all_recipes.html", recipe=mongo.db.recipe.find())
 
-@app.route('/yourRecipes')
-def yourRecipes():
-    return render_template("yourRecipes.html")
+@app.route('/your_recipes')
+def your_recipes():
+    return render_template("your_recipes.html")
     
-@app.route('/addRecipes')
-def addRecipes():
-    return render_template("addRecipes.html", categories=mongo.db.categories.find(), key_information=mongo.db.key_information.find())
+@app.route('/add_recipe')
+def add_recipe():
+    return render_template("add_recipe.html", categories=mongo.db.categories.find(), key_information=mongo.db.key_information.find())
 
 
 
@@ -60,7 +60,7 @@ def insert_recipe():
         "timestamp": now,
     }
     recipe.insert_one(submit)
-    return redirect(url_for('allRecipes'))
+    return redirect(url_for('all_recipes'))
 
 
 """@app.route('/insert_recipe', methods=['POST'])
@@ -78,7 +78,7 @@ def insert_recipe():
         "is_dairy_free": request.form.get("is_nut_free"),
     }
     recipe.insert_one(submit)
-    return redirect(url_for('allRecipes'))
+    return redirect(url_for('all_recipes'))
 """
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
@@ -104,7 +104,7 @@ def update_recipe(recipe_id):
         "is_dairy_free": request.form.get("is_dairy_free"),
      
     })
-    return redirect(url_for('allRecipes'))
+    return redirect(url_for('all_recipes'))
 
 
 @app.route('/contact', methods=["GET", "POST"])

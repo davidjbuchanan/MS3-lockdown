@@ -1,0 +1,54 @@
+{% extends 'base.html' %} {% block content %}
+<!-- Page Content -->
+  <div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">All Categories
+      <small>Subheading</small>
+    </h1>
+
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="index.html">Home</a>
+      </li>
+      <li class="breadcrumb-item active">Blog Home 2</li>
+    </ol>
+
+    <a href="{{ url_for('add_category')}}" class="btn btn-primary">Add &rarr;</a>
+
+
+    <!-- Category Post -->
+    {% for item in categories %}
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="row">
+          
+                <div class="col-lg-6">
+                    <h2 class="card-title">{{item.category_name}}</h2>
+                    <a href="{{ url_for('delete_category', category_id=item._id) }}" class="btn btn-primary">Delete &rarr;</a>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-muted">
+            Posted on {{item.timestamp}} by {{item.username}}
+            <!--<a href="#">Start Bootstrap</a>-->
+        </div>
+    </div>
+    {% endfor %}
+    
+
+    <!-- Pagination -->
+    <ul class="pagination justify-content-center mb-4">
+      <li class="page-item">
+        <a class="page-link" href="#">&larr; Older</a>
+      </li>
+      <li class="page-item disabled">
+        <a class="page-link" href="#">Newer &rarr;</a>
+      </li>
+    </ul>
+
+  </div>
+
+  </div>
+  <!-- /.container -->
+{% endblock %}

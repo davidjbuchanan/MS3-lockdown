@@ -22,10 +22,6 @@ def index():
     )
 
 
-@app.route('/about')
-def about():
-    return render_template("about.html")
-
 @app.route('/all_recipes')
 def all_recipes():
     return render_template("all_recipes.html", recipe=mongo.db.recipe.find())
@@ -37,10 +33,6 @@ def your_recipes():
 @app.route('/add_recipe')
 def add_recipe():
     return render_template("add_recipe.html", categories=mongo.db.categories.find(), key_information=mongo.db.key_information.find())
-
-
-
-
 
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
@@ -62,24 +54,6 @@ def insert_recipe():
     recipe.insert_one(submit)
     return redirect(url_for('all_recipes'))
 
-
-"""@app.route('/insert_recipe', methods=['POST'])
-def insert_recipe():
-    recipe = mongo.db.recipe
-    submit = {
-        "category_name": request.form.get("category_name"),
-        "name": request.form.get("name"),
-        "description": request.form.get("description"),
-        "ingredients": request.form.getlist("ingredients"),
-        "procedures": request.form.getlist("procedures"),
-        "dietry_name": request.form.get("dietry_name"),
-        "is_gluten_free": request.form.get("is_gluten_free"),
-        "is_nut_free": request.form.get("is_nut_free"),
-        "is_dairy_free": request.form.get("is_nut_free"),
-    }
-    recipe.insert_one(submit)
-    return redirect(url_for('all_recipes'))
-"""
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
     the_recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
@@ -111,6 +85,37 @@ def delete_recipe(recipe_id):
     mongo.db.recipe.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('all_recipes'))
 
+@app.route('/all_categories')
+def all_categories():
+    return render_template("all_categories.html", categories=mongo.db.categories.find())
+
+@app.route('/add_category')
+def add_category():
+    return render_template("add_category.html")
+
+@app.route('/insert_category', methods=['POST'])
+def insert_category():
+    now = datetime.now().strftime("%B %-d, %Y")
+    category = mongo.db.categories
+    submit = {
+        "username": request.form.get("username"),
+        "category_name": request.form.get("category_name"),
+        "timestamp": now,
+    }
+    category.insert_one(submit)
+    return redirect(url_for('all_categories'))
+
+@app.route('/delete_category/<category_id>')
+def delete_category(category_id):
+    mongo.db.categories.remove({'_id': ObjectId(category_id)})
+    return redirect(url_for('all_categories'))
+
+
+
+
+
+
+
 
 
 @app.route('/contact', methods=["GET", "POST"])
@@ -123,6 +128,9 @@ def contact():
 
 
 
+@app.route('/about')
+def about():
+    return render_template("about.html")
 
 @app.route('/nutrition')
 def nutrition():

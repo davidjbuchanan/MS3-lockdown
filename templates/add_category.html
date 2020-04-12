@@ -1,0 +1,85 @@
+{% extends 'base.html' %} {% block content %}
+<!-- Page Content -->
+<div class="container">
+
+	<!-- Page Heading/Breadcrumbs -->
+	<h1 class="mt-4 mb-3">Add a Category
+		<small>Subheading</small>
+	</h1>
+
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item">
+			<a href="index.html">Home</a>
+		</li>
+		<li class="breadcrumb-item active">Blog Home 2</li>
+	</ol>
+
+
+    
+    
+    
+	<!-- Blog Post -->
+	<div class="card mb-4">
+		<div class="card-body">
+			<form action="{{ url_for('insert_category') }}" method="POST">
+				<div class="form-group row">
+                    <label for="name" class="col-sm-2 col-form-label">Username</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="" name="username">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="exampleFormControlSelect1" class="col-sm-2 col-form-label">Category</label>
+                    
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="" name="category_name">
+                    </div>
+                    
+                </div>
+                <!--<div class="form-group row">
+                    <div class="col-sm-2">Allergy information</div>
+                    <div class="col-sm-10">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch1" name="is_gluten_free">
+                            <label class="custom-control-label" for="customSwitch1">Gluten free</label>
+                        </div>	
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch2" name="is_nut_free">
+                            <label class="custom-control-label" for="customSwitch2">Nut free</label>
+                        </div>	
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch3" name="is_dairy_free">
+                            <label class="custom-control-label" for="customSwitch3">Dairy free</label>
+                        </div>			
+					</div>
+				</div>-->
+                
+                <div class="form-group row" hidden>
+                    <label for="name" class="col-sm-2 col-form-label">Timestamp</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="" name="timestamp" value="{{timestamp}}">
+                    </div>
+                </div>
+                
+
+
+				<div class="form-group row">
+					<div class="col-sm-10">
+						<button type="submit" class="btn btn-primary" name="action">Submit category</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- Pagination -->
+	<ul class="pagination justify-content-center mb-4">
+		<li class="page-item">
+			<a class="page-link" href="#">&larr; Older</a>
+		</li>
+		<li class="page-item disabled">
+			<a class="page-link" href="#">Newer &rarr;</a>
+		</li>
+	</ul>
+</div>
+<!-- /.container -->
+{% endblock %}

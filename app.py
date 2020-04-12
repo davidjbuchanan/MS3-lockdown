@@ -106,6 +106,12 @@ def update_recipe(recipe_id):
     })
     return redirect(url_for('all_recipes'))
 
+@app.route('/delete_recipe/<recipe_id>')
+def delete_recipe(recipe_id):
+    mongo.db.recipe.remove({'_id': ObjectId(recipe_id)})
+    return redirect(url_for('all_recipes'))
+
+
 
 @app.route('/contact', methods=["GET", "POST"])
 def contact():

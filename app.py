@@ -34,6 +34,63 @@ def your_recipes():
 def add_recipe():
     return render_template("add_recipe.html", categories=mongo.db.categories.find(), key_information=mongo.db.key_information.find())
 
+
+
+
+
+@app.route('/search_recipes')
+def search_recipes():
+    return render_template("search_recipes.html", recipes=mongo.db.recipe.find(), categories=mongo.db.categories.find(), key_information=mongo.db.key_information.find())
+
+@app.route('/find_recipe', methods=['GET'])
+def find_recipe():
+    coll_r = mongo.db.recipe
+    coll_c = mongo.db.categories
+    coll_ki = mongo.db.key_information
+    submit = {      
+    #    "username": request.form.get("username"),
+        "dish_name": request.form.get("dish_name"),
+    #    "ingredients": request.form.getlist("ingredients"),
+    #    "procedures": request.form.getlist("procedures"),
+    #    "dietry_name": request.form.get("dietry_name"),
+       
+    #    "category_name": request.form.get("category_name"),
+
+    #    "is_gluten_free": request.form.get("is_gluten_free"),
+    #    "is_nut_free": request.form.get("is_nut_free"),
+    #    "is_dairy_free": request.form.get("is_dairy_free"),
+    }
+    try:
+         doc = coll_r.find_one({'username': username})
+    except:
+        print("Error accessing the database")
+    
+    if not doc:
+        print("Error! No results found.")
+    
+    
+    return redirect(url_for('found_recipes'))
+
+
+#collection.find({"$text": {"$search": search_text}}).limit(10)
+
+
+
+#coll_r.find( { $text: { $search: dish_name } } ),
+
+
+@app.route('/found_recipes')
+def found_recipes():
+    return render_template("found_recipes.html", recipe=mongo.db.recipe.find())
+
+
+
+
+
+
+
+
+
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
     now = datetime.now().strftime("%B %-d, %Y")

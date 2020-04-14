@@ -1,110 +1,30 @@
 {% extends 'base.html' %} {% block content %}
 <!-- Page Content -->
 <div class="container">
-
 	<!-- Page Heading/Breadcrumbs -->
 	<h1 class="mt-4 mb-3">Search Recipes
 		<small>Subheading</small>
 	</h1>
-
 	<ol class="breadcrumb">
 		<li class="breadcrumb-item">
 			<a href="index.html">Home</a>
 		</li>
 		<li class="breadcrumb-item active">Blog Home 2</li>
-	</ol>
-
-
-    
-    
-    
+	</ol> 
 	<!-- Blog Post -->
 	<div class="card mb-4">
 		<div class="card-body">
-			<form action="{{ url_for('find_recipe') }}" method="POST">
-				<div class="form-group row">
-                    <label for="name" class="col-sm-2 col-form-label">Username</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="" name="username">
-                    </div>
-                </div>
+			<form action="{{url_for('found_recipes')}}" method="POST">
+				             
                 <div class="form-group row">
-                    <label for="exampleFormControlSelect1" class="col-sm-2 col-form-label">Category</label>
+                    <label for="name" class="col-sm-2 col-form-label">Search</label>
                     <div class="col-sm-10">
-                        <select class="form-control" id="category_name" name="category_name">
-                            {% for cat in categories %}
-                            <option value="{{cat.category_name}}">{{cat.category_name}}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="name" class="col-sm-2 col-form-label">Dish name</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="" name="dish_name">
+                        <input type="text" class="form-control" id="" name="users_search_input">
                     </div>
                 </div>                
-                <div class="form-group row">
-                    <label for="name" class="col-sm-2 col-form-label">Description</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="" name="description">
-                    </div>
-                </div>             
-                <div class="form-group row new-ingredients" id="ingredients-item">
-                    <label for="ingredients" class="col-sm-2 col-form-label">Ingredient</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" name="ingredients">
-                    </div>
-                </div>               
-                <div class="form-group row new-procedures" id="procedures-item">
-                    <label for="procedures" class="col-sm-2 col-form-label">Procedure</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" name="procedures">
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label for="exampleFormControlSelect1" class="col-sm-2 col-form-label">Dietry information</label>
-                    <div class="col-sm-10">
-                        <select class="form-control" id="dietry_name" name="dietry_name">
-                            {% for key in key_information %}
-                            <option value="{{key.dietry_name}}">{{key.dietry_name}}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                </div>
-                
-
-               <div class="form-group row">
-                    <div class="col-sm-2">Allergy information</div>
-                    <div class="col-sm-10">
-                        <div class="custom-control custom-switch">
-                            <input type="checkbox" class="custom-control-input" id="customSwitch1" name="is_gluten_free">
-                            <label class="custom-control-label" for="customSwitch1">Gluten free</label>
-                        </div>	
-                        <div class="custom-control custom-switch">
-                            <input type="checkbox" class="custom-control-input" id="customSwitch2" name="is_nut_free">
-                            <label class="custom-control-label" for="customSwitch2">Nut free</label>
-                        </div>	
-                        <div class="custom-control custom-switch">
-                            <input type="checkbox" class="custom-control-input" id="customSwitch3" name="is_dairy_free">
-                            <label class="custom-control-label" for="customSwitch3">Dairy free</label>
-                        </div>			
-					</div>
-				</div>
-                
-                <div class="form-group row" hidden>
-                    <label for="name" class="col-sm-2 col-form-label">Timestamp</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="" name="timestamp" value="{{timestamp}}">
-                    </div>
-                </div>
-                
-
-
-				<div class="form-group row">
+    			<div class="form-group row">
 					<div class="col-sm-10">
-						<button type="submit" class="btn btn-primary" name="action">Submit recipe</button>
+						<button type="submit" class="btn btn-primary" name="action">Search Recipes</button>
 					</div>
 				</div>
 			</form>

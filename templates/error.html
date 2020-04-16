@@ -1,0 +1,57 @@
+{% extends 'base.html' %} {% block content %}
+<!-- Page Content -->
+<body>
+
+  
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">404
+      <small>Page Not Found</small>
+    </h1>
+
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="{{ url_for('index') }}">Home</a>
+      </li>
+      <li class="breadcrumb-item active">404</li>
+    </ol>
+
+    <div class="jumbotron">
+        <h1 class="display-1">404</h1>
+        <p>The page you're looking for could not be found. Here are some helpful links to get you back on track:</p>
+        <ul>
+            <li>
+                <a href="{{ url_for('index') }}">Home</a>
+            </li>
+            <li>
+                <a href="{{ url_for('about') }}">About</a>
+            </li>
+            <li>
+                <a href="{{ url_for('subscribe') }}">Subscribe</a>
+            </li>
+            <li>
+                Eat
+                <ul>
+                    <li>
+                        <a href="{{ url_for('all_recipes') }}">All Recipes</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('add_recipe') }}">Add Recipe</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('search_recipes') }}">Search Recipes</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('all_categories') }}">All Categories</a>
+                    </li>
+                </ul>
+            </li>
+      </ul>
+    </div>
+    <!-- /.jumbotron -->
+
+  </div>
+  <!-- /.container -->
+{% endblock %}

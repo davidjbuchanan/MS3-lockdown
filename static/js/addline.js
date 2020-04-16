@@ -22,17 +22,6 @@ $("#delete_row_procedure").click(function () {
 
 
 
-//$('.test').on('click', '#deleteRow', function() {
-//    $('#deleteRow').closest('.test').find('.new-ingredients').not(':first').last().remove();
-//});
-
-//$(document).ready(function(e) {
-//    e.preventDefault();
-//  $("#deleteRow").click(function(){
-//    $(".new-ingredients").not(':first').last().remove();
-
-
-
 
 
 

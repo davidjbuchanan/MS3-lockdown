@@ -152,7 +152,9 @@ def subscribe():
 def about():
     return render_template("about.html")
 
-
+@app.route('/error')
+def error():
+    return render_template("error.html")
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

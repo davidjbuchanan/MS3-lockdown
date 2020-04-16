@@ -138,33 +138,19 @@ def delete_category(category_id):
 
 
 
-@app.route('/contact', methods=["GET", "POST"])
-def contact():
+@app.route('/subscribe', methods=["GET", "POST"])
+def subscribe():
     if request.method == "POST":
         flash("Thank-you {}, we will be in contact shortly".format(
             request.form["name"]
         ))
-    return render_template("contact.html", page_title="Contact")
+    return render_template("subscribe.html", page_title="Subscribe")
 
 
 
 @app.route('/about')
 def about():
     return render_template("about.html")
-
-@app.route('/nutrition')
-def nutrition():
-    return render_template("nutrition.html")
-
-@app.route('/calm')
-def calm():
-    return render_template("calm.html")
-
-@app.route('/play')
-def play():
-    return render_template("play.html")
-
-
 
 
 

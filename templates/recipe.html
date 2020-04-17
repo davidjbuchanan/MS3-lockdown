@@ -1,0 +1,98 @@
+{% extends 'base.html' %} {% block content %}
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">{{recipe.dish_name}}
+        <small>Subheading</small>
+    </h1>
+
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="index.html">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Blog Home 2</li>
+    </ol>
+
+    <!-- Recipe Post -->
+    
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <a href="#">
+                        <img class="img-fluid rounded" src="http://placehold.it/750x300" alt="">
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="col-12">
+                        <h2>Description</h2>
+                            <p class="card-text">{{recipe.description}}</p>
+                            <p class="card-text">{{recipe.category_name}}</p>
+                    </div>
+                    <div class="col-12">
+                        <h3>Dietry details</h3>
+                        <div class="col-6">
+                            <p class="card-text">{{recipe.dietry_name}}</p>
+                        </div>
+                        <div class="col-6">
+                            {% if recipe.is_gluten_free %}
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="customSwitch1" name="is_gluten_free" checked>
+                                <label class="custom-control-label" for="customSwitch1">Gluten free</label>
+                            </div>
+                            {% else %}
+                            {% endif %}
+                            {% if recipe.is_nut_free %}
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="customSwitch2" name="is_nut_free" checked>
+                                <label class="custom-control-label" for="customSwitch2">Nut free</label>
+                            </div>
+                            {% else %}
+                            {% endif %}
+                            {% if recipe.is_dairy_free %}
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="customSwitch3" name="is_dairy_free" checked>
+                                <label class="custom-control-label" for="customSwitch3">Dairy free</label>
+                            </div>
+                            {% else %}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <label for="ingredients" class="col-12 col-form-label">Ingredient</label>
+                    {% for ingredient in recipe.ingredients %}
+                    <div class="form-group row new-ingredients" id="ingredients-item">
+                        <div class="col-12">
+                            <input type="text" class="form-control" name="ingredients" value="{{ ingredient }}">
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            
+                <div class="col-lg-6">
+                    <label for="procedures" class="col-12 col-form-label">Procedure</label>
+                    {% for procedure in recipe.procedures %}
+                    <div class="form-group row new-procedures" id="procedures-item">
+                        <div class="col-12">
+                            <input type="text" class="form-control" name="procedures" value="{{ procedure }}">
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>            
+            <a href="{{ url_for('all_recipes') }}" class="btn btn-primary">Back to recipes &rarr;</a>
+            <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn btn-primary">Edit &rarr;</a>
+            <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn btn-primary">Delete &rarr;</a>
+        </div>
+        <div class="card-footer text-muted">
+            Posted on {{recipe.timestamp}} by {{recipe.username}}
+            <!--<a href="#">Start Bootstrap</a>-->
+        </div>
+    </div>
+</div>
+  <!-- /.container -->
+{% endblock %}

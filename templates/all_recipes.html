@@ -1,44 +1,44 @@
 {% extends 'base.html' %} {% block content %}
 <!-- Page Content -->
-  <div class="container">
+<div class="container">
 
     <!-- Page Heading/Breadcrumbs -->
     <h1 class="mt-4 mb-3">All Recipes
-      <small>Subheading</small>
+        <small>Subheading</small>
     </h1>
 
     <ol class="breadcrumb">
-      <li class="breadcrumb-item">
-        <a href="index.html">Home</a>
-      </li>
-      <li class="breadcrumb-item active">Blog Home 2</li>
+        <li class="breadcrumb-item">
+            <a href="index.html">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Blog Home 2</li>
     </ol>
 
     <!-- Recipe Post -->
     {% for item in recipe %}
     <div class="card mb-4">
-      <div class="card-body">
-        <div class="row">
-          <div class="col-lg-6">
-            <a href="#">
-              <img class="img-fluid rounded" src="http://placehold.it/750x300" alt="">
-            </a>
-          </div>
-          <div class="col-lg-6">
-            <h2 class="card-title">{{item.dish_name}}</h2>
-            <p class="card-text">{{item.description}}</p>
-            
-            
-            <a href="#" class="btn btn-primary">Read More &rarr;</a>
-            <a href="{{ url_for('edit_recipe', recipe_id=item._id) }}" class="btn btn-primary">Edit &rarr;</a>
-            <a href="{{ url_for('delete_recipe', recipe_id=item._id) }}" class="btn btn-primary">Delete &rarr;</a>
-          </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <a href="#">
+                        <img class="img-fluid rounded" src="http://placehold.it/750x300" alt="">
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="card-title">{{item.dish_name}}</h2>
+                    <p class="card-text">{{item.description}}</p>
+                
+                
+                    <a href="{{ url_for('recipe', recipe_id=item._id) }}" class="btn btn-primary">Read More &rarr;</a>
+                    <a href="{{ url_for('edit_recipe', recipe_id=item._id) }}" class="btn btn-primary">Edit &rarr;</a>
+                    <a href="{{ url_for('delete_recipe', recipe_id=item._id) }}" class="btn btn-primary">Delete &rarr;</a>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="card-footer text-muted">
-        Posted on {{item.timestamp}} by {{item.username}}
-        <!--<a href="#">Start Bootstrap</a>-->
-      </div>
+        <div class="card-footer text-muted">
+            Posted on {{item.timestamp}} by {{item.username}}
+            <!--<a href="#">Start Bootstrap</a>-->
+        </div>
     </div>
     {% endfor %}
 
@@ -46,16 +46,16 @@
 
     <!-- Pagination -->
     <ul class="pagination justify-content-center mb-4">
-      <li class="page-item">
-        <a class="page-link" href="#">&larr; Older</a>
-      </li>
-      <li class="page-item disabled">
-        <a class="page-link" href="#">Newer &rarr;</a>
-      </li>
+        <li class="page-item">
+            <a class="page-link" href="#">&larr; Older</a>
+        </li>
+        <li class="page-item disabled">
+            <a class="page-link" href="#">Newer &rarr;</a>
+        </li>
     </ul>
 
-  </div>
+</div>
 
-  </div>
+
   <!-- /.container -->
 {% endblock %}

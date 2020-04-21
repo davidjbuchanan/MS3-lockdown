@@ -16,10 +16,13 @@
     
     <div class="container-fluid navalert-container">
         <div class="container-fluid alert-container">
-            <div class="row d-none d-sm-block">
-                <div class="col-12">
-                    <div class="site-wide-alert alert alert-warning">
-                        <strong>Promotion!</strong> Essential worker's discount. Get a 12-month subscription for the price of 6! <a href="">See here for details!</a>
+            <div class="row">
+                <div class="d-none d-sm-block col-12" id="gutter">
+                    <div class="text-center alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>Promotion!</strong>Essential worker's discount. Get a 12-month subscription for the price of 6! <a href="{{ url_for('subscribe') }}">See here for details!</a>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -129,7 +132,10 @@
     <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!--Javascript for add inline-->
-    <script src="{{ url_for('static', filename='js/addline.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/add_line.js') }}"></script>
+    <!-- Java Query for alert onclick dismiss-->
+    <script src="{{ url_for('static', filename='js/alert_dismiss.js') }}"></script>
+
 </body>
 
 </html>

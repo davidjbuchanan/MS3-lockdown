@@ -1,22 +1,40 @@
+
+body {
+    padding-top: 56px;
+}
+
+.carousel-item {
+    height: 65vh;
+    min-height: 300px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.portfolio-item {
+    margin-bottom: 30px;
+}
 /*!
  * Start Bootstrap - Modern Business (https://startbootstrap.com/template-overviews/modern-business)
  * Copyright 2013-2019 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
  */
-body {
-  padding-top: 56px;
-}
 
-.carousel-item {
-  height: 65vh;
-  min-height: 300px;
-  background: no-repeat center center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
+ .alert-container {
+    padding: 0px;
+ }
 
-.portfolio-item {
-  margin-bottom: 30px;
-}
+ .alert, .alert-warning {
+    margin-bottom: 0px;
+ }
+
+ #gutter {
+    padding-right: 0px;
+    padding-left: 0px;
+ }
+
+ .carousel {
+    margin-bottom: 50px;
+ }

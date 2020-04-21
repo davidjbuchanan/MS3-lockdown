@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!-- Bootstrap core CSS -->
-<link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-<link rel="stylesheet" href="{{ url_for('static', filename='css/modern-business.css') }}" type="text/css" />
+<link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}"/>
+<script src="https://kit.fontawesome.com/a0ff73228b.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/modern-business.css') }}" type="text/css"/>
     <title>Lockdown</title>
 </head>
 
@@ -86,10 +87,42 @@
 
     <!-- Footer -->
     <footer class="py-5 bg-dark">
-        <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+        <div class="row">
+            <div class="col-12 col-sm-6 ">
+                <p class="m-0 text-center text-white">Let's get social</p>
+                <ul class="list-inline m-0 text-center text-white">
+                    <li class="list-inline-item">
+                        <a href="https://en-gb.facebook.com/" target="_blank">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                            <span class="sr-only">Facebook</span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/?lang=en-gb " target="_blank">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                            <span class="sr-only">Twitter</span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://uk.linkedin.com" target="_blank">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                            <span class="sr-only">Linkedin</span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://www.youtube.com" target="_blank">
+                            <i class="fab fa-youtube" aria-hidden="true"></i>
+                            <span class="sr-only">Youtube</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-12 col-sm-6 ">
+                <p class="m-0 text-center text-white">
+                    Copyright &copy; Your Website 2019
+                </p>
+            </div>
         </div>
-        <!-- /.container -->
     </footer>
 
     <!-- Bootstrap core JavaScript -->

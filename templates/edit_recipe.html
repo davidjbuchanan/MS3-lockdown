@@ -13,8 +13,8 @@
 		</li>
 		<li class="breadcrumb-item active">Blog Home 2</li>
 	</ol>
-
-	<button id="add_row_ingredient">+ Add ingredient</button>
+    
+    <button id="add_row_ingredient">+ Add ingredient</button>
 	<button id="delete_row_ingredient">+ Delete ingredient</button>
 	<button id="add_row_procedure">+ Add procedure</button>
 	<button id="delete_row_procedure">+ Delete procedure</button>
@@ -26,8 +26,13 @@
 				<div class="form-group row">
                     <label for="name" class="col-sm-2 col-form-label">Username</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" disabled id="" name="username" value="{{recipe.username}}">
+                        <input type="text" class="form-control" id="" name="username" value="{{recipe.username}}">
                     </div>
+                </div>
+                <div>
+                    <input type="text" class="form-control" hidden id="" name="feature" value="{{recipe.feature}}">
+                    <input type="text" class="form-control" hidden id="" name="picture" value="{{recipe.picture}}">
+                    <input type="text" class="form-control" hidden id="" name="timestamp" value="{{recipe.timestamp}}">
                 </div>
                 <div class="form-group row">
 					<label for="exampleFormControlSelect1" class="col-sm-2 col-form-label">Category</label>

@@ -90,10 +90,13 @@ def recipe(recipe_id):
 
 @app.route('/update_recipe/<recipe_id>', methods=["POST"])
 def update_recipe(recipe_id):
+    now = datetime.now().strftime("%B %-d, %Y")
     recipe = mongo.db.recipe
     recipe.update({'_id': ObjectId(recipe_id)},
     {
         "username": request.form.get("username"),
+        "feature": request.form.get("feature"),
+        "picture": request.form.get("picture"),
         "category_name": request.form.get("category_name"),
         "dish_name": request.form.get("dish_name"),
         "description": request.form.get("description"),
@@ -103,7 +106,8 @@ def update_recipe(recipe_id):
         "is_gluten_free": request.form.get("is_gluten_free"),
         "is_nut_free": request.form.get("is_nut_free"),
         "is_dairy_free": request.form.get("is_dairy_free"),
-     
+        "timestamp": request.form.get("timestamp"),
+        "edit_timestamp": now,    
     })
     return redirect(url_for('all_recipes'))
 

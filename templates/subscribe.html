@@ -65,7 +65,7 @@
 
 
             <h3>Send us a Message</h3>
-            <form method="POST" name="sentMessage" id="contactForm" novalidate>
+            <form onsubmit="return sendMail(this);" name="sentMessage" id="contactForm" novalidate>
                 <div class="control-group form-group">
                     <div class="controls">
                         <label>Full Name:</label>

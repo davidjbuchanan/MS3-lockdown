@@ -7,6 +7,12 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}"/>
 <script src="https://kit.fontawesome.com/a0ff73228b.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="{{ url_for('static', filename='css/modern-business.css') }}" type="text/css"/>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+        emailjs.init("user_VuHH7gH01MALuxjLWlXKy");   
+   })();
+</script>
     <title>Lockdown</title>
 </head>
 
@@ -135,6 +141,8 @@
     <script src="{{ url_for('static', filename='js/add_line.js') }}"></script>
     <!-- Java Query for alert onclick dismiss-->
     <script src="{{ url_for('static', filename='js/alert_dismiss.js') }}"></script>
+    <!-- Java Query for emailJS onclick-->
+    <script src="{{ url_for('static', filename='js/sendEmail.js') }}"></script>
 
 </body>
 

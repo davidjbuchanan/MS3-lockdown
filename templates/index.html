@@ -104,12 +104,9 @@
                     <a href="{{ url_for('recipe', recipe_id=item._id) }}"><img class="card-img-top" src="{{item.picture}}" alt=""></a>
                         <div class="card-body">
                             <h4 class="card-title">
-                                <a href="{{ url_for('recipe', recipe_id=item._id) }}">Project One</a>
+                                <a href="{{ url_for('recipe', recipe_id=item._id) }}">{{item.dish_name}}</a>
                             </h4>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
-                                aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque
-                                deserunt,
-                                dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
+                            <p class="card-text">{{item.description}}</p>
                         </div>
                 </div>
 		    </div>
@@ -119,12 +116,9 @@
                     <a href="{{ url_for('recipe', recipe_id=item._id) }}"><img class="card-img-top" src="{{item.picture}}" alt=""></a>
                         <div class="card-body">
                             <h4 class="card-title">
-                                <a href="{{ url_for('recipe', recipe_id=item._id) }}">Project One</a>
+                                <a href="{{ url_for('recipe', recipe_id=item._id) }}">{{item.dish_name}}</a>
                             </h4>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
-                                aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque
-                                deserunt,
-                                dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
+                            <p class="card-text">{{item.description}}</p>
                         </div>
                 </div>
 		    </div>

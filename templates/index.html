@@ -1,216 +1,208 @@
 {% extends 'base.html' %}
 {% block content %}
+<!-- carousel -->
 <header>
-	<div id="carouselExampleIndicators" class="carousel slide shadow" data-ride="carousel">
-		<ol class="carousel-indicators">
-			<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-			<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-			<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-		</ol>
-		<div class="carousel-inner" role="listbox">
-			<!-- Slide One - Set the background image for this slide in the line below -->
-			<div class="carousel-item active"
-				style="background-image: url('../static/images/cropped-photo-of-child-watching-through-imac-4145038.jpg')">
-				<div class="carousel-caption d-none d-md-block">
-					<h3>
-						<a href="{{ url_for('error') }}">Play &amp Learn</a>
-					</h3>
-				</div>
-			</div>
-			<!-- Slide Two - Set the background image for this slide in the line below -->
-			<div class="carousel-item"
-				style="background-image: url('../static/images/little-girl-cooking-1684032.jpg')">
-				<div class="carousel-caption d-none d-md-block">
-					<h3>
-						<a href="{{ url_for('all_recipes') }}">Feed &amp Eat</a>
-					</h3>
-				</div>
-			</div>
-			<!-- Slide Three - Set the background image for this slide in the line below -->
-			<div class="carousel-item"
-				style="background-image: url('../static/images/4k-wallpaper-adorable-blur-boy-1148998.jpg')">
-				<div class="carousel-caption d-none d-md-block">
-					<h3>
-						<a href="{{ url_for('error') }}">Rest &amp Relaxation</a>
-					</h3>
-				</div>
-			</div>
-		</div>
-		<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			<span class="sr-only">Previous</span>
-		</a>
-		<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-			<span class="carousel-control-next-icon" aria-hidden="true"></span>
-			<span class="sr-only">Next</span>
-		</a>
-	</div>
+    <div id="carouselExampleIndicators" class="carousel slide shadow" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active"
+                style="background-image: url('../static/images/cropped-photo-of-child-watching-through-imac-4145038.jpg')">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>
+                        <a class="btn btn-primary" href="{{ url_for('error') }}"><strong>Play &amp; Learn</strong></a>
+                    </h3>
+                </div>
+            </div>
+            <div class="carousel-item"
+                style="background-image: url('../static/images/4k-wallpaper-adorable-blur-boy-1148998.jpg')">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>
+                        <a class="btn btn-primary" href="{{ url_for('error') }}"><strong>Rest &amp; Relaxation</strong></a>
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
 </header>
-
-<!-- Page Content -->
+<!-- /carousel -->
+<!-- Alert -->
+<div class="container-fluid alert-container" id="alert">
+    <div class="row">
+        <div class="d-none d-sm-block col-12" id="gutter">
+            <div class="text-center alert alert-warning alert-dismissible fade show" role="alert">
+                <p>
+                    <strong>Promotion! </strong>
+                    Essential worker's discount. Get a 12-month subscription for the price of 6! 
+                    <a id="alert-link" href="{{   url_for('subscribe') }}"><strong>See here for details!</strong></a>
+                </p>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Alert -->
 <div class="container">
-
-
-
-	<div class="row">
+	<!-- Call to Action Section -->
+    <div class="row">
 		<div class="col-lg-6">
 			<h2>Subscribe</h2>
-			<p>Join this site because:</p>
+			<p>Make an investment during these unusual times:</p>
 			<ul>
-				<li>
-					<strong>one</strong>
-				</li>
-				<li>two</li>
-				<li>three</li>
-				<li>four</li>
-				<li>five</li>
+				<li>Recipes straight from your larder</li>
+                <li>Fun games for all the family</li>
+				<li>Educational tools for kids</li>
+				<li>Priority delivery from store</li>
+                <li>Maintain mental wellbeing</li>
 			</ul>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id
-				reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia
-				dolorum ducimus unde.</p>
+			<p>Ease the burdon on you, as a home maker, by subscribing to this lifestyle website where all your Lockdown needs can be met.</p>
 		</div>
 		<div class="col-lg-6">
-			<a href="{{ url_for('subscribe') }}"><img class="img-fluid rounded" src="static/images/adult-cutting-daylight-facial-expression-1153369.jpg" alt="">
-            </a>
+			<img class="img-fluid rounded" src="static/images/adult-cutting-daylight-facial-expression-1153369.jpg" alt="">
 		</div>
 	</div>
-	<!-- /.row -->
 	<hr>
-	<!-- Call to Action Section -->
 	<div class="row mb-4">
 		<div class="col-md-8">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum
-				deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
+			<p>Choose from a range of subscrition options with the option to cancel subscriptions at any time!</p>
 		</div>
 		<div class="col-md-4">
-			<a class="btn btn-lg btn-primary btn-block" href="{{ url_for('subscribe') }}">subscribe</a>
+			<a class="btn btn-lg btn-primary btn-block hvr-box-shadow-outset" href="{{ url_for('subscribe') }}">Subscribe today</a>
 		</div>
 	</div>
-
-	<h1 class="my-4">Today's featured articles and recipes</h1>
-	<!-- Portfolio Section -->
-	<a href="{{ url_for('all_recipes') }}">
-		<h2>Eat</h2>
-	</a>
-	
-	
-
-
-    <div class="row">
+    <!-- /Call to Action Section -->
+    <hr>
+	<!-- Features Section -->
+    <h1 class="my-4">Today's featured articles and recipes</h1>
+	<h2 class="theme-feature hvr-forward">
+        <a href="{{ url_for('all_recipes') }}">Eat</a>
+    </h2>
+	<div class="row">
     {% for item in recipe %}
             {% if item.feature == "true_narrow" %}
             <div class="col-lg-4 col-sm-6 portfolio-item">
                 <div class="card h-100 shadow">
-                    <a href="{{ url_for('recipe', recipe_id=item._id) }}"><img class="card-img-top" src="{{item.picture}}" alt=""></a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="{{ url_for('recipe', recipe_id=item._id) }}">{{item.dish_name}}</a>
-                            </h4>
-                            <p class="card-text">{{item.description}}</p>
-                        </div>
+                    <a href="{{ url_for('recipe', recipe_id=item._id) }}"><img class="card-img-top hvr-shadow" src="{{item.picture}}" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title hvr-forward">
+                            <a href="{{ url_for('recipe', recipe_id=item._id) }}">{{item.dish_name}}</a>
+                        </h4>
+                        <p class="card-text">{{item.description}}</p>
+                    </div>
                 </div>
 		    </div>
             {% elif item.feature == "true_wide" %}
             <div class="d-none d-lg-block col-lg-4 col-sm-6 portfolio-item">
                 <div class="card h-100 shadow">
-                    <a href="{{ url_for('recipe', recipe_id=item._id) }}"><img class="card-img-top" src="{{item.picture}}" alt=""></a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="{{ url_for('recipe', recipe_id=item._id) }}">{{item.dish_name}}</a>
-                            </h4>
-                            <p class="card-text">{{item.description}}</p>
-                        </div>
+                    <a href="{{ url_for('recipe', recipe_id=item._id) }}"><img class="card-img-top hvr-shadow" src="{{item.picture}}" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title hvr-forward">
+                            <a href="{{ url_for('recipe', recipe_id=item._id) }}">{{item.dish_name}}</a>
+                        </h4>
+                        <p class="card-text">{{item.description}}</p>
+                    </div>
                 </div>
 		    </div>
             {% endif %}
     {% endfor %}
     </div>
-    <a href="">
-		<h2>Play</h2>
-	</a>
+    <h2>Play</h2>
 	<div class="row">
 		<div class="col-lg-4 col-sm-6 portfolio-item">
 			<div class="card h-100 shadow">
-				<a href="#"><img class="card-img-top" src="static/images/hotrod-die-cast-model-on-board-1422673.jpg" alt=""></a>
-					<div class="card-body">
-						<h4 class="card-title">
-							<a href="#">Project Four</a>
-						</h4>
-						<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra
-							euismod odio, gravida pellentesque urna varius vitae.</p>
-					</div>
+				<img class="card-img-top" src="static/images/hotrod-die-cast-model-on-board-1422673.jpg" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">
+                        Boardgames
+                    </h4>
+                    <p class="card-text">The thrill of bankrupting an opponent, but it pays to play nice, because fortunes could change with the roll of the dice. Experience the ups and downs by collecting property colors sets to build houses, and maybe even upgrading to a hotel! The more properties each player owns, the more rent can be charged. Chance cards could be worth money, or one might just say Go To Jail!
+                    </p>
+                    <!--credit Hasbro Gaming-->
+                </div>
 			</div>
 		</div>
 		<div class="col-lg-4 col-sm-6 portfolio-item">
 			<div class="card h-100 shadow">
-				<a href="#"><img class="card-img-top" src="static/images/girl-in-white-and-pink-shirt-wearing-white-vr-goggles-4144041.jpg" alt=""></a>
-					<div class="card-body">
-						<h4 class="card-title">
-							<a href="#">Project Five</a>
-						</h4>
-						<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra
-							euismod odio, gravida pellentesque urna varius vitae.</p>
-					</div>
+				<img class="card-img-top" src="static/images/girl-in-white-and-pink-shirt-wearing-white-vr-goggles-4144041.jpg" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">
+                        Augmented Reality
+                    </h4>
+                    <p class="card-text">What if the line between your imagination and the real world didn’t exist? With augmented reality, not only is that possible, it’s here. AR transforms how you work, learn, play, shop, and connect with the world around you. It’s the perfect way to visualize things that would be impossible or impractical to see otherwise. 
+                    </p>
+                    <!--credit Apple.com-->
+                </div>
 			</div>
 		</div>
 		<div class="d-none d-lg-block col-lg-4 portfolio-item">
 			<div class="card h-100 shadow">
-				<a href="#"><img class="card-img-top" src="static/images/two-boy-and-girl-holding-game-controllers-1103563.jpg" alt=""></a>
-					<div class="card-body">
-						<h4 class="card-title">
-							<a href="#">Project Six</a>
-						</h4>
-						<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum
-							nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit
-							eius in
-							voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
-					</div>
+				<img class="card-img-top" src="static/images/two-boy-and-girl-holding-game-controllers-1103563.jpg" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">
+                        Gaming
+                    </h4>
+                    <p class="card-text">Gaming is bigger than ever. The games industry is now larger than both cinema and music, and with the advent of mobile gaming, more people are playing games than ever before. However, the appeal of gaming is still a mystery for many people.
+                    </p>
+                     <!--credit https://swgfl.org.uk/magazine/what-is-gaming/-->
+                </div>
 			</div>
 		</div>
 	</div>
-	<a href="">
-		<h2>Rest</h2>
-	</a>
+	<h2>Rest</h2>
 	<div class="row">
 		<div class="col-lg-4 col-sm-6 portfolio-item">
 			<div class="card h-100 shadow">
-				<a href="#"><img class="card-img-top" src="static/images/adult-arts-and-crafts-clay-dirty-357428 (1).jpg" alt=""></a>
-					<div class="card-body">
-						<h4 class="card-title">
-							<a href="#">Project Four</a>
-						</h4>
-						<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra
-							euismod odio, gravida pellentesque urna varius vitae.</p>
-					</div>
+				<img class="card-img-top" src="static/images/adult-arts-and-crafts-clay-dirty-357428(1).jpg" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">
+                        Pottery
+                    </h4>
+                    <p class="card-text">One of the oldest and most widespread of the decorative arts, consisting of objects made of clay and hardened with heat. The objects made are commonly useful ones, such as vessels for holding liquids or plates or bowls from which food can be served.
+                    </p>
+                    <!--credit https://www.britannica.com/art/pottery-->
+                </div>
 			</div>
 		</div>
 		<div class="col-lg-4 col-sm-6 portfolio-item">
 			<div class="card h-100 shadow">
-				<a href="#"><img class="card-img-top" src="static/images/arts-and-crafts-child-close-up-color-159579 (1).jpg" alt=""></a>
-					<div class="card-body">
-						<h4 class="card-title">
-							<a href="#">Project Five</a>
-						</h4>
-						<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra
-							euismod odio, gravida pellentesque urna varius vitae.</p>
-					</div>
+				<img class="card-img-top" src="static/images/arts-and-crafts-child-close-up-color-159579(1).jpg" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">
+                        Colouring
+                    </h4>
+                    <p class="card-text">Make your world more colorful with printable coloring pages from Crayola. Our free coloring pages for adults and kids, range from Star Wars to Mickey Mouse.
+                    </p>
+                    <!--credit https://www.crayola.com/featured/free-coloring-pages/-->
+                </div>
 			</div>
 		</div>
 		<div class="d-none d-lg-block col-lg-4 portfolio-item">
 			<div class="card h-100 shadow">
-				<a href="#"><img class="card-img-top" src="static/images/childred-decorating-eggs-3972178.jpg" alt=""></a>
-					<div class="card-body">
-						<h4 class="card-title">
-							<a href="#">Project Six</a>
-						</h4>
-						<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum
-							nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit
-							eius in
-							voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
-					</div>
+				<img class="card-img-top" src="static/images/childred-decorating-eggs-3972178.jpg" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">
+                        Crafting
+                    </h4>
+                    <p class="card-text">Inspire yourself with our craft creations and ideas or find out how to get involved with craft courses in your area. Whether you're experienced in arts and crafts or just starting out, there's something for everyone to enjoy.
+                    </p>
+                    <!--credit https://www.saga.co.uk/magazine/home-garden/craft-hobbies/crafting-->
+                </div>
 			</div>
 		</div>
 	</div>
-	<!-- /.row -->
+	<!-- /Features Section -->
 </div>
+<!-- /container -->
 {% endblock %}

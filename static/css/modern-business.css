@@ -1,7 +1,49 @@
+/*!
+ * Start Bootstrap - Modern Business (https://startbootstrap.com/template-overviews/modern-business)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
+ */
 
-body {
-    padding-top: 56px;
+/*navbar*/
+.bg-dark {
+    background-color: #66b2b2!important;
+ }
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 1);
 }
+
+#home a {
+    transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+}
+
+#home a:hover {
+    color:rgb(181, 68, 132);
+}
+
+.dropdown-menu {
+    background-color: #66b2b2;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border: 0px;
+}
+
+.dropdown-item {
+    color: rgba(255, 255, 255, 1);
+    transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+}
+
+.dropdown-item:hover {
+    color:rgb(181, 68, 132);
+    background-color: #66b2b2;
+}
+/*carousel*/
 
 .carousel-item {
     height: 65vh;
@@ -13,28 +55,100 @@ body {
     background-size: cover;
 }
 
+.carousel-caption a{
+    color:rgb(181, 68, 132);
+    text-decoration: none; 
+    font-size: 28px; 
+    background-color: rgb(102, 178, 178, 0.6);
+    border: rgb(102, 178, 178, 0.6);
+}
+ /* alert */
+ 
+.alert, .alert-warning {
+    margin-bottom: 0px;
+    background-color: #66b2b2;
+    border-top-width: 0px;  
+}
+
+.alert-warning p {
+    color: rgba(255, 255, 255, 1);
+}
+
+.alert-warning p a {
+    color:rgb(255, 255, 255, 1); 
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+
+.alert-warning p a:hover {
+   color:rgb(181, 68, 132); 
+}
+
+#gutter {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+#alert {
+    margin-bottom: 50px;
+}
+
+ /* callout */
+.btn-primary {
+    background-color: #66b2b2;
+    border-color: #66b2b2;
+}
+
+.btn-primary:hover {
+    background-color: #66b2b2;
+    border-color: #66b2b2;   
+}
+
+/* body and cards */
+
+body {
+    padding-top: 56px;
+}
+
 .portfolio-item {
     margin-bottom: 30px;
 }
-/*!
- * Start Bootstrap - Modern Business (https://startbootstrap.com/template-overviews/modern-business)
- * Copyright 2013-2019 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
- */
 
- .alert-container {
-    padding: 0px;
- }
+.theme-feature a {
+   text-decoration: none; 
+   color: rgb(33, 37, 41);
+}
 
- .alert, .alert-warning {
-    margin-bottom: 0px;
- }
+.card-title a {
+    text-decoration: none;
+    color: rgb(33, 37, 41);
+}
 
- #gutter {
-    padding-right: 0px;
-    padding-left: 0px;
- }
+/* footer */
 
- .carousel {
-    margin-bottom: 50px;
- }
+.fab {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 30px;
+    color:rgba(255, 255, 255, 1);
+}
+
+.social li a i {
+    transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+}
+
+.social li a i:hover {
+    color: rgb(181, 68, 132);
+}
+
+
+
+
+

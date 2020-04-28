@@ -1,136 +1,107 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<!-- Bootstrap core CSS -->
-<link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}"/>
-<script src="https://kit.fontawesome.com/a0ff73228b.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="{{ url_for('static', filename='css/modern-business.css') }}" type="text/css"/>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
-<script type="text/javascript">
-   (function(){
-        emailjs.init("user_VuHH7gH01MALuxjLWlXKy");   
-   })();
-</script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}"/>
+    <script src="https://kit.fontawesome.com/a0ff73228b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/modern-business.css') }}" type="text/css"/>
+    <!--Hover.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" integrity="sha256-c+C87jupO1otD1I5uyxV68WmSLCqtIoNlcHLXtzLCT0=" crossorigin="anonymous" />
+    <!--EmailJS-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+                emailjs.init("user_VuHH7gH01MALuxjLWlXKy");   
+        })();
+    </script>
     <title>Lockdown</title>
 </head>
 
-<body>
-         
+<body>     
     <!-- Navigation -->
-    
-    <div class="container-fluid navalert-container">
-        <div class="container-fluid alert-container">
-            <div class="row">
-                <div class="d-none d-sm-block col-12" id="gutter">
-                    <div class="text-center alert alert-warning alert-dismissible fade show" role="alert">
-                        <strong>Promotion!</strong>Essential worker's discount. Get a 12-month subscription for the price of 6! <a href="{{ url_for('subscribe') }}">See here for details!</a>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-    
-    
-    
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url_for('index') }}">Lockdown &amp Thrive</a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('error') }}">Store</a>
-                        </li>  
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('error') }}">About</a>
-                        </li>              
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('subscribe') }}">Subscribe</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Eat
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownRecipes">
-                                <a class="dropdown-item" href="{{ url_for('all_recipes') }}">All Recipes</a>
-                                <a class="dropdown-item" href="{{ url_for('add_recipe') }}">Add Recipe</a>
-                                <a class="dropdown-item" href="{{ url_for('search_recipes') }}">Search Recipes</a>
-                                <a class="dropdown-item" href="{{ url_for('all_categories') }}">All Category</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Play
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownRecipes">
-                                <a class="dropdown-item" href="{{ url_for('error') }}">Games for kids</a>
-                                <a class="dropdown-item" href="{{ url_for('error') }}">Learning for kids</a>
-                                <a class="dropdown-item" href="{{ url_for('error') }}">Games for big kids</a>
-                                <a class="dropdown-item" href="{{ url_for('error') }}">Puzzles for big kids</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Rest
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownRecipes">
-                                <a class="dropdown-item" href="{{ url_for('error') }}">Meditation</a>
-                                <a class="dropdown-item" href="{{ url_for('error') }}">Yoga and pilates</a>
-                                <a class="dropdown-item" href="{{ url_for('error') }}">Exercise</a>
-                                <a class="dropdown-item" href="{{ url_for('error') }}">Sleep aids</a>
-                            </div>
-                        </li>         
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
-    {% block content %}{% endblock %}
-    
-
-    <!-- Footer -->
-    <footer class="py-5 bg-dark">
-        <div class="row">
-            <div class="col-12 col-sm-6 ">
-                <p class="m-0 text-center text-white">Let's get social</p>
-                <ul class="list-inline m-0 text-center text-white">
-                    <li class="list-inline-item">
-                        <a href="https://en-gb.facebook.com/" target="_blank">
-                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                            <span class="sr-only">Facebook</span>
-                        </a>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container" id="home">
+            <a class="navbar-brand" href="{{ url_for('index') }}">Lockdown &amp; Thrive</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+            </button>    
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('error') }}">Store</a>
+                    </li>              
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('subscribe') }}">Subscribe</a>
                     </li>
-                    <li class="list-inline-item">
-                        <a href="https://twitter.com/?lang=en-gb " target="_blank">
-                            <i class="fab fa-twitter" aria-hidden="true"></i>
-                            <span class="sr-only">Twitter</span>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownRecipes" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Feed &amp; Eat
                         </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownRecipes">
+                            <a class="dropdown-item" href="{{ url_for('all_recipes') }}">All Recipes</a>
+                            <a class="dropdown-item" href="{{ url_for('add_recipe') }}">Add Recipe</a>
+                            <a class="dropdown-item" href="{{ url_for('search_recipes') }}">Search Recipes</a>
+                            <a class="dropdown-item" href="{{ url_for('all_categories') }}">All Category</a>
+                        </div>
                     </li>
-                    <li class="list-inline-item">
-                        <a href="https://uk.linkedin.com" target="_blank">
-                            <i class="fab fa-linkedin" aria-hidden="true"></i>
-                            <span class="sr-only">Linkedin</span>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPlay" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Play &amp; Learn
                         </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPlay">
+                            <a class="dropdown-item" href="{{ url_for('error') }}">Games for kids</a>
+                            <a class="dropdown-item" href="{{ url_for('error') }}">Learning for kids</a>
+                            <a class="dropdown-item" href="{{ url_for('error') }}">Games for big kids</a>
+                            <a class="dropdown-item" href="{{ url_for('error') }}">Puzzles for big kids</a>
+                        </div>
                     </li>
-                    <li class="list-inline-item">
-                        <a href="https://www.youtube.com" target="_blank">
-                            <i class="fab fa-youtube" aria-hidden="true"></i>
-                            <span class="sr-only">Youtube</span>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownRest" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Rest &amp; Relax
                         </a>
-                    </li>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownRest">
+                            <a class="dropdown-item" href="{{ url_for('error') }}">Meditation</a>
+                            <a class="dropdown-item" href="{{ url_for('error') }}">Yoga and pilates</a>
+                            <a class="dropdown-item" href="{{ url_for('error') }}">Exercise</a>
+                            <a class="dropdown-item" href="{{ url_for('error') }}">Sleep aids</a>
+                        </div>
+                    </li>         
                 </ul>
             </div>
-            <div class="col-12 col-sm-6 ">
-                <p class="m-0 text-center text-white">
-                    Copyright &copy; Your Website 2019
-                </p>
-            </div>
+        </div>
+    </nav>
+    {% block content %}{% endblock %}
+    <!-- Footer -->
+    <footer class="py-3 bg-dark">
+        <div class="container">
+            <ul class="list-inline text-center social">
+                <li class="list-inline-item">
+                    <a href="https://en-gb.facebook.com/" target="_blank">
+                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        <span class="sr-only">Facebook</span>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://twitter.com/?lang=en-gb " target="_blank">
+                        <i class="fab fa-twitter" aria-hidden="true"></i>
+                        <span class="sr-only">Twitter</span>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://uk.linkedin.com" target="_blank">
+                        <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        <span class="sr-only">Linkedin</span>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://www.youtube.com" target="_blank">
+                        <i class="fab fa-youtube" aria-hidden="true"></i>
+                        <span class="sr-only">Youtube</span>
+                    </a>
+                </li>
+            </ul>
         </div>
     </footer>
 

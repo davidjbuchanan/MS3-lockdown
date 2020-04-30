@@ -4,19 +4,16 @@
 </header>
 <!-- Page Content -->
 <div class="container">
-
     <!-- Page Heading/Breadcrumbs -->
     <h1 class="mt-4 mb-3">Subscribe
         <small>Subheading</small>
     </h1>
-
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
             <a href="{{ url_for('index') }}">Home</a>
         </li>
-        <li class="breadcrumb-item active">Contact</li>
+        <li class="breadcrumb-item active">Subscribe</li>
     </ol>
-
     <!-- Content Row -->
     <div class="row">
         <!-- Map Column -->
@@ -26,7 +23,7 @@
         </div>
         <!-- Contact Details Column -->
         <div class="col-lg-4 mb-4">
-            <h3>Contact Details</h3>
+            <h3>Customer Services</h3>
             <p>
             3481 Melrose Place
             <br>
@@ -34,70 +31,89 @@
             <br>
             </p>
             <p>
-                <abbr title="Phone">P</abbr>: (123) 456-7890
+                <i class="fas fa-phone"></i> 
+                (123) 456-7890
             </p>
             <p>
-                <abbr title="Email">E</abbr>:
-                <a href="mailto:name@example.com">name@example.com
+                <i class="fas fa-envelope-square"></i>
+                services@lt.com
             </a>
             </p>
             <p>
-                <abbr title="Hours">H</abbr>: Monday - Friday: 9:00 AM to 5:00 PM
+                <i class="fas fa-hourglass-start"></i> 
+                Monday - Sunday: 9:00 AM to 5:00 PM
             </p>
         </div>
     </div>
     <!-- /.row -->
-
-    <!-- Contact Form -->
-    <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
+    <!-- Form -->
     <div class="row">
         <div class="col-lg-8 mb-4">
-        
             {% with messages = get_flashed_messages() %} 
-                {% if messages %}
-                <ul class="">
-                    {% for message in messages %}
-                    <li>{{ message }}</li>
-                    {% endfor %}
-                </ul>
-                {% endif %} 
+            {% if messages %}
+            <ul class="notification">
+                {% for message in messages %}
+                <p>{{ message }}</p>
+                {% endfor %}
+            </ul>
+            {% endif %} 
             {% endwith %}
-
-
-            <h3>Send us a Message</h3>
-            <form onsubmit="return sendMail(this);" name="sentMessage" id="contactForm" novalidate>
-                <div class="control-group form-group">
-                    <div class="controls">
-                        <label>Full Name:</label>
-                        <input type="text" class="form-control" id="name" name="name" required data-validation-required-message="Please enter your name.">
-                        <p class="help-block"></p>
+            <h3>Sign up</h3>
+            <!--onsubmit="return sendMail(this);"-->
+            <form name="sentMessage" method="POST" id="contactForm"  class="needs-validation" novalidate>
+                <div class="form-row">
+                    <div class="col-12">
+                        <label for="name">Full Name:</label>
+                        <input type="text" class="form-control" id="name" name="name" required placeholder="Please enter your name.">
                     </div>
                 </div>
-                <div class="control-group form-group">
-                    <div class="controls">
-                        <label>Phone Number:</label>
-                        <input type="tel" class="form-control" id="phone" name="number" required data-validation-required-message="Please enter your phone number.">
+                <div class="form-row">
+                    <div class="col-12">
+                        <label for="name">Occupation:</label>
+                        <input type="text" class="form-control" id="job" name="job" required placeholder="Please enter your job title and/or employer's name."> 
                     </div>
                 </div>
-                <div class="control-group form-group">
-                    <div class="controls">
-                        <label>Email Address:</label>
-                        <input type="email" class="form-control" id="email" name="email" required data-validation-required-message="Please enter your email address.">
+                <div class="form-group">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="invalidCheck">
+                        <label for="invalidCheck">Essential worker?</label>    
                     </div>
                 </div>
-                <div class="control-group form-group">
-                    <div class="controls">
-                        <label>Message:</label>
-                        <textarea rows="10" cols="100" class="form-control" name="message" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" class="form-control" id="phone" name="number" required placeholder="Please enter your phone number.">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email">Email Address:</label>
+                        <input type="email" class="form-control" id="email" name="email" required placeholder="Please enter your email address.">
                     </div>
                 </div>
-                <div id="success"></div>
-                <!-- For success/fail messages -->
-                <button type="submit" class="btn btn-primary" id="sendMessageButton">Send Message</button>
+                <button type="submit" class="btn btn-primary hvr-box-shadow-outset" id="sendMessageButton">Send Message</button>
             </form>
         </div>
     </div>
-<!-- /.row -->
+    <!-- /.row -->
 </div>
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
 <!-- /.container -->
 {% endblock %}

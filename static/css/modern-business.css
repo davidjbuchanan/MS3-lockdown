@@ -104,7 +104,8 @@
 
 .btn-primary:hover {
     background-color: #66b2b2;
-    border-color: #66b2b2;   
+    border-color: #66b2b2;
+    color: rgb(181, 68, 132);   
 }
 
 /* body and cards */
@@ -127,8 +128,29 @@ body {
     color: rgb(33, 37, 41);
 }
 
-/* footer */
+/*sign up fields*/
+.form-group {
+    padding-top:15px;
+    margin-bottom: 0px;
+}
 
+#sendMessageButton {
+    margin-top: 15px;
+}
+
+.form-row label {
+    padding-top: 15px;
+}
+
+.notification {
+    background-color: #66b2b2;
+    color: rgb(181, 68, 132);
+    padding-left: 0px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* footer */
 .fab {
     padding-top: 20px;
     padding-left: 20px;

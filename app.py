@@ -155,7 +155,7 @@ def subscribe():
         flash("Thank-you {}, we will be in contact shortly".format(
             request.form["name"]
         ))
-    return render_template("subscribe.html", page_title="Subscribe")
+    return render_template("subscribe.html", page_title="subscribe")
 
 
 

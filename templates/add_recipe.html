@@ -1,27 +1,27 @@
 {% extends 'base.html' %} {% block content %}
 <!-- Page Content -->
 <div class="container">
-
 	<!-- Page Heading/Breadcrumbs -->
-	<h1 class="mt-4 mb-3">Add a Recipe
-		<small>Subheading</small>
-	</h1>
-
+	<h1 class="mt-4 mb-3">Add a Recipe</h1>
 	<ol class="breadcrumb">
 		<li class="breadcrumb-item">
-			<a href="index.html">Home</a>
+			<a href="{{ url_for('index')}}">
+                Home
+            </a>
 		</li>
-		<li class="breadcrumb-item active">Blog Home 2</li>
+        <li class="breadcrumb-item">
+            <a href="{{ url_for('all_recipes')}}">
+                All Recipes
+            </a>
+        </li>
+		<li class="breadcrumb-item active">
+            Add a Recipe
+        </li>
 	</ol>
-
-
-    
-    
     <button id="add_row_ingredient">+ Add ingredient</button>
     <button id="delete_row_ingredient">+ Delete ingredient</button>
     <button id="add_row_procedure">+ Add procedure</button>
     <button id="delete_row_procedure">+ Delete procedure</button>
-
 	<!-- Blog Post -->
 	<div class="card mb-4">
 		<div class="card-body">
@@ -66,7 +66,6 @@
                         <input type="text" class="form-control" name="procedures">
                     </div>
                 </div>
-
                 <div class="form-group row">
                     <label for="exampleFormControlSelect1" class="col-sm-2 col-form-label">Dietry information</label>
                     <div class="col-sm-10">
@@ -77,8 +76,6 @@
                         </select>
                     </div>
                 </div>
-                
-
                <div class="form-group row">
                     <div class="col-sm-2">Allergy information</div>
                     <div class="col-sm-10">
@@ -95,17 +92,13 @@
                             <label class="custom-control-label" for="customSwitch3">Dairy free</label>
                         </div>			
 					</div>
-				</div>
-                
+				</div>              
                 <div class="form-group row" hidden>
                     <label for="name" class="col-sm-2 col-form-label">Timestamp</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="" name="timestamp" value="{{timestamp}}">
                     </div>
                 </div>
-                
-
-
 				<div class="form-group row">
 					<div class="col-sm-10">
 						<button type="submit" class="btn btn-primary" name="action">Submit recipe</button>
@@ -114,15 +107,6 @@
 			</form>
 		</div>
 	</div>
-	<!-- Pagination -->
-	<ul class="pagination justify-content-center mb-4">
-		<li class="page-item">
-			<a class="page-link" href="#">&larr; Older</a>
-		</li>
-		<li class="page-item disabled">
-			<a class="page-link" href="#">Newer &rarr;</a>
-		</li>
-	</ul>
 </div>
 <!-- /.container -->
 {% endblock %}

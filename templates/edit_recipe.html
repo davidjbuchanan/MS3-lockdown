@@ -1,22 +1,37 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
+{% block navigation %}
+<div class="col-xs-3">
+    <button class="btn btn-primary btn-block" id="add_row_ingredient">
+        + <i class="fas fa-carrot"></i>
+    </button>
+</div>   
+<div class="col-xs-3">
+    <button class="btn btn-primary btn-block" id="delete_row_ingredient">
+        - <i class="fas fa-carrot"></i>
+    </button>
+</div>   
+<div class="col-xs-3">
+    <button class="btn btn-primary btn-block" id="add_row_procedure">
+        + <i class="fas fa-utensil-spoon"></i>
+    </button>
+</div> 
+<div class="col-xs-3">
+    <button class="btn btn-primary btn-block" id="delete_row_procedure">
+        - <i class="fas fa-utensil-spoon"></i>
+    </button>
+</div>
+{% endblock navigation%}
+{% block content %}
 <!-- Page Content -->
 <div class="container">
-
 	<!-- Page Heading/Breadcrumbs -->
-	<h1 class="mt-4 mb-3">Edit a Recipe</h1>
-
+	<h1 class="mt-4 mb-3 nav-spacer">Edit a Recipe</h1>
 	<ol class="breadcrumb">
 		<li class="breadcrumb-item">
 			<a href="{{ url_for('index')}}">Home</a>
 		</li>
 		<li class="breadcrumb-item active">Edit Recipe</li>
-	</ol>
-    
-    <button id="add_row_ingredient">+ Add ingredient</button>
-	<button id="delete_row_ingredient">+ Delete ingredient</button>
-	<button id="add_row_procedure">+ Add procedure</button>
-	<button id="delete_row_procedure">+ Delete procedure</button>
-
+	</ol>  
 	<!-- Blog Post -->
 	<div class="card mb-4">
 		<div class="card-body">
@@ -133,8 +148,7 @@
                 </div>
 			</form>
 		</div>
-	</div>
-	
+	</div>	
 </div>
 <!-- /.container -->
 {% endblock %}

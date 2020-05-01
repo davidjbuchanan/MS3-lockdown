@@ -1,8 +1,32 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
+    {% block navigation %}
+    <div class="col-xs-3">
+        <button class="btn btn-primary btn-block" id="add_row_ingredient">
+            + <i class="fas fa-carrot"></i>
+        </button>
+    </div>
+     
+    <div class="col-xs-3">
+        <button class="btn btn-primary btn-block" id="delete_row_ingredient">
+            - <i class="fas fa-carrot"></i>
+        </button>
+    </div>   
+    <div class="col-xs-3">
+        <button class="btn btn-primary btn-block" id="add_row_procedure">
+            + <i class="fas fa-utensil-spoon"></i>
+        </button>
+    </div> 
+    <div class="col-xs-3">
+        <button class="btn btn-primary btn-block" id="delete_row_procedure">
+            - <i class="fas fa-utensil-spoon"></i>
+        </button>
+    </div>
+    {% endblock navigation%}
+{% block content %}
 <!-- Page Content -->
 <div class="container">
 	<!-- Page Heading/Breadcrumbs -->
-	<h1 class="mt-4 mb-3">Add a Recipe</h1>
+	<h1 class="mt-4 mb-3" id="nav-spacer">Add a Recipe</h1>
 	<ol class="breadcrumb">
 		<li class="breadcrumb-item">
 			<a href="{{ url_for('index')}}">
@@ -18,94 +42,94 @@
             Add a Recipe
         </li>
 	</ol>
-    <button id="add_row_ingredient">+ Add ingredient</button>
-    <button id="delete_row_ingredient">+ Delete ingredient</button>
-    <button id="add_row_procedure">+ Add procedure</button>
-    <button id="delete_row_procedure">+ Delete procedure</button>
 	<!-- Blog Post -->
 	<div class="card mb-4">
 		<div class="card-body">
-			<form action="{{ url_for('insert_recipe') }}" method="POST">
-				<div class="form-group row">
-                    <label for="name" class="col-sm-2 col-form-label">Username</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="" name="username">
-                    </div>
+            <div class="row">
+                <div class="col-12">
+                    <form action="{{ url_for('insert_recipe') }}" method="POST">
+                        <div class="form-group row" id="top-field">
+                            <label for="name" class="col-md-2 col-form-label">Username</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="" name="username" placeholder="how do you want to be known?">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="exampleFormControlSelect1" class="col-md-2 col-form-label">Category</label>
+                            <div class="col-md-10">
+                                <select class="form-control" id="category_name" name="category_name">
+                                    {% for cat in categories %}
+                                    <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="name" class="col-md-2 col-form-label">Dish name</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="" name="dish_name" placeholder="what's your dish called?">
+                            </div>
+                        </div>                
+                        <div class="form-group row">
+                            <label for="name" class="col-md-2 col-form-label">Description</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="" name="description"placeholder="add a description here">
+                            </div>
+                        </div>             
+                        <div class="form-group row new-ingredients" id="ingredients-item">
+                            <label for="ingredients" class="col-md-2 col-form-label">Ingredient</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" name="ingredients" placeholder="add an ingredient here, use the spoon above to add more ingredients">
+                            </div>
+                        </div>
+                        <div class="form-group row new-procedures" id="procedures-item">
+                            <label for="procedures" class="col-md-2 col-form-label">Procedure</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" name="procedures" placeholder="add a step here, use the spoon above to add more steps">
+                            </div>
+                        </div>                
+                        <div class="form-group row">
+                            <label for="exampleFormControlSelect1" class="col-md-2 col-form-label">Dietry information</label>
+                            <div class="col-md-10">
+                                <select class="form-control" id="dietry_name" name="dietry_name">
+                                    {% for key in key_information %}
+                                    <option value="{{key.dietry_name}}">{{key.dietry_name}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-2">Allergy information</div>
+                            <div class="col-md-10">
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input" id="customSwitch1" name="is_gluten_free">
+                                    <label class="custom-control-label" for="customSwitch1">Gluten free</label>
+                                </div>	
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input" id="customSwitch2" name="is_nut_free">
+                                    <label class="custom-control-label" for="customSwitch2">Nut free</label>
+                                </div>	
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input" id="customSwitch3" name="is_dairy_free">
+                                    <label class="custom-control-label" for="customSwitch3">Dairy free</label>
+                                </div>			
+                            </div>
+                        </div>              
+                        <div class="form-group row" hidden>
+                            <label for="name" class="col-md-2 col-form-label">Timestamp</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="" name="timestamp" value="{{timestamp}}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-10">
+                                <button type="submit" class="btn btn-primary" name="action">Submit recipe</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="form-group row">
-                    <label for="exampleFormControlSelect1" class="col-sm-2 col-form-label">Category</label>
-                    <div class="col-sm-10">
-                        <select class="form-control" id="category_name" name="category_name">
-                            {% for cat in categories %}
-                            <option value="{{cat.category_name}}">{{cat.category_name}}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="name" class="col-sm-2 col-form-label">Dish name</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="" name="dish_name">
-                    </div>
-                </div>                
-                <div class="form-group row">
-                    <label for="name" class="col-sm-2 col-form-label">Description</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="" name="description">
-                    </div>
-                </div>             
-                <div class="form-group row new-ingredients" id="ingredients-item">
-                    <label for="ingredients" class="col-sm-2 col-form-label">Ingredient</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" name="ingredients">
-                    </div>
-                </div>               
-                <div class="form-group row new-procedures" id="procedures-item">
-                    <label for="procedures" class="col-sm-2 col-form-label">Procedure</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" name="procedures">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="exampleFormControlSelect1" class="col-sm-2 col-form-label">Dietry information</label>
-                    <div class="col-sm-10">
-                        <select class="form-control" id="dietry_name" name="dietry_name">
-                            {% for key in key_information %}
-                            <option value="{{key.dietry_name}}">{{key.dietry_name}}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                </div>
-               <div class="form-group row">
-                    <div class="col-sm-2">Allergy information</div>
-                    <div class="col-sm-10">
-                        <div class="custom-control custom-switch">
-                            <input type="checkbox" class="custom-control-input" id="customSwitch1" name="is_gluten_free">
-                            <label class="custom-control-label" for="customSwitch1">Gluten free</label>
-                        </div>	
-                        <div class="custom-control custom-switch">
-                            <input type="checkbox" class="custom-control-input" id="customSwitch2" name="is_nut_free">
-                            <label class="custom-control-label" for="customSwitch2">Nut free</label>
-                        </div>	
-                        <div class="custom-control custom-switch">
-                            <input type="checkbox" class="custom-control-input" id="customSwitch3" name="is_dairy_free">
-                            <label class="custom-control-label" for="customSwitch3">Dairy free</label>
-                        </div>			
-					</div>
-				</div>              
-                <div class="form-group row" hidden>
-                    <label for="name" class="col-sm-2 col-form-label">Timestamp</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="" name="timestamp" value="{{timestamp}}">
-                    </div>
-                </div>
-				<div class="form-group row">
-					<div class="col-sm-10">
-						<button type="submit" class="btn btn-primary" name="action">Submit recipe</button>
-					</div>
-				</div>
-			</form>
-		</div>
+            </div>
+        </div>
 	</div>
 </div>
 <!-- /.container -->

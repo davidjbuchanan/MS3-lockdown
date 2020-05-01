@@ -155,8 +155,16 @@ body {
     padding-top: 20px;
     padding-left: 20px;
     padding-right: 20px;
+    padding-bottom: 20px;
     font-size: 30px;
     color:rgba(255, 255, 255, 1);
+}
+
+.social li {
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 0px;
+    max-width: 20%;
 }
 
 .social li a i {
@@ -170,7 +178,46 @@ body {
     color: rgb(181, 68, 132);
 }
 
+/* add recipe*/
+#top-field {
+    padding-top: 0px;
+}
 
+/*navbar adaptions for 'add recipe' page*/
+@media (min-width:300px) and (max-width:496px) {            
+    #nav-spacer {
+        margin-top: 2.0rem !important;
+    }
+}
 
+@media (min-width:332px) and (max-width:380px) {            
+    #home .navbar-toggler {
+        margin-left: 50px; 
+    }
+}
 
+@media (min-width:381px) and (max-width:430px) {            
+    #home .navbar-toggler {
+        margin-left: 100px; 
+    }
+}
 
+@media (min-width:431px) and (max-width:450px) {            
+    #home .navbar-toggler {
+        margin-left: 120px; 
+    }
+}
+
+@media (min-width:451px) and (max-width:490px) {            
+    #home .navbar-toggler {
+        margin-left: 160px; 
+    }
+}
+
+@media (min-width:491px) and (max-width:496px) {            
+    #home .navbar-toggler {
+        margin-left: 180px; 
+    }
+}
+
+/*END navbar adaptions for 'add recipe' page*/

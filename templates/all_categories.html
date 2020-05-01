@@ -4,29 +4,35 @@
     <!-- Page Heading/Breadcrumbs -->
     <h1 class="mt-4 mb-3">All Categories</h1>
     <ol class="breadcrumb">
-      <li class="breadcrumb-item">
-        <a href="{{ url_for('index')}}">
-            Home
-        </a>
-      </li>
-      <li class="breadcrumb-item">
-        <a href="{{ url_for('all_recipes')}}">
-            All Recipes
-        </a>
-      </li>
-      <li class="breadcrumb-item active">
-        All Categories
-    </li>
+        <li class="breadcrumb-item">
+            <a href="{{ url_for('index')}}">
+                Home
+            </a>
+        </li>
+        <li class="breadcrumb-item">
+            <a href="{{ url_for('all_recipes')}}">
+                All Recipes
+            </a>
+        </li>
+        <li class="breadcrumb-item active">
+            All Categories
+        </li>
     </ol>
-    <a href="{{ url_for('add_category')}}" class="btn btn-primary">Add &rarr;</a>
+    <div class="col-md-4" id="add_a_category">
+        <a class="btn btn-lg btn-primary btn-block hvr-box-shadow-outset" href="{{ url_for('add_category') }}">
+            Add a Category &rarr;
+        </a>
+    </div>  
     <!-- Category Post -->
     {% for item in categories %}
     <div class="card mb-4">
         <div class="card-body">
             <div class="row">
-                <div class="col-lg-6">
-                    <h2 class="card-title">{{item.category_name}}</h2>
-                    <a href="{{ url_for('delete_category', category_id=item._id) }}" class="btn btn-primary">Delete &rarr;</a>
+                <div class="col-md-6">
+                    <h2 class="card-title">{{item.category_name}}</h2>              
+                </div>
+                <div class="col-md-6">                  
+                    <a href="{{ url_for('delete_category', category_id=item._id) }}" class="btn btn-primary hvr-box-shadow-outset">Delete &rarr;</a>
                 </div>
             </div>
         </div>

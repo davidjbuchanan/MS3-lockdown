@@ -185,7 +185,7 @@ body {
 
 /*navbar adaptions for 'add recipe' page*/
 @media (min-width:300px) and (max-width:496px) {            
-    #nav-spacer {
+    .nav-spacer {
         margin-top: 2.0rem !important;
     }
 }
@@ -221,3 +221,9 @@ body {
 }
 
 /*END navbar adaptions for 'add recipe' page*/
+
+/*all_categories*/
+#add_a_category {
+    padding-left: 0px;
+    padding-bottom: 20px;
+}

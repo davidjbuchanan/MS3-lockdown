@@ -3,15 +3,13 @@
 <div class="container">
 
 	<!-- Page Heading/Breadcrumbs -->
-	<h1 class="mt-4 mb-3">Edit a Recipe
-		<small>Subheading</small>
-	</h1>
+	<h1 class="mt-4 mb-3">Edit a Recipe</h1>
 
 	<ol class="breadcrumb">
 		<li class="breadcrumb-item">
-			<a href="index.html">Home</a>
+			<a href="{{ url_for('index')}}">Home</a>
 		</li>
-		<li class="breadcrumb-item active">Blog Home 2</li>
+		<li class="breadcrumb-item active">Edit Recipe</li>
 	</ol>
     
     <button id="add_row_ingredient">+ Add ingredient</button>
@@ -136,15 +134,7 @@
 			</form>
 		</div>
 	</div>
-	<!-- Pagination -->
-	<ul class="pagination justify-content-center mb-4">
-		<li class="page-item">
-			<a class="page-link" href="#">&larr; Older</a>
-		</li>
-		<li class="page-item disabled">
-			<a class="page-link" href="#">Newer &rarr;</a>
-		</li>
-	</ul>
+	
 </div>
 <!-- /.container -->
 {% endblock %}

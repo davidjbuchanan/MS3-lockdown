@@ -1,19 +1,17 @@
 {% extends 'base.html' %} {% block content %}
 <!-- Page Content -->
 <div class="container">
-
 	<!-- Page Heading/Breadcrumbs -->
-	<h1 class="mt-4 mb-3">{{recipe.dish_name}}
-		<small>Subheading</small>
-	</h1>
-
+	<h1 class="mt-4 mb-3">{{recipe.dish_name}}</h1>
 	<ol class="breadcrumb">
 		<li class="breadcrumb-item">
-			<a href="index.html">Home</a>
+			<a href="{{ url_for('index') }}">Home</a>
 		</li>
-		<li class="breadcrumb-item active">Blog Home 2</li>
+		<li class="breadcrumb-item">
+			<a href="{{ url_for('all_recipes') }}">All Recipes</a>
+		</li>
+		<li class="breadcrumb-item active">Recipe</li>
 	</ol>
-
 	<!-- Recipe Post -->
 	<div class="card mb-4">
 		<div class="card-body">
@@ -22,12 +20,11 @@
 					<a href="#"><img class="img-fluid rounded" src="{{recipe.picture}}" alt=""></a>
 				</div>
 				<div class="col-lg-6">
-					<div class="col-12">
+					<div class="col-12 gutter">
 						<h2>Description</h2>
 						<p class="card-text">{{recipe.description}}</p>
+						<h2>Category</h2>
 						<p class="card-text">{{recipe.category_name}}</p>
-					</div>
-					<div class="col-12">
 						<h3>Dietry details</h3>
 						<div class="col-6">
 							<p class="card-text">{{recipe.dietry_name}}</p>
@@ -35,21 +32,21 @@
 						<div class="col-6">
 							{% if recipe.is_gluten_free %}
 							<div class="custom-control custom-switch">
-								<input type="checkbox" class="custom-control-input" id="customSwitch1" name="is_gluten_free" checked>
+								<input type="checkbox" class="custom-control-input" id="customSwitch1" name="is_gluten_free" checked disabled>
 								<label class="custom-control-label" for="customSwitch1">Gluten free</label>
 							</div>
 							{% else %}
 							{% endif %}
 							{% if recipe.is_nut_free %}
 							<div class="custom-control custom-switch">
-								<input type="checkbox" class="custom-control-input" id="customSwitch2" name="is_nut_free" checked>
+								<input type="checkbox" class="custom-control-input" id="customSwitch2" name="is_nut_free" checked disabled>
 								<label class="custom-control-label" for="customSwitch2">Nut free</label>
 							</div>
 							{% else %}
 							{% endif %}
 							{% if recipe.is_dairy_free %}
 							<div class="custom-control custom-switch">
-								<input type="checkbox" class="custom-control-input" id="customSwitch3" name="is_dairy_free" checked>
+								<input type="checkbox" class="custom-control-input" id="customSwitch3" name="is_dairy_free" checked disabled>
 								<label class="custom-control-label" for="customSwitch3">Dairy free</label>
 							</div>
 							{% else %}
@@ -58,40 +55,161 @@
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-lg-6">
-					<label for="ingredients" class="col-12 col-form-label">Ingredient</label>
-					{% for ingredient in recipe.ingredients %}
-					<div class="form-group row new-ingredients" id="ingredients-item">
-						<div class="col-12">
-							<input type="text" class="form-control" name="ingredients" value="{{ ingredient }}">
+            <div class="d-lg-none d-xl-none mt-4 mb-4">
+                <p>
+                    <a class="btn btn-primary mt-2" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        Nutrional data &rarr;
+                    </a>
+                </p>
+                <div class="collapse" id="collapseExample">
+                    <div class="row">
+                        <div class="col-4 nutri-tabs-sm">
+                            <div class="card">
+                                <div class="card-body">
+                                    <p class="card-text">Calories</p>
+                                    <p class="card-text">{{recipe.calories}}kcal</p>
+                                </div>
+                            </div>
                         </div>
-					</div>	
-					{% endfor %}
-				</div>
-                <div class="col-lg-6">
-                    <label for="procedures" class="col-12 col-form-label">Procedure</label>
-                    {% for procedure in recipe.procedures %}
-                    <div class="form-group row new-procedures" id="procedures-item">
-                        <div class="col-12">
-                            <input type="text" class="form-control" name="procedures" value="{{ procedure }}">
+                        <div class="col-4 nutri-tabs-sm">
+                            <div class="card">
+                                <div class="card-body">
+                                    <p class="card-text">Fat</p>
+                                    <p class="card-text">{{recipe.fat}}g</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>	
-                    {% endfor %}
-				</div>
-            </div>		
-			<div class="row">
-				<div class="col-lg-12">
-                    <a href="{{ url_for('all_recipes') }}" class="btn btn-primary">Back to recipes &rarr;</a>
-			        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn btn-primary">Edit &rarr;</a>
-			        <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn btn-primary">Delete &rarr;</a>
+                        <div class="col-4 nutri-tabs-sm">
+                            <div class="card">
+                                <div class="card-body">
+                                    <p class="card-text">Sats</p>
+                                    <p class="card-text">{{recipe.saturates}}g</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 nutri-tabs-sm">
+                            <div class="card">
+                                <div class="card-body">
+                                    <p class="card-text">Sugar</p>
+                                    <p class="card-text">{{recipe.sugar}}g</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 nutri-tabs-sm">
+                            <div class="card">
+                                <div class="card-body">
+                                    <p class="card-text">Salt</p>
+                                    <p class="card-text">{{recipe.salt}}g</p>
+                                </div>
+                            </div>
+                        </div>                        
+                        <div class="col-4 nutri-tabs-sm">
+                            <div class="card">
+                                <div class="card-body">
+                                    <p class="card-text">Protein</p>
+                                    <p class="card-text">{{recipe.protein}}g</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 nutri-tabs-sm">
+                            <div class="card">
+                                <div class="card-body">
+                                    <p class="card-text">Carbs</p>
+                                    <p class="card-text">{{recipe.carbs}}g</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 nutri-tabs-sm">
+                            <div class="card">
+                                <div class="card-body">
+                                    <p class="card-text">Fibre</p>
+                                    <p class="card-text">{{recipe.fibre}}g</p>
+                                </div>
+                            </div>
+                        </div>                       
+                    </div>
                 </div>
-            </div>		
+            </div>
+            <div class="text-center d-none d-lg-block mt-4 mb-4">
+                <ul class="list-group list-group-horizontal justify-content-center">
+                    <li class="list-group-item nutri-tabs-lg">
+                        <p class="">Calories</p>
+                        <hr>
+                        <p>{{recipe.calories}}</p>
+                    </li>
+                    <li class="list-group-item nutri-tabs-lg">
+                        <p class="">Fat</p>
+                        <hr>
+                        <p>{{recipe.fat}}g</p>
+                    </li>
+                    <li class="list-group-item nutri-tabs-lg">
+                        <p class="">Saturates</p>
+                        <hr>
+                        <p>{{recipe.saturates}}g</p>
+                    </li>
+                    <li class="list-group-item nutri-tabs-lg">
+                        <p class="">Sugars</p>
+                        <hr>
+                        <p>{{recipe.fat}}g</p>
+                    </li>
+                    <li class="list-group-item nutri-tabs-lg">
+                        <p class="">Salt</p>
+                        <hr>
+                        <p>{{recipe.salt}}g</p>
+                    </li>
+                    <li class="list-group-item nutri-tabs-lg">
+                        <p class="">Protein</p>
+                        <hr>
+                        <p>{{recipe.protein}}g</p>
+                    </li>
+                    <li class="list-group-item nutri-tabs-lg">
+                        <p class="">Carbs</p>
+                        <hr>
+                        <p>{{recipe.carbs}}g</p>
+                    </li>
+                    <li class="list-group-item nutri-tabs-lg">
+                        <p class="">Fibre</p>
+                        <hr>
+                        <p>{{recipe.fibre}}g</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h4>Ingredient</h4>
+                    {% for ingredient in recipe.ingredients %}
+                    <div class="form-group row">
+                        <div class="col-12">
+                            <p class="card-text">{{ ingredient }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="col-lg-8 mb-4">
+                    <h4>Procedure</h4>
+                    {% for procedure in recipe.procedures %}
+                    <div class="form-group row">
+                        <div class="col-12">
+                            <p class="card-text">{{ procedure }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <a href="{{ url_for('all_recipes') }}" class="btn btn-primary">Back to recipes &rarr;</a>
+                    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn btn-primary">Edit
+                        &rarr;</a>
+                    <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn btn-primary">Delete
+                        &rarr;</a>
+                </div>
+            </div>
+			</div>
+			<div class="card-footer text-muted">
+				Posted on {{recipe.timestamp}} by {{recipe.username}}
+			</div>
 		</div>
-        <div class="card-footer text-muted">
-            Posted on {{recipe.timestamp}} by {{recipe.username}}
-            <!--<a href="#">Start Bootstrap</a>-->
-        </div>
     </div>
 </div>
 <!-- /.container -->

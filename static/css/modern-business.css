@@ -108,6 +108,12 @@
     color: rgb(181, 68, 132);   
 }
 
+.btn-primary:not(:disabled):not(.disabled):active {
+    background-color: #66b2b2;
+    border-color: #66b2b2;
+    color: rgb(181, 68, 132);   
+}
+
 /* body and cards */
 
 body {
@@ -151,6 +157,8 @@ body {
 }
 
 /* footer */
+
+
 .fab {
     padding-top: 20px;
     padding-left: 20px;
@@ -226,4 +234,25 @@ body {
 #add_a_category {
     padding-left: 0px;
     padding-bottom: 20px;
+}
+
+
+
+
+.nutri-tabs-lg {
+    width: 110px;
+    height: 110px;
+
+}
+
+.nutri-tabs-sm {
+    width: 110px;
+    height: 110px;
+    padding: 0px;
+    font-size: 14px;
+
+}
+
+.gutter {
+    padding-left: 0px;
 }

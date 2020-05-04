@@ -26,7 +26,7 @@
 <!-- Page Content -->
 <div class="container">
 	<!-- Page Heading/Breadcrumbs -->
-	<h1 class="mt-4 mb-3" id="nav-spacer">Add a Recipe</h1>
+	<h1 class="mt-4 mb-3 nav-spacer">Add a Recipe</h1>
 	<ol class="breadcrumb">
 		<li class="breadcrumb-item">
 			<a href="{{ url_for('index')}}">
@@ -114,7 +114,60 @@
                                     <label class="custom-control-label" for="customSwitch3">Dairy free</label>
                                 </div>			
                             </div>
-                        </div>              
+                        </div>
+                        <div class="form-group row" id="calories">
+                            <label for="calories" class="col-md-2 col-form-label">Calories</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" name="calories" placeholder="how many kcals does each serving contain?">
+                            </div>
+                        </div>   
+                        <div class="form-group row" id="fat">
+                            <label for="fat" class="col-md-2 col-form-label">Fat</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" name="fat" placeholder="how many grammes of fat does each serving contain?">
+                            </div>
+                        </div>
+                        <div class="form-group row" id="saturates">
+                            <label for="saturates" class="col-md-2 col-form-label">Saturates</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" name="saturates" placeholder="how many grammes of saturated fat does each serving contain?">
+                            </div>
+                        </div>   
+                        <div class="form-group row" id="sugar">
+                            <label for="sugar" class="col-md-2 col-form-label">Sugar</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" name="sugar" placeholder="how many grammes of sugar does each serving contain?">
+                            </div>
+                        </div>
+                        <div class="form-group row" id="salt">
+                            <label for="salt" class="col-md-2 col-form-label">Salt</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" name="salt" placeholder="how many grammes of salt does each serving contain?">
+                            </div>
+                        </div>   <div class="form-group row" id="protein">
+                            <label for="protein" class="col-md-2 col-form-label">Protein</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" name="protein" placeholder="how many grammes of protein does each serving contain?">
+                            </div>
+                        </div>
+                        <div class="form-group row" id="carbs">
+                            <label for="carbs" class="col-md-2 col-form-label">Carbs</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" name="carbs" placeholder="how many grammes of carbs does each serving contain?">
+                            </div>
+                        </div>   
+                        <div class="form-group row" id="fibre">
+                            <label for="fibre" class="col-md-2 col-form-label">Fibre</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" name="fibre" placeholder="how many grammes of fibre does each serving contain?">
+                            </div>
+                        </div>  
+                        <div class="form-group row" id="picture">
+                            <label for="picture" class="col-md-2 col-form-label">Picture</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" name="picture" placeholder="upload a picture of your dish. Format should be https://img1.jamieoliver.com/jamieoliver/recipe-database/oldImages/xtra_med/7_1_1434019298.jpg?tr=w-400">
+                            </div>
+                        </div>                    
                         <div class="form-group row" hidden>
                             <label for="name" class="col-md-2 col-form-label">Timestamp</label>
                             <div class="col-md-10">

@@ -4,7 +4,6 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId 
 from datetime import datetime
 from os import path
-
 if path.exists('env.py'):
     import env
 
@@ -31,7 +30,6 @@ def your_recipes():
 def add_recipe():
     return render_template("add_recipe.html", categories=mongo.db.categories.find(), key_information=mongo.db.key_information.find())
 
-
 #------------------------------Start search functionality---------------------------------------
 
 @app.route('/search_recipes')
@@ -46,13 +44,7 @@ def found_recipes():
     result = coll.find({"dish_name": {"$regex": sought}})
     return render_template("found_recipes.html", result=result)
 
-
 #------------------------------End search functionality---------------------------------------
-
-
-
-
-
 
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
@@ -123,7 +115,6 @@ def update_recipe(recipe_id):
         "protein": request.form.get("protein"),
         "carbs": request.form.get("carbs"),
         "fibre": request.form.get("fibre"),
-        "picture": request.form.get("picture"),
         "timestamp": request.form.get("timestamp"),
         "edit_timestamp": now,    
     })
@@ -159,14 +150,6 @@ def delete_category(category_id):
     mongo.db.categories.remove({'_id': ObjectId(category_id)})
     return redirect(url_for('all_categories'))
 
-
-
-
-
-
-
-
-
 @app.route('/subscribe', methods=["GET", "POST"])
 def subscribe():
     if request.method == "POST":
@@ -174,10 +157,6 @@ def subscribe():
             request.form["name"]
         ))
     return render_template("subscribe.html", page_title="subscribe")
-
-
-
-
 
 @app.route('/error')
 def error():

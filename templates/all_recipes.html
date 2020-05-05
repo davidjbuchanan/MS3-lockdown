@@ -13,15 +13,18 @@
             All Recipes
         </li>
     </ol>
+    <div class="col-md-4" id="add_a_recipe">
+        <a class="btn btn-lg btn-primary btn-block hvr-box-shadow-outset" href="{{ url_for('add_recipe') }}">
+            Add a Recipe &rarr;
+        </a>
+    </div>  
     <!-- Recipe Post -->
     {% for item in recipe %}
     <div class="card mb-4">
         <div class="card-body">
             <div class="row">
                 <div class="col-lg-6">
-                    <a href="#">
-                        <img class="img-fluid rounded" src="{{item.picture}}" alt="">
-                    </a>
+                    <img class="img-fluid rounded" src="{{item.picture}}" alt="image of food">
                 </div>
                 <div class="col-lg-6">
                     <h2 class="card-title">{{item.dish_name}}</h2>

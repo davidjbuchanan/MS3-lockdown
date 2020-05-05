@@ -43,8 +43,8 @@
             <div class="text-center alert alert-warning alert-dismissible fade show" role="alert">
                 <p>
                     <strong>Promotion! </strong>
-                    Essential worker's discount. Get a 12-month subscription for the price of 6! 
-                    <a id="alert-link" href="{{   url_for('subscribe') }}"><strong>See here for details!</strong></a>
+                    Essential worker's discount available on all store goods. Sign-up now! 
+                    <a id="alert-link" href="{{ url_for('subscribe') }}"><strong>See here for details!</strong></a>
                 </p>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
                 </button>
@@ -84,7 +84,7 @@
     <!-- /Call to Action Section -->
     <hr>
 	<!-- Features Section -->
-    <h1 class="my-4">Today's featured articles and recipes</h1>
+    <h2 class="my-4">Today's featured articles and recipes</h2>
 	<h2 class="theme-feature hvr-forward">
         <a href="{{ url_for('all_recipes') }}">Eat</a>
     </h2>

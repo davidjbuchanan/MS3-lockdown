@@ -6,17 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}"/>
-    <script src="https://kit.fontawesome.com/a0ff73228b.js" crossorigin="anonymous"></script>
+    <!-- Google icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Style CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/modern-business.css') }}" type="text/css"/>
     <!--Hover.css-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" integrity="sha256-c+C87jupO1otD1I5uyxV68WmSLCqtIoNlcHLXtzLCT0=" crossorigin="anonymous" />
-    <!--EmailJS-->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function(){
-                emailjs.init("user_VuHH7gH01MALuxjLWlXKy");   
-        })();
-    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" integrity="sha256-c+C87jupO1otD1I5uyxV68WmSLCqtIoNlcHLXtzLCT0=" crossorigin="anonymous"/>
     <title>Lockdown</title>
 </head>
 
@@ -24,58 +19,55 @@
     <!-- Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">    
         <div class="container" id="home">
-           
-                <a class="navbar-brand" href="{{ url_for('index') }}">
-                    Lockdown &amp; Thrive
-                </a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
-                </button>    
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('error') }}">Store</a>
-                        </li>              
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('subscribe') }}">Subscribe</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownRecipes" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Feed &amp; Eat
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownRecipes">
-                                <a class="dropdown-item" href="{{ url_for('all_recipes') }}">All Recipes</a>
-                                <a class="dropdown-item" href="{{ url_for('add_recipe') }}">Add Recipe</a>
-                                <a class="dropdown-item" href="{{ url_for('search_recipes') }}">Search Recipes</a>
-                                <a class="dropdown-item" href="{{ url_for('all_categories') }}">All Category</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPlay" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Play &amp; Learn
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPlay">
-                                <a class="dropdown-item" href="{{ url_for('error') }}">Games for kids</a>
-                                <a class="dropdown-item" href="{{ url_for('error') }}">Learning for kids</a>
-                                <a class="dropdown-item" href="{{ url_for('error') }}">Games for big kids</a>
-                                <a class="dropdown-item" href="{{ url_for('error') }}">Puzzles for big kids</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownRest" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Rest &amp; Relax
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownRest">
-                                <a class="dropdown-item" href="{{ url_for('error') }}">Meditation</a>
-                                <a class="dropdown-item" href="{{ url_for('error') }}">Yoga and pilates</a>
-                                <a class="dropdown-item" href="{{ url_for('error') }}">Exercise</a>
-                                <a class="dropdown-item" href="{{ url_for('error') }}">Sleep aids</a>
-                            </div>
-                        </li>         
-                    </ul>
-                </div>  
-        
-            
-                {% block navigation %}{% endblock navigation %}       
+            <a class="navbar-brand" href="{{ url_for('index') }}">
+                Lockdown &amp; Thrive
+            </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+            </button>    
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('error') }}">Store</a>
+                    </li>              
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('subscribe') }}">Subscribe</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownRecipes" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Feed &amp; Eat
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownRecipes">
+                            <a class="dropdown-item" href="{{ url_for('all_recipes') }}">All Recipes</a>
+                            <a class="dropdown-item" href="{{ url_for('add_recipe') }}">Add Recipe</a>
+                            <a class="dropdown-item" href="{{ url_for('search_recipes') }}">Search Recipes</a>
+                            <a class="dropdown-item" href="{{ url_for('all_categories') }}">All Category</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPlay" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Play &amp; Learn
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPlay">
+                            <a class="dropdown-item" href="{{ url_for('error') }}">Games for kids</a>
+                            <a class="dropdown-item" href="{{ url_for('error') }}">Learning for kids</a>
+                            <a class="dropdown-item" href="{{ url_for('error') }}">Games for big kids</a>
+                            <a class="dropdown-item" href="{{ url_for('error') }}">Puzzles for big kids</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownRest" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Rest &amp; Relax
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownRest">
+                            <a class="dropdown-item" href="{{ url_for('error') }}">Meditation</a>
+                            <a class="dropdown-item" href="{{ url_for('error') }}">Yoga and pilates</a>
+                            <a class="dropdown-item" href="{{ url_for('error') }}">Exercise</a>
+                            <a class="dropdown-item" href="{{ url_for('error') }}">Sleep aids</a>
+                        </div>
+                    </li>         
+                </ul>
+            </div>             
+            {% block navigation %}{% endblock navigation %}       
         </div> 
     </nav>
     {% block content %}{% endblock %}
@@ -120,7 +112,8 @@
     <script src="{{ url_for('static', filename='js/alert_dismiss.js') }}"></script>
     <!-- Java Query for emailJS onclick-->
     <script src="{{ url_for('static', filename='js/sendEmail.js') }}"></script>
-
+    <!-- Java Query for form validation-->
+    <script src="{{ url_for('static', filename='js/jqBootstrapValidation.js') }}"></script>
 </body>
 
 </html>

@@ -18,36 +18,34 @@
     <div class="row">
         <!-- Map Column -->
         <div class="col-lg-8 mb-4">
-            
-            <img class="img-fluid rounded" src="static/images/adult-cutting-daylight-facial-expression-1153369.jpg" alt="">    
+            <img class="img-fluid rounded" src="static/images/adult-cutting-daylight-facial-expression-1153369.jpg" alt="image of adult preparing food">
         </div>
         <!-- Contact Details Column -->
         <div class="col-lg-4 mb-4">
             <h3>Customer Services</h3>
             <p>
-            3481 Melrose Place
-            <br>
-            Beverly Hills, CA 90210
-            <br>
+                3481 Melrose Place
+                <br>
+                Beverly Hills, CA 90210
+                <br>
             </p>
             <p>
-                <i class="fas fa-phone"></i> 
+                <span class="material-icons">phone</span> 
                 (123) 456-7890
             </p>
             <p>
-                <i class="fas fa-envelope-square"></i>
+                <span class="material-icons">alternate_email</span>
                 services@lt.com
-            </a>
             </p>
             <p>
-                <i class="fas fa-hourglass-start"></i> 
+                <span class="material-icons">access_time</span> 
                 Monday - Sunday: 9:00 AM to 5:00 PM
             </p>
         </div>
     </div>
-    <!-- /.row -->
-    <!-- Form -->
+    <!-- /row -->
     <div class="row">
+        <!-- Form -->
         <div class="col-lg-8 mb-4">
             {% with messages = get_flashed_messages() %} 
             {% if messages %}
@@ -59,7 +57,7 @@
             {% endif %} 
             {% endwith %}
             <h3>Sign up</h3>
-            <!--onsubmit="return sendMail(this);"-->
+            <!-- <form name="sentMessage" onsubmit="return sendMail(this);" id="contactForm"  class="needs-validation" novalidate> -->
             <form name="sentMessage" method="POST" id="contactForm"  class="needs-validation" novalidate>
                 <div class="form-row">
                     <div class="col-12">
@@ -75,7 +73,7 @@
                 </div>
                 <div class="form-group">
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="invalidCheck">
+                        <input type="checkbox" class="form-check-input" id="Check">
                         <label for="invalidCheck">Essential worker?</label>    
                     </div>
                 </div>
@@ -89,31 +87,14 @@
                         <input type="email" class="form-control" id="email" name="email" required placeholder="Please enter your email address.">
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary hvr-box-shadow-outset" id="sendMessageButton">Send Message</button>
+                <button type="submit" class="btn btn-primary hvr-box-shadow-outset" id="sendMessageButton" >
+                    Submit Request
+                </button>
             </form>
         </div>
+        <!-- /Form -->
     </div>
-    <!-- /.row -->
+    <!-- /row -->
 </div>
-<script>
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-(function() {
-  'use strict';
-  window.addEventListener('load', function() {
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.getElementsByClassName('needs-validation');
-    // Loop over them and prevent submission
-    var validation = Array.prototype.filter.call(forms, function(form) {
-      form.addEventListener('submit', function(event) {
-        if (form.checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-        form.classList.add('was-validated');
-      }, false);
-    });
-  }, false);
-})();
-</script>
-<!-- /.container -->
+<!-- /container -->
 {% endblock %}

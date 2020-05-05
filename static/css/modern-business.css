@@ -1,9 +1,3 @@
-/*!
- * Start Bootstrap - Modern Business (https://startbootstrap.com/template-overviews/modern-business)
- * Copyright 2013-2019 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
- */
-
 /*navbar*/
 .bg-dark {
     background-color: #66b2b2!important;
@@ -158,7 +152,6 @@ body {
 
 /* footer */
 
-
 .fab {
     padding-top: 20px;
     padding-left: 20px;
@@ -236,8 +229,10 @@ body {
     padding-bottom: 20px;
 }
 
-
-
+#add_a_recipe {
+    padding-left: 0px;
+    padding-bottom: 20px;
+}
 
 .nutri-tabs-lg {
     width: 110px;

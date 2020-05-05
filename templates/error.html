@@ -1,26 +1,23 @@
 {% extends 'base.html' %} {% block content %}
 <!-- Page Content -->
-<body>
-
-  
-  <!-- Page Content -->
-  <div class="container">
-
+<div class="container">
     <!-- Page Heading/Breadcrumbs -->
-    <h1 class="mt-4 mb-3">404
-      <small>Page Not Found</small>
+    <h1 class="mt-4 mb-3">
+        Under Construction
     </h1>
-
     <ol class="breadcrumb">
-      <li class="breadcrumb-item">
-        <a href="{{ url_for('index') }}">Home</a>
-      </li>
-      <li class="breadcrumb-item active">404</li>
+        <li class="breadcrumb-item">
+            <a href="{{ url_for('index') }}">Home</a>
+        </li>
+        <li class="breadcrumb-item active">
+            Under Construction
+        </li>
     </ol>
-
     <div class="jumbotron">
-        <h1 class="display-1">404</h1>
-        <p>The page you're looking for could not be found. Here are some helpful links to get you back on track:</p>
+        <div class="col-lg-8 mb-4">
+            <img class="img-fluid rounded" src="static/images/building-construction-site-work-38293.jpg" alt="building construction site">
+        </div>
+        <p>The page you're looking for is under construction. Here are some helpful links to get you back on track:</p>
         <ul>
             <li>
                 <a href="{{ url_for('index') }}">Home</a>
@@ -29,7 +26,7 @@
                 <a href="{{ url_for('subscribe') }}">Subscribe</a>
             </li>
             <li>
-                Eat
+                Eat and Feed
                 <ul>
                     <li>
                         <a href="{{ url_for('all_recipes') }}">All Recipes</a>
@@ -45,10 +42,9 @@
                     </li>
                 </ul>
             </li>
-      </ul>
+        </ul>
     </div>
     <!-- /.jumbotron -->
-
-  </div>
-  <!-- /.container -->
+</div>
+<!-- /.container -->
 {% endblock %}

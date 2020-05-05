@@ -4,8 +4,7 @@
         <button class="btn btn-primary btn-block" id="add_row_ingredient">
             + <i class="fas fa-carrot"></i>
         </button>
-    </div>
-     
+    </div>   
     <div class="col-xs-3">
         <button class="btn btn-primary btn-block" id="delete_row_ingredient">
             - <i class="fas fa-carrot"></i>
@@ -42,7 +41,7 @@
             Add a Recipe
         </li>
 	</ol>
-	<!-- Blog Post -->
+	<!-- Recipe Form -->
 	<div class="card mb-4">
 		<div class="card-body">
             <div class="row">
@@ -51,7 +50,7 @@
                         <div class="form-group row" id="top-field">
                             <label for="name" class="col-md-2 col-form-label">Username</label>
                             <div class="col-md-10">
-                                <input type="text" class="form-control" id="" name="username" placeholder="how do you want to be known?">
+                                <input type="text" class="form-control" name="username" placeholder="how do you want to be known?">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -67,15 +66,15 @@
                         <div class="form-group row">
                             <label for="name" class="col-md-2 col-form-label">Dish name</label>
                             <div class="col-md-10">
-                                <input type="text" class="form-control" id="" name="dish_name" placeholder="what's your dish called?">
+                                <input type="text" class="form-control" name="dish_name" placeholder="what's your dish called?">
                             </div>
                         </div>                
                         <div class="form-group row">
                             <label for="name" class="col-md-2 col-form-label">Description</label>
                             <div class="col-md-10">
-                                <input type="text" class="form-control" id="" name="description"placeholder="add a description here">
+                                <input type="text" class="form-control" name="description" placeholder="add a description here">
                             </div>
-                        </div>             
+                        </div>    
                         <div class="form-group row new-ingredients" id="ingredients-item">
                             <label for="ingredients" class="col-md-2 col-form-label">Ingredient</label>
                             <div class="col-md-10">
@@ -165,13 +164,13 @@
                         <div class="form-group row" id="picture">
                             <label for="picture" class="col-md-2 col-form-label">Picture</label>
                             <div class="col-md-10">
-                                <input type="text" class="form-control" name="picture" placeholder="upload a picture of your dish. Format should be https://img1.jamieoliver.com/jamieoliver/recipe-database/oldImages/xtra_med/7_1_1434019298.jpg?tr=w-400">
+                                <input type="text" class="form-control" name="picture" placeholder="supply a URL address for an image representing your dish.">
                             </div>
-                        </div>                    
+                        </div>
                         <div class="form-group row" hidden>
                             <label for="name" class="col-md-2 col-form-label">Timestamp</label>
                             <div class="col-md-10">
-                                <input type="text" class="form-control" id="" name="timestamp" value="{{timestamp}}">
+                                <input type="text" class="form-control" name="timestamp" value="{{timestamp}}">
                             </div>
                         </div>
                         <div class="form-group row">

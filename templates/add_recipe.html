@@ -48,15 +48,15 @@
                 <div class="col-12">
                     <form action="{{ url_for('insert_recipe') }}" method="POST">
                         <div class="form-group row" id="top-field">
-                            <label for="name" class="col-md-2 col-form-label">Username</label>
+                            <label for="username" class="col-md-2 col-form-label">Username</label>
                             <div class="col-md-10">
-                                <input type="text" class="form-control" name="username" placeholder="how do you want to be known?">
+                                <input type="text" class="form-control" name="username" id="username" placeholder="how do you want to be known?">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="exampleFormControlSelect1" class="col-md-2 col-form-label">Category</label>
+                            <label for="category_name" class="col-md-2 col-form-label">Category</label>
                             <div class="col-md-10">
-                                <select class="form-control" id="category_name" name="category_name">
+                                <select class="form-control" name="category_name" id="category_name">
                                     {% for cat in categories %}
                                     <option value="{{cat.category_name}}">{{cat.category_name}}</option>
                                     {% endfor %}
@@ -64,31 +64,31 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="name" class="col-md-2 col-form-label">Dish name</label>
+                            <label for="dish_name" class="col-md-2 col-form-label">Dish name</label>
                             <div class="col-md-10">
-                                <input type="text" class="form-control" name="dish_name" placeholder="what's your dish called?">
+                                <input type="text" class="form-control" name="dish_name" id="dish_name" placeholder="what's your dish called?">
                             </div>
                         </div>                
                         <div class="form-group row">
-                            <label for="name" class="col-md-2 col-form-label">Description</label>
+                            <label for="description" class="col-md-2 col-form-label">Description</label>
                             <div class="col-md-10">
-                                <input type="text" class="form-control" name="description" placeholder="add a description here">
+                                <input type="text" class="form-control" name="description" id="description" placeholder="add a description here">
                             </div>
                         </div>    
                         <div class="form-group row new-ingredients" id="ingredients-item">
                             <label for="ingredients" class="col-md-2 col-form-label">Ingredient</label>
                             <div class="col-md-10">
-                                <input type="text" class="form-control" name="ingredients" placeholder="add an ingredient here, use the spoon above to add more ingredients">
+                                <input type="text" class="form-control" name="ingredients" id="ingredients" placeholder="add an ingredient here, use the spoon above to add more ingredients">
                             </div>
                         </div>
                         <div class="form-group row new-procedures" id="procedures-item">
                             <label for="procedures" class="col-md-2 col-form-label">Procedure</label>
                             <div class="col-md-10">
-                                <input type="text" class="form-control" name="procedures" placeholder="add a step here, use the spoon above to add more steps">
+                                <input type="text" class="form-control" name="procedures" id="procedures" placeholder="add a step here, use the spoon above to add more steps">
                             </div>
                         </div>                
                         <div class="form-group row">
-                            <label for="exampleFormControlSelect1" class="col-md-2 col-form-label">Dietry information</label>
+                            <label for="dietry_name" class="col-md-2 col-form-label">Dietry information</label>
                             <div class="col-md-10">
                                 <select class="form-control" id="dietry_name" name="dietry_name">
                                     {% for key in key_information %}
@@ -101,76 +101,76 @@
                             <div class="col-md-2">Allergy information</div>
                             <div class="col-md-10">
                                 <div class="custom-control custom-switch">
-                                    <input type="checkbox" class="custom-control-input" id="customSwitch1" name="is_gluten_free">
-                                    <label class="custom-control-label" for="customSwitch1">Gluten free</label>
+                                    <input type="checkbox" class="custom-control-input" id="is_gluten_free" name="is_gluten_free">
+                                    <label class="custom-control-label" for="is_gluten_free">Gluten free</label>
                                 </div>	
                                 <div class="custom-control custom-switch">
-                                    <input type="checkbox" class="custom-control-input" id="customSwitch2" name="is_nut_free">
-                                    <label class="custom-control-label" for="customSwitch2">Nut free</label>
+                                    <input type="checkbox" class="custom-control-input" id="is_nut_free" name="is_nut_free">
+                                    <label class="custom-control-label" for="is_nut_free">Nut free</label>
                                 </div>	
                                 <div class="custom-control custom-switch">
-                                    <input type="checkbox" class="custom-control-input" id="customSwitch3" name="is_dairy_free">
-                                    <label class="custom-control-label" for="customSwitch3">Dairy free</label>
+                                    <input type="checkbox" class="custom-control-input" id="is_dairy_free" name="is_dairy_free">
+                                    <label class="custom-control-label" for="is_dairy_free">Dairy free</label>
                                 </div>			
                             </div>
                         </div>
-                        <div class="form-group row" id="calories">
+                        <div class="form-group row">
                             <label for="calories" class="col-md-2 col-form-label">Calories</label>
                             <div class="col-md-10">
-                                <input type="text" class="form-control" name="calories" placeholder="how many kcals does each serving contain?">
+                                <input type="text" class="form-control" name="calories" id="calories" placeholder="how many kcals does each serving contain?">
                             </div>
                         </div>   
-                        <div class="form-group row" id="fat">
+                        <div class="form-group row">
                             <label for="fat" class="col-md-2 col-form-label">Fat</label>
                             <div class="col-md-10">
-                                <input type="text" class="form-control" name="fat" placeholder="how many grammes of fat does each serving contain?">
+                                <input type="text" class="form-control" name="fat" id="fat" placeholder="how many grammes of fat does each serving contain?">
                             </div>
                         </div>
-                        <div class="form-group row" id="saturates">
+                        <div class="form-group row">
                             <label for="saturates" class="col-md-2 col-form-label">Saturates</label>
                             <div class="col-md-10">
-                                <input type="text" class="form-control" name="saturates" placeholder="how many grammes of saturated fat does each serving contain?">
+                                <input type="text" class="form-control" name="saturates" id="saturates" placeholder="how many grammes of saturated fat does each serving contain?">
                             </div>
                         </div>   
-                        <div class="form-group row" id="sugar">
+                        <div class="form-group row">
                             <label for="sugar" class="col-md-2 col-form-label">Sugar</label>
                             <div class="col-md-10">
-                                <input type="text" class="form-control" name="sugar" placeholder="how many grammes of sugar does each serving contain?">
+                                <input type="text" class="form-control" name="sugar" id="sugar" placeholder="how many grammes of sugar does each serving contain?">
                             </div>
                         </div>
-                        <div class="form-group row" id="salt">
+                        <div class="form-group row">
                             <label for="salt" class="col-md-2 col-form-label">Salt</label>
                             <div class="col-md-10">
-                                <input type="text" class="form-control" name="salt" placeholder="how many grammes of salt does each serving contain?">
+                                <input type="text" class="form-control" name="salt" id="salt" placeholder="how many grammes of salt does each serving contain?">
                             </div>
-                        </div>   <div class="form-group row" id="protein">
+                        </div>   <div class="form-group row">
                             <label for="protein" class="col-md-2 col-form-label">Protein</label>
                             <div class="col-md-10">
-                                <input type="text" class="form-control" name="protein" placeholder="how many grammes of protein does each serving contain?">
+                                <input type="text" class="form-control" name="protein" id="protein" placeholder="how many grammes of protein does each serving contain?">
                             </div>
                         </div>
-                        <div class="form-group row" id="carbs">
+                        <div class="form-group row">
                             <label for="carbs" class="col-md-2 col-form-label">Carbs</label>
                             <div class="col-md-10">
-                                <input type="text" class="form-control" name="carbs" placeholder="how many grammes of carbs does each serving contain?">
+                                <input type="text" class="form-control" name="carbs" id="carbs" placeholder="how many grammes of carbs does each serving contain?">
                             </div>
                         </div>   
-                        <div class="form-group row" id="fibre">
+                        <div class="form-group row">
                             <label for="fibre" class="col-md-2 col-form-label">Fibre</label>
                             <div class="col-md-10">
-                                <input type="text" class="form-control" name="fibre" placeholder="how many grammes of fibre does each serving contain?">
+                                <input type="text" class="form-control" name="fibre" id="fibre" placeholder="how many grammes of fibre does each serving contain?">
                             </div>
                         </div>  
-                        <div class="form-group row" id="picture">
+                        <div class="form-group row">
                             <label for="picture" class="col-md-2 col-form-label">Picture</label>
                             <div class="col-md-10">
-                                <input type="text" class="form-control" name="picture" placeholder="supply a URL address for an image representing your dish.">
+                                <input type="text" class="form-control" name="picture" id="picture" placeholder="supply a URL address for an image representing your dish.">
                             </div>
                         </div>
                         <div class="form-group row" hidden>
-                            <label for="name" class="col-md-2 col-form-label">Timestamp</label>
+                            <label for="timestamp" class="col-md-2 col-form-label">Timestamp</label>
                             <div class="col-md-10">
-                                <input type="text" class="form-control" name="timestamp" value="{{timestamp}}">
+                                <input type="text" class="form-control" name="timestamp" id="timestamp" value="{{timestamp}}">
                             </div>
                         </div>
                         <div class="form-group row">

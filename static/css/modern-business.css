@@ -8,7 +8,7 @@ body {
  }
 
 .navbar-dark .navbar-nav .nav-link {
-    color: rgba(255, 255, 255, 1);
+    color: #FFFFFF;
 }
 
 #home a {
@@ -19,7 +19,7 @@ body {
 }
 
 #home a:hover {
-    color:rgb(181, 68, 132);
+    color:#B54484;
 }
 
 .dropdown-menu {
@@ -30,7 +30,7 @@ body {
 }
 
 .dropdown-item {
-    color: rgba(255, 255, 255, 1);
+    color: #FFFFFF;
     transition: all 1s ease-in-out;
     -moz-transition: all 1s ease-in-out;
     -webkit-transition: all 1s ease-in-out;
@@ -38,7 +38,7 @@ body {
 }
 
 .dropdown-item:hover {
-    color:rgb(181, 68, 132);
+    color: #B54484;
     background-color: #66b2b2;
 }
 /*carousel*/
@@ -54,7 +54,7 @@ body {
 }
 
 .carousel-caption a{
-    color:rgb(181, 68, 132);
+    color: #B54484;
     text-decoration: none; 
     font-size: 28px; 
     background-color: rgb(102, 178, 178, 0.6);
@@ -69,11 +69,11 @@ body {
 }
 
 .alert-warning p {
-    color: rgba(255, 255, 255, 1);
+    color: #FFFFFF;
 }
 
 .alert-warning p a {
-    color:rgb(255, 255, 255, 1); 
+    color: #FFFFFF; 
     text-decoration: none;
     transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
@@ -82,7 +82,7 @@ body {
 }
 
 .alert-warning p a:hover {
-   color:rgb(181, 68, 132); 
+   color:#B54484; 
 }
 
 #gutter {
@@ -103,13 +103,13 @@ body {
 .btn-primary:hover {
     background-color: #66b2b2;
     border-color: #66b2b2;
-    color: rgb(181, 68, 132);   
+    color: #B54484;   
 }
 
 .btn-primary:not(:disabled):not(.disabled):active {
     background-color: #66b2b2;
     border-color: #66b2b2;
-    color: rgb(181, 68, 132);   
+    color: #B54484;   
 }
 
 /* body and cards */
@@ -124,12 +124,12 @@ body {
 
 .theme-feature a {
    text-decoration: none; 
-   color: rgb(33, 37, 41);
+   color: #212529;
 }
 
 .card-title a {
     text-decoration: none;
-    color: rgb(33, 37, 41);
+    color: #212529;
 }
 
 /*sign up fields*/
@@ -148,7 +148,7 @@ body {
 
 .notification {
     background-color: #66b2b2;
-    color: rgb(181, 68, 132);
+    color:#B54484;
     padding-left: 0px;
     text-align: center;
     font-weight: 500;
@@ -162,7 +162,7 @@ body {
     padding-right: 20px;
     padding-bottom: 20px;
     font-size: 30px;
-    color:rgba(255, 255, 255, 1);
+    color: #FFFFFF;
 }
 
 .social li {
@@ -180,7 +180,7 @@ body {
 }
 
 .social li a i:hover {
-    color: rgb(181, 68, 132);
+    color: #B54484;
 }
 
 /* add recipe*/

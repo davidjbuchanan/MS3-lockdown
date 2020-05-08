@@ -92,7 +92,7 @@
     {% for item in recipe %}
             {% if item.feature == "true_narrow" %}
             <div class="col-lg-4 col-sm-6 portfolio-item">
-                <div class="card h-100 shadow">
+                <div class="card d-block h-100 shadow">
                     <a href="{{ url_for('recipe', recipe_id=item._id) }}"><img class="card-img-top hvr-shadow" src="{{item.picture}}" alt="image of food"></a>
                     <div class="card-body">
                         <h4 class="card-title hvr-forward">
@@ -104,7 +104,7 @@
 		    </div>
             {% elif item.feature == "true_wide" %}
             <div class="d-none d-lg-block col-lg-4 col-sm-6 portfolio-item">
-                <div class="card h-100 shadow">
+                <div class="card d-block h-100 shadow">
                     <a href="{{ url_for('recipe', recipe_id=item._id) }}"><img class="card-img-top hvr-shadow" src="{{item.picture}}" alt="image of food"></a>
                     <div class="card-body">
                         <h4 class="card-title hvr-forward">
@@ -120,7 +120,7 @@
     <h2>Play</h2>
 	<div class="row">
 		<div class="col-lg-4 col-sm-6 portfolio-item">
-			<div class="card h-100 shadow">
+			<div class="card d-block h-100 shadow">
 				<img class="card-img-top" src="static/images/hotrod-die-cast-model-on-board-1422673.jpg" alt="image of board game">
                 <div class="card-body">
                     <h4 class="card-title">
@@ -133,7 +133,7 @@
 			</div>
 		</div>
 		<div class="col-lg-4 col-sm-6 portfolio-item">
-			<div class="card h-100 shadow">
+			<div class="card d-block h-100 shadow">
 				<img class="card-img-top" src="static/images/girl-in-white-and-pink-shirt-wearing-white-vr-goggles-4144041.jpg" alt="image of VR seton child">
                 <div class="card-body">
                     <h4 class="card-title">
@@ -146,7 +146,7 @@
 			</div>
 		</div>
 		<div class="d-none d-lg-block col-lg-4 portfolio-item">
-			<div class="card h-100 shadow">
+			<div class="card d-block h-100 shadow">
 				<img class="card-img-top" src="static/images/two-boy-and-girl-holding-game-controllers-1103563.jpg" alt="image of children playing computer games">
                 <div class="card-body">
                     <h4 class="card-title">
@@ -162,7 +162,7 @@
 	<h2>Rest</h2>
 	<div class="row">
 		<div class="col-lg-4 col-sm-6 portfolio-item">
-			<div class="card h-100 shadow">
+			<div class="card d-block h-100 shadow">
 				<img class="card-img-top" src="static/images/adult-arts-and-crafts-clay-dirty-357428(1).jpg" alt="image of pottery">
                 <div class="card-body">
                     <h4 class="card-title">
@@ -175,7 +175,7 @@
 			</div>
 		</div>
 		<div class="col-lg-4 col-sm-6 portfolio-item">
-			<div class="card h-100 shadow">
+			<div class="card d-block h-100 shadow">
 				<img class="card-img-top" src="static/images/arts-and-crafts-child-close-up-color-159579(1).jpg" alt="image of children colouring">
                 <div class="card-body">
                     <h4 class="card-title">
@@ -188,7 +188,7 @@
 			</div>
 		</div>
 		<div class="d-none d-lg-block col-lg-4 portfolio-item">
-			<div class="card h-100 shadow">
+			<div class="card d-block h-100 shadow">
 				<img class="card-img-top" src="static/images/childred-decorating-eggs-3972178.jpg" alt="image of children crafting">
                 <div class="card-body">
                     <h4 class="card-title">

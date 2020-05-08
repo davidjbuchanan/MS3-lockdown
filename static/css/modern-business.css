@@ -98,6 +98,7 @@ body {
 .btn-primary {
     background-color: #66b2b2;
     border-color: #66b2b2;
+    margin-bottom: 6px;
 }
 
 .btn-primary:hover {

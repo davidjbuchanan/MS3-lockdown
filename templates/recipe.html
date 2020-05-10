@@ -20,38 +20,41 @@
 					<img class="img-fluid rounded" src="{{recipe.picture}}" alt="image of food">
 				</div>
 				<div class="col-lg-6">
-					<div class="col-12 gutter">
-						<h2>Description</h2>
+					<div class="col-12 gutter text-center">
+                        <hr class="recipe-hr">
+						<h2 hidden>Description</h2>
 						<p class="card-text">{{recipe.description}}</p>
-						<h2>Category</h2>
-						<p class="card-text">{{recipe.category_name}}</p>
-						<h3>Dietry details</h3>
-						<div class="col-6">
-							<p class="card-text">{{recipe.dietry_name}}</p>
-						</div>
-						<div class="col-6">
-							{% if recipe.is_gluten_free %}
-							<div class="custom-control custom-switch">
-								<input type="checkbox" class="custom-control-input" id="customSwitch1" name="is_gluten_free" checked disabled>
-								<label class="custom-control-label" for="customSwitch1">Gluten free</label>
-							</div>
-							{% else %}
-							{% endif %}
-							{% if recipe.is_nut_free %}
-							<div class="custom-control custom-switch">
-								<input type="checkbox" class="custom-control-input" id="customSwitch2" name="is_nut_free" checked disabled>
-								<label class="custom-control-label" for="customSwitch2">Nut free</label>
-							</div>
-							{% else %}
-							{% endif %}
-							{% if recipe.is_dairy_free %}
-							<div class="custom-control custom-switch">
-								<input type="checkbox" class="custom-control-input" id="customSwitch3" name="is_dairy_free" checked disabled>
-								<label class="custom-control-label" for="customSwitch3">Dairy free</label>
-							</div>
-							{% else %}
-							{% endif %}
-						</div>
+						<h2 hidden>Category</h2>
+                        <hr class="recipe-hr">
+						<p class="card-text">Excellent option for {{recipe.category_name}}</p>
+						<h3 hidden>Dietry details</h3>
+						<hr class="recipe-hr">
+                        <div class="row">
+                            <div class="col-6">
+                                <p class="card-text">{{recipe.dietry_name}}</p>
+                            </div>
+                            <div class="col-6">
+                                {% if recipe.is_gluten_free %}
+                                <div class="custom-control custom-switch">
+                                    <p>Gluten free</p>
+                                </div>
+                                {% else %}
+                                {% endif %}
+                                {% if recipe.is_nut_free %}
+                                <div class="custom-control custom-switch">
+                                    <p>Nut free</p>
+                                </div>
+                                {% else %}
+                                {% endif %}
+                                {% if recipe.is_dairy_free %}
+                                <div class="custom-control custom-switch">
+                                    <p>Dairy free</p>
+                                </div>
+                                {% else %}
+                                {% endif %}
+                            </div>
+                        </div>
+                        <hr class="recipe-hr">
 					</div>
 				</div>
 			</div>

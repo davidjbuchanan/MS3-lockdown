@@ -8,7 +8,7 @@ body {
  }
 
 .navbar-dark .navbar-nav .nav-link {
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
 #home a {
@@ -19,7 +19,7 @@ body {
 }
 
 #home a:hover {
-    color:#B54484;
+    color:#b54484;
 }
 
 .dropdown-menu {
@@ -30,7 +30,7 @@ body {
 }
 
 .dropdown-item {
-    color: #FFFFFF;
+    color: #ffffff;
     transition: all 1s ease-in-out;
     -moz-transition: all 1s ease-in-out;
     -webkit-transition: all 1s ease-in-out;
@@ -38,7 +38,7 @@ body {
 }
 
 .dropdown-item:hover {
-    color: #B54484;
+    color: #b54484;
     background-color: #66b2b2;
 }
 /*carousel*/
@@ -54,7 +54,7 @@ body {
 }
 
 .carousel-caption a{
-    color: #B54484;
+    color: #b54484;
     text-decoration: none; 
     font-size: 28px; 
     background-color: rgb(102, 178, 178, 0.6);
@@ -69,11 +69,11 @@ body {
 }
 
 .alert-warning p {
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
 .alert-warning p a {
-    color: #FFFFFF; 
+    color: #ffffff; 
     text-decoration: none;
     transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
@@ -82,7 +82,7 @@ body {
 }
 
 .alert-warning p a:hover {
-   color:#B54484; 
+   color:#b54484; 
 }
 
 #gutter {
@@ -104,13 +104,13 @@ body {
 .btn-primary:hover {
     background-color: #66b2b2;
     border-color: #66b2b2;
-    color: #B54484;   
+    color: #b54484;   
 }
 
 .btn-primary:not(:disabled):not(.disabled):active {
     background-color: #66b2b2;
     border-color: #66b2b2;
-    color: #B54484;   
+    color: #b54484;   
 }
 
 /* body and cards */
@@ -149,7 +149,7 @@ body {
 
 .notification {
     background-color: #66b2b2;
-    color:#B54484;
+    color:#b54484;
     padding-left: 0px;
     text-align: center;
     font-weight: 500;
@@ -250,9 +250,13 @@ body {
     height: 110px;
     padding: 0px;
     font-size: 14px;
-
 }
 
 .gutter {
     padding-left: 0px;
+}
+
+.recipe-hr {
+    background-color: #66b2b2;
+    height: 1.5px;
 }

@@ -192,7 +192,7 @@ body {
 /*navbar adaptions for 'add recipe' page*/
 @media (min-width:300px) and (max-width:496px) {            
     .nav-spacer {
-        margin-top: 2.0rem !important;
+    margin-top: 2.5rem !important;
     }
 }
 

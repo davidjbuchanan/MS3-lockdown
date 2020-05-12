@@ -4,7 +4,7 @@ body {
 
 /*navbar*/
 .bg-dark {
-    background-color: #66b2b2!important;
+    background-color: #077979!important;
  }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -54,17 +54,17 @@ body {
 }
 
 .carousel-caption a{
-    color: #b54484;
+    color: #ffffff;
     text-decoration: none; 
     font-size: 28px; 
-    background-color: rgb(102, 178, 178, 0.6);
-    border: rgb(102, 178, 178, 0.6);
+    background-color: #077979;
+    border: #077979;
 }
  /* alert */
  
 .alert, .alert-warning {
     margin-bottom: 0px;
-    background-color: #66b2b2;
+    background-color: #077979;
     border-top-width: 0px;  
 }
 
@@ -96,20 +96,20 @@ body {
 
  /* callout */
 .btn-primary {
-    background-color: #66b2b2;
-    border-color: #66b2b2;
+    background-color: #077979;
+    border-color: #077979;
     margin-bottom: 6px;
 }
 
 .btn-primary:hover {
-    background-color: #66b2b2;
+    background-color: #077979;
     border-color: #66b2b2;
     color: #b54484;   
 }
 
 .btn-primary:not(:disabled):not(.disabled):active {
-    background-color: #66b2b2;
-    border-color: #66b2b2;
+    background-color: #077979;
+    border-color: #077979;
     color: #b54484;   
 }
 
@@ -148,7 +148,7 @@ body {
 }
 
 .notification {
-    background-color: #66b2b2;
+    background-color: #077979;
     color:#b54484;
     padding-left: 0px;
     text-align: center;
@@ -257,6 +257,6 @@ body {
 }
 
 .recipe-hr {
-    background-color: #66b2b2;
+    background-color: #077979;
     height: 1.5px;
 }

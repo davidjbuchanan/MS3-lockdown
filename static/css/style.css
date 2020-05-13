@@ -12,6 +12,7 @@ body {
 }
 
 #home a {
+    color: #ffffff;
     transition: all 1s ease-in-out;
     -moz-transition: all 1s ease-in-out;
     -webkit-transition: all 1s ease-in-out;
@@ -19,7 +20,7 @@ body {
 }
 
 #home a:hover {
-    color:#b54484;
+    /*color:#000000;*/
 }
 
 .dropdown-menu {
@@ -38,8 +39,8 @@ body {
 }
 
 .dropdown-item:hover {
-    color: #b54484;
-    background-color: #66b2b2;
+    color: #000000;
+    background-color: #077979;
 }
 /*carousel*/
 
@@ -82,7 +83,7 @@ body {
 }
 
 .alert-warning p a:hover {
-   color:#b54484; 
+   color:#000000;
 }
 
 #gutter {
@@ -103,14 +104,14 @@ body {
 
 .btn-primary:hover {
     background-color: #077979;
-    border-color: #66b2b2;
-    color: #b54484;   
+    border-color: #077979;
+    color: #ffffff;   
 }
 
 .btn-primary:not(:disabled):not(.disabled):active {
     background-color: #077979;
     border-color: #077979;
-    color: #b54484;   
+    color: #ffffff;   
 }
 
 /* body and cards */
@@ -148,11 +149,21 @@ body {
 }
 
 .notification {
-    background-color: #077979;
+    background-color: #66b2b2;
     color:#b54484;
+    font-family: 'Roboto', sans-serif;
     padding-left: 0px;
     text-align: center;
+    min-height: 200px;
+    font-size: 24px;
     font-weight: 500;
+    margin-bottom: 5;
+}
+
+.notification p {
+    padding-top: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 /* footer */
@@ -163,7 +174,7 @@ body {
     padding-right: 20px;
     padding-bottom: 20px;
     font-size: 30px;
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
 .social li {
@@ -181,7 +192,7 @@ body {
 }
 
 .social li a i:hover {
-    color: #B54484;
+    color: #ffffff;
 }
 
 /* add recipe*/

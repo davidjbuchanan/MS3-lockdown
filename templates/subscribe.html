@@ -13,6 +13,15 @@
         </li>
         <li class="breadcrumb-item active">Subscribe</li>
     </ol>
+    {% with messages = get_flashed_messages() %} 
+        {% if messages %}
+        <ul class="notification">
+            {% for message in messages %}
+            <p>{{ message }}</p>
+            {% endfor %}
+        </ul>
+        {% endif %} 
+    {% endwith %}
     <!-- Content Row -->
     <div class="row">
         <!-- Map Column -->
@@ -46,7 +55,7 @@
     <div class="row">
         <!-- Form -->
         <div class="col-lg-8 mb-4">
-            {% with messages = get_flashed_messages() %} 
+            <!--{% with messages = get_flashed_messages() %} 
             {% if messages %}
             <ul class="notification">
                 {% for message in messages %}
@@ -54,7 +63,7 @@
                 {% endfor %}
             </ul>
             {% endif %} 
-            {% endwith %}
+            {% endwith %}-->
             <h3>Sign up</h3>
             <!-- <form name="sentMessage" onsubmit="return sendMail(this);" id="contactForm"  class="needs-validation" novalidate> -->
             <form name="sentMessage" method="POST" id="contactForm"  class="needs-validation" novalidate>

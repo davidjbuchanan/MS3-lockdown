@@ -80,14 +80,18 @@ def edit_recipe(recipe_id):
     the_recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
     all_categories = mongo.db.categories.find()
     all_key_information = mongo.db.key_information.find()
-    return render_template("edit_recipe.html", recipe=the_recipe, categories=all_categories, key_information=all_key_information)
+    the_ingredients = [(index+1,value) for index,value in enumerate(the_recipe["ingredients"])]
+    """print(the_ingredients)"""
+    return render_template("edit_recipe.html", recipe=the_recipe, categories=all_categories, key_information=all_key_information, ingredients=the_ingredients)
 
 @app.route('/recipe/<recipe_id>')
 def recipe(recipe_id):
     the_recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
     all_categories = mongo.db.categories.find()
     all_key_information = mongo.db.key_information.find()
-    return render_template("recipe.html", recipe=the_recipe, categories=all_categories, key_information=all_key_information)
+    the_steps = [(index+1,value) for index,value in enumerate(the_recipe["procedures"])]
+    """print(the_ingredients)"""
+    return render_template("recipe.html", recipe=the_recipe, categories=all_categories, key_information=all_key_information, procedures=the_steps)
 
 @app.route('/update_recipe/<recipe_id>', methods=["POST"])
 def update_recipe(recipe_id):

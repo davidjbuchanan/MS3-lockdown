@@ -50,12 +50,27 @@ def found_recipes():
 def insert_recipe():
     now = datetime.now().strftime("%B %-d, %Y")
     recipe = mongo.db.recipe
+    """new"""
+    found = True
+    ingredients = []
+    counter = 0
+    while found:
+        if request.form.get("ingredients" + str(counter)):
+            ingredients.append(request.form.get("ingredients" + str(counter)))
+            """print(request.form.get("ingredients" + str(counter)))"""
+            counter += 1
+        else: 
+            found = False
+    """end new"""
     submit = {
+        """new"""
+        "ingredients": ingredients,
+        """end new"""
+        """ingredients": request.form.getlist("ingredients"),"""
         "username": request.form.get("username"),
         "category_name": request.form.get("category_name"),
         "dish_name": request.form.get("dish_name"),
         "description": request.form.get("description"),
-        "ingredients": request.form.getlist("ingredients"),
         "procedures": request.form.getlist("procedures"),
         "dietry_name": request.form.get("dietry_name"),
         "is_gluten_free": request.form.get("is_gluten_free"),
@@ -75,37 +90,34 @@ def insert_recipe():
     recipe.insert_one(submit)
     return redirect(url_for('all_recipes'))
 
-@app.route('/edit_recipe/<recipe_id>')
-def edit_recipe(recipe_id):
-    the_recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
-    all_categories = mongo.db.categories.find()
-    all_key_information = mongo.db.key_information.find()
-    the_ingredients = [(index+1,value) for index,value in enumerate(the_recipe["ingredients"])]
-    """print(the_ingredients)"""
-    return render_template("edit_recipe.html", recipe=the_recipe, categories=all_categories, key_information=all_key_information, ingredients=the_ingredients)
-
-@app.route('/recipe/<recipe_id>')
-def recipe(recipe_id):
-    the_recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
-    all_categories = mongo.db.categories.find()
-    all_key_information = mongo.db.key_information.find()
-    the_steps = [(index+1,value) for index,value in enumerate(the_recipe["procedures"])]
-    """print(the_ingredients)"""
-    return render_template("recipe.html", recipe=the_recipe, categories=all_categories, key_information=all_key_information, procedures=the_steps)
-
 @app.route('/update_recipe/<recipe_id>', methods=["POST"])
 def update_recipe(recipe_id):
     now = datetime.now().strftime("%B %-d, %Y")
     recipe = mongo.db.recipe
+    """new"""
+    found = True
+    ingredients = []
+    counter = 0
+    while found:
+        if request.form.get("ingredients" + str(counter)):
+            ingredients.append(request.form.get("ingredients" + str(counter)))
+            print(request.form.get("ingredients" + str(counter)))
+            counter += 1
+        else: 
+            found = False
+    """end new"""
     recipe.update({'_id': ObjectId(recipe_id)},
     {
+        """new"""
+        "ingredients": ingredients,
+        """end new"""
+        """ingredients": request.form.getlist("ingredients"),"""
         "username": request.form.get("username"),
         "feature": request.form.get("feature"),
         "picture": request.form.get("picture"),
         "category_name": request.form.get("category_name"),
         "dish_name": request.form.get("dish_name"),
         "description": request.form.get("description"),
-        "ingredients": request.form.getlist("ingredients"),
         "procedures": request.form.getlist("procedures"),
         "dietry_name": request.form.get("dietry_name"),
         "is_gluten_free": request.form.get("is_gluten_free"),
@@ -123,6 +135,32 @@ def update_recipe(recipe_id):
         "edit_timestamp": now,    
     })
     return redirect(url_for('all_recipes'))
+
+@app.route('/edit_recipe/<recipe_id>')
+def edit_recipe(recipe_id):
+    the_recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
+    all_categories = mongo.db.categories.find()
+    all_key_information = mongo.db.key_information.find()
+
+    """"------------------------------ enumeration of ingredients ---------------------------"""
+    the_ingredients = [(index,value) for index,value in enumerate(the_recipe["ingredients"])]
+    
+    """"------------------------------ print(the_ingredients) ---------------------------"""
+
+    return render_template("edit_recipe.html", recipe=the_recipe, categories=all_categories, key_information=all_key_information, ingredients=the_ingredients)
+
+@app.route('/recipe/<recipe_id>')
+def recipe(recipe_id):
+    the_recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
+    all_categories = mongo.db.categories.find()
+    all_key_information = mongo.db.key_information.find()
+
+    """"------------------------------ enumeration of procedures ---------------------------"""
+    the_steps = [(index+1,value) for index,value in enumerate(the_recipe["procedures"])]
+
+    """"------------------------------ print(procedures) ---------------------------"""
+    
+    return render_template("recipe.html", recipe=the_recipe, categories=all_categories, key_information=all_key_information, procedures=the_steps)
 
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):

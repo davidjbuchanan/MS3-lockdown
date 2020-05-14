@@ -83,14 +83,26 @@
                     </div>
 				</div>    
                 <hr class="recipe-hr">          
-				{% for ingredient in recipe.ingredients %}
-				<div class="form-group row new-ingredients" id="ingredients-item">
-                    <label for="ingredients1" class="col-md-2 col-form-label">Ingredient</label>
-                    <div class="col-md-10">
-                        <input type="text" class="form-control" name="ingredients" required value="{{ ingredient }}" id="ingredients1" placeholder="add an ingredient here, use the carrot above to add more ingredients">
+				
+
+                {% for ingredient in ingredients %}
+				<div class="form-group row new-ingredients" id="ingredient-item-{{ingredient[0]}}">
+                    <label for="ingredient-{{ingredient[0]}}" class="col-md-2 col-form-label">Ingredient {{ingredient[0]}}</label>
+                    <div class="col-md-10" id="ingredient-test">
+                        <input type="text" class="form-control" name="ingredients{{ingredient[0]}}" required value="{{ ingredient[1] }}" id="ingredients{{ingredient[0]}}" placeholder="add an ingredient here, use the carrot above to add more ingredients">
                     </div>
                 </div>
                 {% endfor %}
+
+                <!--
+                <div class="form-group row new-ingredients" id="ingredients-item">
+                    <label for="ingredients" class="col-md-2 col-form-label">Ingredient <button btn-sml id="new-highlight" >New</button></label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control" name="ingredients" required id="ingredients" placeholder="add an ingredient here, use the carrot above to add more ingredients">
+                    </div>
+                </div>
+                -->
+
                 <hr class="recipe-hr">
                 {% for procedure in recipe.procedures %}
                 <div class="form-group row new-procedures" id="procedures-item">

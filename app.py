@@ -50,23 +50,18 @@ def found_recipes():
 def insert_recipe():
     now = datetime.now().strftime("%B %-d, %Y")
     recipe = mongo.db.recipe
-    """new"""
     found = True
     ingredients = []
-    counter = 0
+    counter = 1
     while found:
         if request.form.get("ingredients" + str(counter)):
             ingredients.append(request.form.get("ingredients" + str(counter)))
-            """print(request.form.get("ingredients" + str(counter)))"""
+            print(request.form.get("ingredients" + str(counter)))
             counter += 1
         else: 
             found = False
-    """end new"""
     submit = {
-        """new"""
         "ingredients": ingredients,
-        """end new"""
-        """ingredients": request.form.getlist("ingredients"),"""
         "username": request.form.get("username"),
         "category_name": request.form.get("category_name"),
         "dish_name": request.form.get("dish_name"),

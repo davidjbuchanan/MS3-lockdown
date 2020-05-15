@@ -7,22 +7,31 @@ ele.style.setProperty("text-decoration", "line-through");
 }
 
 /*-------------------------------- Add Recipe buttons --------------------------------*/
-/*$("#add_row_ingredient").click(function() {
-  var counter=document.getElementsByClassName("new-ingredients").length;
+$("#add_row_ingredient").click(function() {
+  var counter=document.getElementsByClassName("new-ingredients").length + 1;
+  var outer_div=document.createElement("div");
   var the_label=document.createElement("label");
+  var inner_div=document.createElement("div");
   var the_input=document.createElement("input");
+  outer_div.className="form-group row new-ingredients";
+  outer_div.setAttribute("id","ingredients-item" + counter);
+  the_label.setAttribute("for","ingredients" + counter);
   the_label.className="col-md-2 col-form-label";
-  the_input.className="form-control col-md-10";
-  the_input.setAttribute("id","ingredients" + counter);
-  the_label.innerHTML="ingredient";
+  the_label.innerHTML="ingredient " + counter;
+  the_label.setAttribute("id","ingredient-test" + counter);
+  inner_div.className="col-md-10";
   the_input.setAttribute("type","text");
+  the_input.className="form-control";
+  the_input.setAttribute("id","ingredients" + counter); 
   the_input.setAttribute("name","ingredients" + counter);
   the_input.setAttribute("placeholder","add an ingredient here, use the carrot above to add more ingredients");
-  document.getElementById("ingredients-item").appendChild(the_label);
-  document.getElementById("ingredients-item").appendChild(the_input);
-});*/
+  inner_div.appendChild(the_input);
+  outer_div.appendChild(the_label);
+  outer_div.appendChild(inner_div);
+  document.getElementById("new-ingredients").appendChild(outer_div);
+});
 
-$("#add_row_ingredient").click(function() {
+/*$("#add_row_ingredient").click(function() {
   var counter=document.getElementsByClassName("new-ingredients").length;
   var the_input=document.createElement("input");
   the_input.className="new-ingredients form-control";
@@ -30,13 +39,12 @@ $("#add_row_ingredient").click(function() {
   the_input.setAttribute("id","ingredients" + counter);
   the_input.setAttribute("placeholder","add an ingredient here, use the carrot above to add more ingredients");
   document.getElementById("ingredient-test").appendChild(the_input);
-});
+});*/   /*Stephen_CI*/
 
 /*
 $("#add_row_ingredient").click(function() {
   $("#ingredients-item").clone().insertAfter($(".new-ingredients:last")).find("input[type='text']").val("");
-});
-*/
+});*/   /**Tim_CI*/
 
 $("#delete_row_ingredient").click(function () {
    var div = $('.new-ingredients');

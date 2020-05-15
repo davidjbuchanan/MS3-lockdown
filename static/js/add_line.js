@@ -28,7 +28,8 @@ $("#add_row_ingredient").click(function() {
   inner_div.appendChild(the_input);
   outer_div.appendChild(the_label);
   outer_div.appendChild(inner_div);
-  document.getElementById("new-ingredients").appendChild(outer_div);
+  /*document.getElementById("new-ingredients").appendChild(outer_div);  works for add_recipe*/
+  /*document.getElementById("any").appendChild(outer_div);  works for add_recipe*/
 });
 
 /*$("#add_row_ingredient").click(function() {
@@ -53,8 +54,32 @@ $("#delete_row_ingredient").click(function () {
 });
 
 $("#add_row_procedure").click(function() {
-   $("#procedures-item").clone().insertAfter($(".new-procedures:last")).find("input[type='text']").val("");
+  var counter=document.getElementsByClassName("new-procedures").length + 1;
+  var outer_div=document.createElement("div");
+  var the_label=document.createElement("label");
+  var inner_div=document.createElement("div");
+  var the_input=document.createElement("textarea");
+  outer_div.className="form-group row new-procedures";
+  outer_div.setAttribute("id","procedures-item" + counter);
+  the_label.setAttribute("for","procedures" + counter);
+  the_label.className="col-md-2 col-form-label";
+  the_label.innerHTML="Step " + counter;
+  the_label.setAttribute("id","procedure-test" + counter);
+  inner_div.className="col-md-10";
+  the_input.className="form-control";
+  the_input.setAttribute("id","procedures" + counter); 
+  the_input.setAttribute("name","procedures" + counter);
+  the_input.setAttribute("placeholder","add a step here, use the spoon above to add more steps");
+  the_input.setAttribute("rows","3");
+  inner_div.appendChild(the_input);
+  outer_div.appendChild(the_label);
+  outer_div.appendChild(inner_div);
+  document.getElementById("new-procedures").appendChild(outer_div);
 });
+
+/*$("#add_row_procedure").click(function() {
+   $("#procedures-item").clone().insertAfter($(".new-procedures:last")).find("input[type='text']").val("");
+});*/
 
 $("#delete_row_procedure").click(function () {
    var div = $('.new-procedures');

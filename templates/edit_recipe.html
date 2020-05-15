@@ -83,8 +83,32 @@
                     </div>
 				</div>    
                 <hr class="recipe-hr">          
-				
 
+                <!--                    direct from add_page
+                <div class="new-ingredients" id="new-ingredients">
+                    <div class="form-group row" id="ingredients-item1">
+                        <label for="ingredients1" class="col-md-2 col-form-label" id="ingredient-test1">Ingredient 1</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="ingredients1" required id="ingredients1" placeholder="add an ingredient here, use the carrot above to add more ingredients">
+                        </div>
+                    </div>
+                </div>-->
+
+                
+                <div id="any">{% for ingredient in ingredients %}
+
+                    <div class="new-ingredients" id="new-ingredients">
+                        <div class="form-group row" id="ingredient-item{{ingredient[0]}}">
+                            <label for="ingredient{{ingredient[0]}}" class="col-md-2 col-form-label">Ingredient {{ingredient[0]}}</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" name="ingredients{{ingredient[0]}}" required value="{{ ingredient[1] }}" id="ingredients{{ingredient[0]}}" placeholder="add an ingredient here, use the carrot above to add more ingredients">
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+                
+                <!--                        VICTOR
                 {% for ingredient in ingredients %}
 				<div class="form-group row new-ingredients" id="ingredient-item-{{ingredient[0]}}">
                     <label for="ingredient-{{ingredient[0]}}" class="col-md-2 col-form-label">Ingredient {{ingredient[0]}}</label>
@@ -93,8 +117,8 @@
                     </div>
                 </div>
                 {% endfor %}
-
-                <!--
+                -->
+                <!--                        ORIGINAL
                 <div class="form-group row new-ingredients" id="ingredients-item">
                     <label for="ingredients" class="col-md-2 col-form-label">Ingredient <button btn-sml id="new-highlight" >New</button></label>
                     <div class="col-md-10">

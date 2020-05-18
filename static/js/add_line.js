@@ -1,10 +1,18 @@
-function myFunction() {
-    /*var ele = document.getElementsByClassName("strike");            no dice */
-    /*var ele = document.getElementsByName("strike");                 no dice */
-    /*var ele = document.getElementById("{{ procedure[0] }}");        no dice */
+/*-------------------------------- Strike through steps as completed --------------------------------*/
+/*function myFunction() {
     var ele = document.getElementById("strike");                    
-ele.style.setProperty("text-decoration", "line-through");
-}
+ele.style.setProperty("text-decoration", "line-through");             works   
+}*/
+
+/*var ele = document.getElementsByClassName("strike");            no dice */
+/*var ele = document.getElementsByName("strike");                 no dice */
+/*var ele = document.getElementById("{{ procedure[0] }}");        no dice */
+
+$(".myFunction").click(function(){
+  $(this).parent().next("div").children("p.card-text").css("text-decoration", "line-through");
+});
+/*--------------------------------          /           --------------------------------*/
+
 
 /*-------------------------------- Add an ingredient buttons --------------------------------*/
 $("#add_row_ingredient").click(function() {

@@ -142,7 +142,7 @@ def update_recipe(recipe_id):
         "carbs": request.form.get("carbs"),
         "fibre": request.form.get("fibre"),
         "timestamp": request.form.get("timestamp"),
-        "edit_timestamp": now,    
+        "edit_timestamp": now,
     })
     return redirect(url_for('all_recipes'))
 
@@ -154,12 +154,12 @@ def edit_recipe(recipe_id):
 
     """"------------------------------ enumeration of ingredients by Victor---------------------------"""
     the_ingredients = [(index+1,value) for index,value in enumerate(the_recipe["ingredients"])]
-    
+    the_procedures = [(index+1,value) for index,value in enumerate(the_recipe["procedures"])]
     """"------------------------------ print(the_ingredients) ---------------------------"""
 
-    return render_template("edit_recipe.html", recipe=the_recipe, 
-    categories=all_categories, key_information=all_key_information, 
-    ingredients=the_ingredients)
+    return render_template("edit_recipe.html", recipe=the_recipe,
+    categories=all_categories, key_information=all_key_information,
+    ingredients=the_ingredients, procedures=the_procedures)
 
 @app.route('/recipe/<recipe_id>')
 def recipe(recipe_id):

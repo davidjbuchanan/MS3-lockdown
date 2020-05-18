@@ -1,7 +1,7 @@
 {% extends 'base.html' %} 
 {% block navigation %}
 <div class="col-xs-3">
-    <button class="btn btn-primary btn-block" id="add_row_ingredient">
+    <button class="btn btn-primary btn-block" id="add_edit_row_ingredient">
         + <i class="fas fa-carrot"></i>
     </button>
 </div>   
@@ -11,7 +11,7 @@
     </button>
 </div>   
 <div class="col-xs-3">
-    <button class="btn btn-primary btn-block" id="add_row_procedure">
+    <button class="btn btn-primary btn-block" id="add_edit_row_procedure">
         + <i class="fas fa-utensil-spoon"></i>
     </button>
 </div> 
@@ -95,11 +95,13 @@
                 </div>-->
 
                 
-                <div id="any">{% for ingredient in ingredients %}
-
+                <div id="index_enabler_ingredient">
+                {% for ingredient in ingredients %}
                     <div class="new-ingredients" id="new-ingredients">
                         <div class="form-group row" id="ingredient-item{{ingredient[0]}}">
-                            <label for="ingredient{{ingredient[0]}}" class="col-md-2 col-form-label">Ingredient {{ingredient[0]}}</label>
+                            <label for="ingredient{{ingredient[0]}}" class="col-md-2 col-form-label">
+                                Ingredient {{ingredient[0]}}
+                            </label>
                             <div class="col-md-10">
                                 <input type="text" class="form-control" name="ingredients{{ingredient[0]}}" required value="{{ ingredient[1] }}" id="ingredients{{ingredient[0]}}" placeholder="add an ingredient here, use the carrot above to add more ingredients">
                             </div>
@@ -128,15 +130,32 @@
                 -->
 
                 <hr class="recipe-hr">
-                {% for procedure in recipe.procedures %}
+                <div id="index_enabler_procedure">
+                {% for procedure in procedures %}
+                    <div class="new-procedures" id="new-procedures">
+                        <div class="form-group row" id="procedure-item{{procedure[0]}}">
+                            <label for="procedures{{procedure[0]}}" class="col-md-2 col-form-label">
+                                Step {{procedure[0]}}
+                            </label>
+                            <div class="col-md-10">
+                                <textarea class="form-control" name="procedures{{procedure[0]}}" required id="procedures{{procedure[0]}}" placeholder="add a step here, use the spoon above to add more steps" rows="2">
+                                    {{ procedure [1]}}
+                                </textarea>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+                
+                <!--{% for procedure in recipe.procedures %}
                 <div class="form-group row new-procedures" id="procedures-item">
                     <label for="procedures1" class="col-md-2 col-form-label">Procedure</label>
-                    <div class="col-md-10">
+                    <div class="col-md-10">-->
                         <!--<input type="text" class="form-control" name="procedures" required value="{{ procedure }}" id="procedures1" placeholder="add a step here, use the spoon above to add more steps">-->
-                        <textarea class="form-control" name="procedures" required id="procedures1" placeholder="add a step here, use the spoon above to add more steps" rows="2">{{ procedure }}</textarea>
+                        <!--<textarea class="form-control" name="procedures" required id="procedures1" placeholder="add a step here, use the spoon above to add more steps" rows="2">{{ procedure }}</textarea>
                     </div>
                 </div>
-                {% endfor %}
+                {% endfor %}-->
                 <hr class="recipe-hr">
 				<div class="form-group row">
 					<label for="dietry_name1" class="col-md-2 col-form-label">Key information</label>

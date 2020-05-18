@@ -50,23 +50,33 @@ def found_recipes():
 def insert_recipe():
     now = datetime.now().strftime("%B %-d, %Y")
     recipe = mongo.db.recipe
-    found = True
+    found_ingredients = True
+    found_procedures = True
     ingredients = []
-    counter = 1
-    while found:
-        if request.form.get("ingredients" + str(counter)):
-            ingredients.append(request.form.get("ingredients" + str(counter)))
-            print(request.form.get("ingredients" + str(counter)))
-            counter += 1
+    procedures = []
+    ingredients_counter = 1
+    procedures_counter = 1
+    while found_ingredients:
+        if request.form.get("ingredients" + str(ingredients_counter)):
+            ingredients.append(request.form.get("ingredients" + str(ingredients_counter)))
+            print(request.form.get("ingredients" + str(ingredients_counter)))
+            ingredients_counter += 1
         else: 
-            found = False
+            found_ingredients = False
+    while found_procedures:
+        if request.form.get("procedures" + str(procedures_counter)):
+            procedures.append(request.form.get("procedures" + str(procedures_counter)))
+            print(request.form.get("procedures" + str(procedures_counter)))
+            procedures_counter += 1
+        else: 
+            found_procedures = False
     submit = {
         "ingredients": ingredients,
+        "procedures": procedures,
         "username": request.form.get("username"),
         "category_name": request.form.get("category_name"),
         "dish_name": request.form.get("dish_name"),
-        "description": request.form.get("description"),
-        "procedures": request.form.getlist("procedures"),
+        "description": request.form.get("description"),   
         "dietry_name": request.form.get("dietry_name"),
         "is_gluten_free": request.form.get("is_gluten_free"),
         "is_nut_free": request.form.get("is_nut_free"),
@@ -89,31 +99,36 @@ def insert_recipe():
 def update_recipe(recipe_id):
     now = datetime.now().strftime("%B %-d, %Y")
     recipe = mongo.db.recipe
-    """new"""
-    found = True
+    found_ingredients = True
+    found_procedures = True
     ingredients = []
-    counter = 0
-    while found:
-        if request.form.get("ingredients" + str(counter)):
-            ingredients.append(request.form.get("ingredients" + str(counter)))
-            print(request.form.get("ingredients" + str(counter)))
-            counter += 1
+    procedures = []
+    ingredients_counter = 1
+    procedures_counter = 1
+    while found_ingredients:
+        if request.form.get("ingredients" + str(ingredients_counter)):
+            ingredients.append(request.form.get("ingredients" + str(ingredients_counter)))
+            print(request.form.get("ingredients" + str(ingredients_counter)))
+            ingredients_counter += 1
         else: 
-            found = False
-    """end new"""
+            found_ingredients = False
+    while found_procedures:
+        if request.form.get("procedures" + str(procedures_counter)):
+            procedures.append(request.form.get("procedures" + str(procedures_counter)))
+            print(request.form.get("procedures" + str(procedures_counter)))
+            procedures_counter += 1
+        else: 
+            found_procedures = False
     recipe.update({'_id': ObjectId(recipe_id)},
-    {
-        """new"""
+    {     
         "ingredients": ingredients,
-        """end new"""
-        """ingredients": request.form.getlist("ingredients"),"""
+        "procedures": procedures,
         "username": request.form.get("username"),
         "feature": request.form.get("feature"),
         "picture": request.form.get("picture"),
         "category_name": request.form.get("category_name"),
         "dish_name": request.form.get("dish_name"),
         "description": request.form.get("description"),
-        "procedures": request.form.getlist("procedures"),
         "dietry_name": request.form.get("dietry_name"),
         "is_gluten_free": request.form.get("is_gluten_free"),
         "is_nut_free": request.form.get("is_nut_free"),
@@ -137,12 +152,14 @@ def edit_recipe(recipe_id):
     all_categories = mongo.db.categories.find()
     all_key_information = mongo.db.key_information.find()
 
-    """"------------------------------ enumeration of ingredients ---------------------------"""
-    the_ingredients = [(index,value) for index,value in enumerate(the_recipe["ingredients"])]
+    """"------------------------------ enumeration of ingredients by Victor---------------------------"""
+    the_ingredients = [(index+1,value) for index,value in enumerate(the_recipe["ingredients"])]
     
     """"------------------------------ print(the_ingredients) ---------------------------"""
 
-    return render_template("edit_recipe.html", recipe=the_recipe, categories=all_categories, key_information=all_key_information, ingredients=the_ingredients)
+    return render_template("edit_recipe.html", recipe=the_recipe, 
+    categories=all_categories, key_information=all_key_information, 
+    ingredients=the_ingredients)
 
 @app.route('/recipe/<recipe_id>')
 def recipe(recipe_id):
@@ -150,7 +167,7 @@ def recipe(recipe_id):
     all_categories = mongo.db.categories.find()
     all_key_information = mongo.db.key_information.find()
 
-    """"------------------------------ enumeration of procedures ---------------------------"""
+    """"------------------------------ enumeration of procedures by Victor---------------------------"""
     the_steps = [(index+1,value) for index,value in enumerate(the_recipe["procedures"])]
 
     """"------------------------------ print(procedures) ---------------------------"""

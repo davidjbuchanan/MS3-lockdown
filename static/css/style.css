@@ -53,12 +53,25 @@ body {
     background-size: cover;
 }
 
-.carousel-caption a{
+.carousel-caption a {
     color: #ffffff;
     text-decoration: none; 
     font-size: 28px; 
     background-color: #089191;
     border: #089191;
+}
+/*breadcrumb*/
+.breadcrumb-item a {
+    color: #089191;
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;    
+}
+
+.breadcrumb-item a:hover {
+    color:#910808;  
 }
 /* alert */
 .alert, .alert-warning {

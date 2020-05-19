@@ -9,10 +9,9 @@ ele.style.setProperty("text-decoration", "line-through");             works
 /*var ele = document.getElementById("{{ procedure[0] }}");        no dice */
 
 $(".myFunction").click(function(){
-  $(this).parent().next("div").children("p.card-text").css("text-decoration", "line-through");
+  $(this).parent().next("div").children("p.card-text").css({"text-decoration": "line-through", "text-decoration-color": "#077979", "text-decoration-style": "wavy"});
 });
 /*--------------------------------          /           --------------------------------*/
-
 
 /*-------------------------------- Add an ingredient buttons --------------------------------*/
 $("#add_row_ingredient").click(function() {

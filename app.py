@@ -38,18 +38,11 @@ def search_recipes():
 
 @app.route('/found_recipes', methods=['POST'])
 def found_recipes():
-    
     coll = mongo.db.recipe
     sought = request.form.get("users_search_input")
     result0 = coll.find({"dish_name": {"$regex": sought}})
     result1 = coll.find({"username": {"$regex": sought}})
-    result2 = coll.find({"category_name": {"$regex": sought}})
-    result3 = coll.find({"description": {"$regex": sought}})
-    result4 = coll.find({"ingredients": {"$regex": sought}})
-    result5 = coll.find({"procedures": {"$regex": sought}})
-    return render_template("found_recipes.html", 
-    result0=result0, result1=result1, result2=result2, 
-    result3=result3, result4=result4, result5=result5)
+    return render_template("found_recipes.html", result0=result0, result1=result1)
 
 #------------------------------End search functionality---------------------------------------
 

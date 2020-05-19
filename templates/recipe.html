@@ -192,14 +192,13 @@
                     <h4>Procedure</h4>
                     {% for procedure in procedures %}
                     <div class="form-group row">
-                        <div class="col-1">
-                            <button onclick="myFunction()">
-                                {{ procedure[0] }}.
-                            </button>
+                        <div class="col-2 col-md-1">
+                            <button type="button" class="btn btn-outline-success myFunction">{{ procedure[0] }}</button>
+                            <!--<button id="myFunction">{{ procedure[0] }}.            
+                            </button>-->
                         </div>
-                        <div class="col-11">
-                            <p class="card-text" id="strike">
-                                {{ procedure[1] }}
+                        <div class="col-10 col-md-11">
+                            <p class="card-text">{{ procedure[1] }}
                             </p>
                         </div>
                     </div>

@@ -61,8 +61,7 @@ body {
     background-color: #077979;
     border: #077979;
 }
- /* alert */
- 
+/* alert */
 .alert, .alert-warning {
     margin-bottom: 0px;
     background-color: #077979;
@@ -114,8 +113,12 @@ body {
     color: #ffffff;   
 }
 
-/* body and cards */
+.btn-outline-success {
+    color: #077979;
+    border-color: #077979;
+}
 
+/* Index page - body and cards */
 body {
     padding-top: 56px;
 }
@@ -134,7 +137,7 @@ body {
     color: #212529;
 }
 
-/*sign up fields*/
+/*sign-up page - form fields*/
 .form-group {
     padding-top:15px;
     margin-bottom: 0px;
@@ -167,7 +170,6 @@ body {
 }
 
 /* footer */
-
 .fab {
     padding-top: 20px;
     padding-left: 20px;
@@ -253,7 +255,6 @@ body {
 .nutri-tabs-lg {
     width: 110px;
     height: 110px;
-
 }
 
 .nutri-tabs-sm {

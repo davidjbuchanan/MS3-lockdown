@@ -4,7 +4,7 @@ body {
 
 /*navbar*/
 .bg-dark {
-    background-color: #077979!important;
+    background-color: #089191!important;
  }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -20,7 +20,7 @@ body {
 }
 
 #home a:hover {
-    /*color:#000000;*/
+    color:#910808;
 }
 
 .dropdown-menu {
@@ -39,11 +39,10 @@ body {
 }
 
 .dropdown-item:hover {
-    color: #000000;
-    background-color: #077979;
+    color: #910808;
+    background-color: #089191;
 }
 /*carousel*/
-
 .carousel-item {
     height: 65vh;
     min-height: 300px;
@@ -58,13 +57,13 @@ body {
     color: #ffffff;
     text-decoration: none; 
     font-size: 28px; 
-    background-color: #077979;
-    border: #077979;
+    background-color: #089191;
+    border: #089191;
 }
 /* alert */
 .alert, .alert-warning {
     margin-bottom: 0px;
-    background-color: #077979;
+    background-color: #089191;
     border-top-width: 0px;  
 }
 
@@ -82,7 +81,7 @@ body {
 }
 
 .alert-warning p a:hover {
-   color:#000000;
+   color:#910808;
 }
 
 #gutter {
@@ -93,31 +92,29 @@ body {
 #alert {
     margin-bottom: 50px;
 }
-
  /* callout */
 .btn-primary {
-    background-color: #077979;
-    border-color: #077979;
+    background-color: #089191;
+    border-color: #089191;
     margin-bottom: 6px;
 }
 
 .btn-primary:hover {
-    background-color: #077979;
-    border-color: #077979;
+    background-color: #089191;
+    border-color: #089191;
     color: #ffffff;   
 }
 
 .btn-primary:not(:disabled):not(.disabled):active {
-    background-color: #077979;
-    border-color: #077979;
+    background-color: #089191;
+    border-color: #089191;
     color: #ffffff;   
 }
 
 .btn-outline-success {
-    color: #077979;
-    border-color: #077979;
+    color: #089191;
+    border-color: #089191;
 }
-
 /* Index page - body and cards */
 body {
     padding-top: 56px;
@@ -136,7 +133,6 @@ body {
     text-decoration: none;
     color: #212529;
 }
-
 /*sign-up page - form fields*/
 .form-group {
     padding-top:15px;
@@ -152,7 +148,7 @@ body {
 }
 
 .notification {
-    background-color: #66b2b2;
+    background-color: #089191;
     color:#b54484;
     font-family: 'Roboto', sans-serif;
     padding-left: 0px;
@@ -194,7 +190,7 @@ body {
 }
 
 .social li a i:hover {
-    color: #ffffff;
+    color: #910808;
 }
 
 /* add recipe*/
@@ -240,7 +236,6 @@ body {
 }
 
 /*END navbar adaptions for 'add recipe' page*/
-
 /*all_categories*/
 #add_a_category {
     padding-left: 0px;
@@ -269,6 +264,6 @@ body {
 }
 
 .recipe-hr {
-    background-color: #077979;
+    background-color: #089191;
     height: 1.5px;
 }

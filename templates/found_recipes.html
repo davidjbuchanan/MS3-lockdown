@@ -26,7 +26,107 @@
         </li>
     </ol>
     <!-- List -->
-    {% for item in result %}
+    {% for item in result0 %}
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <img class="img-fluid rounded" src="{{item.picture}}" alt="image of food">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="card-title">{{item.dish_name}}</h2>           
+                    <a href="{{ url_for('recipe', recipe_id=item._id) }}" class="btn btn-primary">Read More &rarr;</a>
+                    <a href="{{ url_for('edit_recipe', recipe_id=item._id) }}" class="btn btn-primary">Edit &rarr;</a>
+                    <a href="{{ url_for('delete_recipe', recipe_id=item._id) }}" class="btn btn-primary">Delete &rarr;</a>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-muted">
+            Posted on {{item.timestamp}} by {{item.username}}
+        </div>
+    </div>
+    {% endfor %}
+    {% for item in result1 %}
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <img class="img-fluid rounded" src="{{item.picture}}" alt="image of food">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="card-title">{{item.dish_name}}</h2>           
+                    <a href="{{ url_for('recipe', recipe_id=item._id) }}" class="btn btn-primary">Read More &rarr;</a>
+                    <a href="{{ url_for('edit_recipe', recipe_id=item._id) }}" class="btn btn-primary">Edit &rarr;</a>
+                    <a href="{{ url_for('delete_recipe', recipe_id=item._id) }}" class="btn btn-primary">Delete &rarr;</a>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-muted">
+            Posted on {{item.timestamp}} by {{item.username}}
+        </div>
+    </div>
+    {% endfor %}
+    {% for item in result2 %}
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <img class="img-fluid rounded" src="{{item.picture}}" alt="image of food">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="card-title">{{item.dish_name}}</h2>           
+                    <a href="{{ url_for('recipe', recipe_id=item._id) }}" class="btn btn-primary">Read More &rarr;</a>
+                    <a href="{{ url_for('edit_recipe', recipe_id=item._id) }}" class="btn btn-primary">Edit &rarr;</a>
+                    <a href="{{ url_for('delete_recipe', recipe_id=item._id) }}" class="btn btn-primary">Delete &rarr;</a>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-muted">
+            Posted on {{item.timestamp}} by {{item.username}}
+        </div>
+    </div>
+    {% endfor %}
+    {% for item in result3 %}
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <img class="img-fluid rounded" src="{{item.picture}}" alt="image of food">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="card-title">{{item.dish_name}}</h2>           
+                    <a href="{{ url_for('recipe', recipe_id=item._id) }}" class="btn btn-primary">Read More &rarr;</a>
+                    <a href="{{ url_for('edit_recipe', recipe_id=item._id) }}" class="btn btn-primary">Edit &rarr;</a>
+                    <a href="{{ url_for('delete_recipe', recipe_id=item._id) }}" class="btn btn-primary">Delete &rarr;</a>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-muted">
+            Posted on {{item.timestamp}} by {{item.username}}
+        </div>
+    </div>
+    {% endfor %}
+    {% for item in result4 %}
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <img class="img-fluid rounded" src="{{item.picture}}" alt="image of food">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="card-title">{{item.dish_name}}</h2>           
+                    <a href="{{ url_for('recipe', recipe_id=item._id) }}" class="btn btn-primary">Read More &rarr;</a>
+                    <a href="{{ url_for('edit_recipe', recipe_id=item._id) }}" class="btn btn-primary">Edit &rarr;</a>
+                    <a href="{{ url_for('delete_recipe', recipe_id=item._id) }}" class="btn btn-primary">Delete &rarr;</a>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-muted">
+            Posted on {{item.timestamp}} by {{item.username}}
+        </div>
+    </div>
+    {% endfor %}
+    {% for item in result5 %}
     <div class="card mb-4">
         <div class="card-body">
             <div class="row">

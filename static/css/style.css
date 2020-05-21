@@ -212,6 +212,12 @@ body {
 #top-field {
     padding-top: 0px;
 }
+
+.recipe-hr {
+    background-color: #089191;
+    height: 1.5px;
+}
+
 /*navbar adaptions for 'add recipe' page*/
 @media (min-width:300px) and (max-width:496px) {            
     .nav-spacer {
@@ -277,7 +283,7 @@ body {
     padding-left: 0px;
 }
 
-.recipe-hr {
-    background-color: #089191;
-    height: 1.5px;
+/*search bar input legend*/
+.text-muted {
+    font-size: 12px;
 }

@@ -106,11 +106,13 @@ A modern business design was chosen for this site. Inspired by the Sky.com websi
 
 In keeping with the overall *sweet* theme, I have opted for a bright and colorful color scheme. These standard [Materialize Colors](https://materializecss.com/color.html) work quite well for my project.
   
-- ![#66b2b2](https://placehold.it/15/66b2b2/66b2b2) `#66b2b2` **teal** - navbar, footer and button background
+- ![#089191](https://placehold.it/15/089191/089191) `#089191` **dark cyan** - navbar, footer and button background
 - ![#ffffff](https://placehold.it/15/ffffff/ffffff) `#ffffff` **white** - text colour
-- ![#212529](https://placehold.it/15/212529/212529) `#212529` **black** - text colour
-- ![#b54484](https://placehold.it/15/b54484/b54484) `#b54484` **purple** - action colour
-- ![#e9ecef](https://placehold.it/15/e9ecef/e9ecef) `#e9ecef` **purple** - jumbotron, footer and breadcrumb colour
+- ![#212529](https://placehold.it/15/212529/212529) `#212529` **dark shade of cyan-blue** - text colour
+- ![#910808](https://placehold.it/15/910808/910808) `#910808` **dark red** - text colour (on hover)
+- ![#b54484](https://placehold.it/15/b54484/b54484) `#b54484` **mystic maroon** - background colour (sign-up alert)
+- ![#e9ecef](https://placehold.it/15/e9ecef/e9ecef) `#e9ecef` **Light grayish blue** - jumbotron, footer and breadcrumb colour
+- ![#66b2b2](https://placehold.it/15/66b2b2/66b2b2) `#66b2b2` **light cyan** - navbar dropdown background colour
 
 
 #### Icons
@@ -123,7 +125,7 @@ In keeping with the overall *sweet* theme, I have opted for a bright and colorfu
 #### Typography
 
 - [Google Fonts](https://fonts.google.com/)
-    - [Roboto](https://fonts.google.com/specimen/Roboto)
+- [Roboto](https://fonts.google.com/specimen/Roboto)
 
 ### Wireframes
 
@@ -140,24 +142,26 @@ All of my wireframes for this project can be found [here](https://github.com/) i
 ### Existing Features
 
 **Dashboard page**
-- Page presents a full overview of the site's content enabling rapid movement around site.
+- Page presents a full overview of the site's content enabling rapid movement around site. Here the user can find featured recipes which they can access for scrutiny.
 
 **View all recipes**
 - On the *All Recipes* page, all recipes are displayed in the chronological order of production. Each record has a photo, dish name and a timestamp for the date of production.
 
-**Search for recipes**
-- If a user would like to search for a particular dish, then they can acces the *Search Recipe* page from the navbar. This results in the display of a 'Found Recipes' page to the user, this is a truncated version of the 'All Recipes' page.
+**Search the database**
+- If a user would like to search for a particular dish or by the name of a particular chef, then they can acces the *Search Recipe* page from the navbar. This results in the display of a 'Found Recipes' page to the user, this is a truncated version of the 'All Recipes' page.
 
 **Add a Recipe**
-- **C**RUD Create a new recipe. The 'Add Recipe' page has an adapted navbar that allows the addition of extra input fields for ingredients and procedures. This was installed to assist the user when systematically additing lists - this is particularly beneficial whilst working on small viewports. The addition of a timestamp that records the date of the record's creation.
+- **C**RUD Create a new recipe. The 'Add Recipe' page has an adapted navbar that allows the addition of extra input fields for ingredients and procedures. This was installed to assist the user when systematically additing lists and is particularly beneficial whilst working on small viewports. This list is enumerated to aid the recipe author.
+The addition of a timestamp that records the date of the record's creation.
 
 **Update a Recipe**
-- CR**U**D Update an existing recipe. The 'Edit Recipe' page has the same features as the 'Add Recipe' page and is pre-populated with existing values. Again the adapted navbar has great utility allowing individual ingredients and procedures to be deleted without impact to the rest of the document.
+- CR**U**D Update an existing recipe. The 'Edit Recipe' page has the same features as the 'Add Recipe' page and is pre-populated with existing values. Again the adapted navbar has great utility allowing individual ingredients and procedures to be deleted without impact to the rest of the document. The list has also been enumerated with the ability to add further fields.
 
 **View a Recipe**
 - C**R**UD Read recipes, either from the main page, the 'Found Recipes' or the 'All Recipes' pages. From here, users also have additional options:
     - CR**U**D Update the recipe.
     - CRU**D** Delete the recipe.
+    - Strikethrough completed recipe steps i.e. an onclick event has been added to enable the user to score-off completed tasks.
 
 **Delete a Recipe**
 - CRU**D** Delete a recipe. 
@@ -169,14 +173,17 @@ All of my wireframes for this project can be found [here](https://github.com/) i
 
 ### Features Left to Implement
 
-**Delete a Recipe**
-- Pagination: In the event of the database becoming larger than 10/11 entries then a multipage arrangement will be required for the 'All Recipes' page.
+**Pagination**
+- In the event of the database becoming larger than 10/11 entries then a multipage arrangement will be required for the 'All Recipes' page.
 
-- Authentication: login and account details will be required to render this website useful as it is currently defensless to malicious attack i.e. complete deletion of the database or indedd inclusion of unvetted information.
+**Authentication**
+- login and account details will be required to render this website useful as it is currently defensless to malicious attack i.e. complete deletion of the database or indedd inclusion of unvetted information.
 
-- Elaboration of the other two other main topics (Play & Learn and Rest & Relax) and the store page to add a commercial element.
+**Content Elaboration**
+- Of the other two other main topics (Play & Learn and Rest & Relax) and the store page to add a commercial element.
 
-- Confirmation modals i.e. these are essential for inadvertant deletion of records
+**Confirmation modals**
+- An essential addition for inadvertant deletion of records
 
 ##### back to [top](#table-of-contents)
 
@@ -198,7 +205,7 @@ All of my wireframes for this project can be found [here](https://github.com/) i
     - [Flask 1.1.1](http://flask.pocoo.org/) - Used as a microframework.
     - [Werkzeug 1.0.1](https://werkzeug.palletsprojects.com/en/0.16.x/) 
     - [Jinja 2.11.1](http://jinja.pocoo.org/docs/2.10/) - Used for templating with Flask.
-    - [Flask-PyMongo==2.3.0](https://flask-pymongo.readthedocs.io/en/latest/) - an open source database that stores flexible JSON-like “documents”.
+    - [Flask-PyMongo 2.3.0](https://flask-pymongo.readthedocs.io/en/latest/) - an open source database that stores flexible JSON-like “documents”.
 <!-- Note: to check for which version of Jinja you are using type 'pip3 show jinja2; into cli -->
 - **Heroku**
     - [Heroku](https://www.heroku.com) - Used for app hosting.
@@ -210,134 +217,111 @@ All of my wireframes for this project can be found [here](https://github.com/) i
 ##### back to [top](#table-of-contents)
 ---
 
-
-
-
-
 # Testing
 
+:white_check_mark: *denotes items that have been successfully implemented*
 
-**Add | Edit | Delete a Recipe**
+**Basic navigation**
+    - Links tested on navbar (& navbar toggle button), footer and breadcrumb :white_check_mark
+    - Links tested on carousel :white_check_mark
+    - Links tested on 'under construction page' :white_check_mark
+    - Links tested on under construction :white_check_mark
+    - Alert dismiss :white_check_mark
+    - Alert link to subscribe page :white_check_mark
+    - Footer's Social icons openning to link in a new webpage :white_check_mark
 
-Links tested on navbar (& navbar toggle button), footer and breadcrumb - all work
-
-links tested on carousel - all work
-
-links tested on 'under construction page' - all work
-
-alert dismiss - works
-
-alert link to subscribe page - works
-
-
-Links tested on under construction - all work
-
-Responsiveness tested on portrait and landscape viewport for the following viewports    - works for index
-                                                                                        - all recipes needs buttons done on narrow vp
-                                                                                        - works for add recipe
-                                                                                        - works for search
-                                                                                        - works for all categories
-                                                                                        - works for edit recipe
-                                                                                        - works for add category
-                                                                                        - works for subscribe
-                                                                                        - works for under construction
-Apple iPad pro
-Apple iPad
-Apple iPhone 5/SE/6/7/8/X/6 plus/7 plus/8 plus Note: when tested on actual iPhone 6 the background-attachment: fixed was not compatible with iOS browsers. On Chrome and Safari in iOS, the background photos appeared zoomed-in and blurry. To fix this, the .background-attachment: scroll property value was added in a media query.
-Samsung Galaxy S5
-Pixel 2/2 XL
+**Responsiveness** 
+Tested on portrait and landscape viewport for the following viewports
+    - Apple iPad pro :white_check_mark
+    - Apple iPad :white_check_mark
+    - Apple iPhone 5/SE/6/7/8/X/6 plus/7 plus/8 plus :white_check_mark
+    
+    Note: when tested on actual iPhone 6 the background-attachment: fixed was not compatible with iOS - browsers. On Chrome and Safari in iOS, the background photos appeared zoomed-in and blurry. To fix this, the .background-attachment: scroll property - value was added in a media query.
+    
+    - Samsung Galaxy S5 :white_check_mark
+    - Pixel 2/2 XL :white_check_mark
 
 Responsiveness tested on landscape viewport for the following viewports
-Microsoft Surface 2 laptop  (1504 x 892 px)
-Dell XPS laptop (13.4 inch, 1920 x 1080 px)
-Desktop (1680 x 939 px)
-iMac 27 inch (5120 X 2880 px)
+    - Microsoft Surface 2 laptop  (1504 x 892 px) :white_check_mark
+    - Dell XPS laptop (13.4 inch, 1920 x 1080 px) :white_check_mark
+    - Desktop (1680 x 939 px) :white_check_mark
+    - iMac 27 inch (5120 X 2880 px) :white_check_mark
 
-Sign up form validation
-Required input fields include:
-Full name
-Occupation
-Phone number
-Email address
-These fields give immediate feedback to user if not completed also depressing the 'submit request' button results in no event. Further validation of the Email address input field requires an '@' character in the value before being accepted.
-The Esential worker checkbox is not a required to have a value.
-On successful completion of the form the user is presented by a 'flash' feedback banner
+**Sign up form validation**
+- **Required input fields include:**
+    - Full name
+    - Occupation
+    - Phone number
+    - Email address: input field requires an '@' character
+- **The esential worker checkbox is not a required**
+- **On successful completion of the form the user is presented by a 'flash' feedback banner**
 
-Footer's Social icons: opens to link in a new webpage as expected 
+**Search page / functionality:**
+    - search works for case sensitive searches of full dish names, partial dish names and usernames (i.e. recipe authors)
 
-search page / functionality:
-search works for case sensitive searches of full dish names and partial dish names.
+**Add category page / functionality:**
+    - categories can be added and rendered on the 'all categories' page
 
-add category page / functionality:
-categories can be added and will be rendered on the 'all categories' page and will be presented as an option withi the 'add recipe' and 'edit recipe' pages
+**Add recipe page / functionality:**
+    - recipes can be added and will be rendered on the 'all recipes' page. 
 
-add recipe page / functionality:
-recipes can be added and will be rendered on the 'all recipes' page. From there they can be examined in full usingthe 'read more' button or they can be edited or deleted
+**Edit recipe page / functionality:**
+    - recipes can be edied and will be rendered on the 'all recipes' page. 
 
-edit recipe page / functionality:
-recipes can be edied and will be rendered on the 'all recipes' page. From there they can be examined in full usingthe 'read more' button or they can be re-edited or deleted
+**Compatability**
+    - Internet Explorer (version 11.0.185):  Images within cards were found to be distorted on initial tsting, i.e. not in width but in height, where the height reverted to that of the original image. To rectify the distortion a .d-block class was added to the parent div i.e. div class="card d-block h-100 shadow". Credit jeroendesloovere @ https://github.com/twbs/bootstrap/issues/21885. 
+    - Mozilla (76.0.1):
+    - Safari (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx):
+    - Microsoft Edge ( 44.18362.449.0):
+    - Google Chrome (Version 81.0.4044.138):
 
-Tested on Internet Explorer () and found that images within cards were distorted, not in width but in height where the height reverted to that of the original image. To rectify the distortion a .d-block was added to the parent div i.e. div class="card d-block h-100 shadow". Credit jeroendesloovere @ https://github.com/twbs/bootstrap/issues/21885.
-
-Tested on mozilla and Safari without issue
 
 ### Validators
 
 **HTML**
-- [W3C HTML Validator](https://validator.w3.org) - Unfortunately the W3C Validator for HTML does not understand the Jinja templating syntax, so it therefore shows a lot of errors with regards to `{{ variables }}`, `{% for %} {% endfor %}`, etc. Aside from the Jinja warnings and errors, all of the remaining code is perfectly validating. Also due to the Jinja templating, certain elements cannot be 'beautified' across multiple lines, and must remain on a single line. An example of this is the `<select>` element, which is rather long with specific Materialize classes, and Jinja templating.
+- [W3C HTML Validator](https://validator.w3.org) - Unfortunately the W3C Validator for HTML does not understand the Jinja templating syntax, so it therefore shows a lot of errors with regards to `{{ variables }}`, e.g.:
+    -   img class="img-fluid rounded" src="{{item.picture}}" alt="image of food"        (from all_recipes.html)
+    -   value="{{cat.category_name}}">{{cat.category_name}}                             (from recipe.html)
+
+IO Error: HTTP resource not retrievable. The HTTP status from the remote server was: 405.           from found_recipe.html
+
+Aside from these errors, all of the remaining code is perfectly validating. 
 
 **CSS**
 - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) - I am using `:root{}` variables in my CSS, which isn't [yet?] recognized by the validator. This is causing several **Parsing Errors**, when in fact they are not errors, and work perfectly fine.
-- **Parse Error** *[ li)]* - for some reason, the validator does not recognize the `<li>` element in my `:not(#search_form li)` code, but everything else breaks that particular code, so I've left it alone.
+- **Property Errors**
+    -   *abbr[data-original-title], abbr[title]* - Property text-decoration-skip-ink doesn't exist : none
+    -   *.toast* - Property backdrop-filter doesn't exist : blur(10px) 
 
-```css
-.collapsible-collection li:nth-child(odd):not(#search_form li) {
-    background-color: rgba(var(--purpleLight5), 0.75);
-}
-.collapsible-collection li:nth-child(even):not(#search_form li) {
-    background-color: rgba(var(--pinkLight5), 0.75);
-}
-```
-
-- **Same color for background-color and border-bottom-color** - The code below overrides the Materialize color for the checkbox animation effect, so the validator thinks this is an error, but is correct in order to override the color with my own.
-
-```css
-[type="radio"].with-gap:checked + span:after
-[type="radio"]:checked + span:after
-```
+These errors incurred no impact on the rendered pages and were therefore ignored.
 
 **JavaScript**
 - [JShint](https://jshint.com/)
-    - "There are **37** functions in this file.
-    Function with the largest signature take **0** arguments, while the median is **0**.
-    Largest function has **41** statements in it, while the median is **1**.
-    The most complex function has a cyclomatic complexity value of **10** while the median is **2**."
-    Two undefined variables:
-        - `$` (141 times - this is for jQuery)
-        - `M` (4 times - this is for Materialize)
+    - "There are **11** functions in this file.
+    Function with the largest signature take **1** arguments, while the median is **0**.
+    Largest function has **21** statements in it, while the median is **2**.
+    The most complex function has a cyclomatic complexity value of **2** while the median is **1**."
+    One undefined variables:
+        - `$` (12 times - this is for jQuery)
+        - line 155	'validation' is defined but never used.
 - [JSesprima](http://esprima.org/demo/validate.html)
     - "Code is syntactically valid."
 - [Beautify Tools](http://beautifytools.com/javascript-validator.php)
-    - `M` is not defined. (4 times - for Materialize)
+    - line 155	'validation' is defined but never used.
 
 **Python**
 - [PEP8 Online](http://pep8online.com/)
-    - All `.py` files are completely PEP8 compliant!
+
+    -  E402 errors (module level import not at top of file) did not impact the functionality of the app. They were left in place due to the app comprising a single py file and listing the imports at the top seemed tidy.  
+        -   line 4, from flask_pymongo import PyMongo
+        -   line 5, from bson.objectid import ObjectId
+        -   line 6, from datetime import datetime
+        -   line 7, from os import path
+Other than the list above the app.py file was completely PEP8 compliant!
 
 ### Compatibility
 
-To ensure a broad range of users can successfully use this site, I tested it across the 6 major browsers in both desktop and mobile configuration.
 
-- Chrome *v.74*
-- Edge *v.18*
-- Firefox *v.67*
-- Safari *v.12*
-- Opera *v.56*
-- Internet Explorer *v.11*
-
-For testing compatibility, I created a testing matrix to test across multiple devices and browsers. The test matrix can be found [here](https://github.com/TravelTimN/ci-milestone04-dcd/blob/master/app/testing/test-matrix.png). A brief overview:
-
-<img src="https://github.com/TravelTimN/ci-milestone04-dcd/blob/master/app/testing/test-matrix.png?raw=true" alt="Test Matrix" width="800">
 
 ### Known Issues
 
@@ -487,6 +471,7 @@ I would recommend to create a secondary Google account for this purpose, instead
     - [Jennifer Joyce - Baked piri-piri tilapia with crushed potatoes](https://www.bbcgoodfood.com/recipes/baked-piri-piri-tilapia-crushed-potatoes)
     - [Simon Hopkinson - Steak and perfectly cooked chips](https://www.bbc.co.uk/food/recipes/steak_and_perfectly_77968)
     - [Mary Berry - Rack of lamb with salsa verde](https://www.bbc.co.uk/food/recipes/rack_of_lamb_with_salsa_86126)
+    - [John Torode - Cheat Pizzas](https://www.itv.com/thismorning/food/john-torodes-cheats-pizzas)
 - **Play - description** 
     - [Hasbro - Boardgames](https://www.amazon.co.uk/Hasbro-Gaming-Monopoly-Classic-Game/dp/B073FTR5VV)
     - [Apple - Augmented Reality](https://developer.apple.com/augmented-reality/)

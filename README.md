@@ -222,30 +222,30 @@ The addition of a timestamp that records the date of the record's creation.
 :white_check_mark: *denotes items that have been successfully implemented*
 
 **Basic navigation**
-    - Links tested on navbar (& navbar toggle button), footer and breadcrumb :white_check_mark
-    - Links tested on carousel :white_check_mark
-    - Links tested on 'under construction page' :white_check_mark
-    - Links tested on under construction :white_check_mark
-    - Alert dismiss :white_check_mark
-    - Alert link to subscribe page :white_check_mark
-    - Footer's Social icons openning to link in a new webpage :white_check_mark
+- :white_check_mark: Links tested on navbar (& navbar toggle button), footer and breadcrumb
+- :white_check_mark: Links tested on carousel
+- :white_check_mark: Links tested on 'under construction page'
+- :white_check_mark: Links tested on under construction
+- :white_check_mark: Alert dismiss
+- :white_check_mark: Alert link to subscribe page
+- :white_check_mark: Footer's Social icons openning to link in a new webpage
 
 **Responsiveness** 
 Tested on portrait and landscape viewport for the following viewports
-    - Apple iPad pro :white_check_mark
-    - Apple iPad :white_check_mark
-    - Apple iPhone 5/SE/6/7/8/X/6 plus/7 plus/8 plus :white_check_mark
+- :white_check_mark: Apple iPad pro
+- :white_check_mark: Apple iPad
+- :white_check_mark: Apple iPhone 5/SE/6/7/8/X/6 plus/7 plus/8 plus
     
-    Note: when tested on actual iPhone 6 the background-attachment: fixed was not compatible with iOS - browsers. On Chrome and Safari in iOS, the background photos appeared zoomed-in and blurry. To fix this, the .background-attachment: scroll property - value was added in a media query.
+Note: when tested on actual iPhone 6 the background-attachment: fixed was not compatible with iOS - browsers. On Chrome and Safari in iOS, the background photos appeared zoomed-in and blurry. To fix this, the .background-attachment: scroll property - value was added in a media query.
     
-    - Samsung Galaxy S5 :white_check_mark
-    - Pixel 2/2 XL :white_check_mark
+- :white_check_mark:Samsung Galaxy S5
+- :white_check_mark:Pixel 2/2 XL
 
 Responsiveness tested on landscape viewport for the following viewports
-    - Microsoft Surface 2 laptop  (1504 x 892 px) :white_check_mark
-    - Dell XPS laptop (13.4 inch, 1920 x 1080 px) :white_check_mark
-    - Desktop (1680 x 939 px) :white_check_mark
-    - iMac 27 inch (5120 X 2880 px) :white_check_mark
+- :white_check_mark: Microsoft Surface 2 laptop  (1504 x 892 px)
+- :white_check_mark: Dell XPS laptop (13.4 inch, 1920 x 1080 px)
+- :white_check_mark: Desktop (1680 x 939 px)
+- :white_check_mark: iMac 27 inch (5120 X 2880 px)
 
 **Sign up form validation**
 - **Required input fields include:**
@@ -318,10 +318,6 @@ These errors incurred no impact on the rendered pages and were therefore ignored
         -   line 6, from datetime import datetime
         -   line 7, from os import path
 Other than the list above the app.py file was completely PEP8 compliant!
-
-### Compatibility
-
-
 
 ### Known Issues
 

@@ -166,14 +166,14 @@ body {
 
 .notification {
     background-color: #089191;
-    color:#b54484;
+    color:#ffffff;
     font-family: 'Roboto', sans-serif;
     padding-left: 0px;
     text-align: center;
     min-height: 200px;
     font-size: 24px;
     font-weight: 500;
-    margin-bottom: 5;
+    margin-bottom: 5px;
 }
 
 .notification p {

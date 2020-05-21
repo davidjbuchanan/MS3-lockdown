@@ -129,6 +129,10 @@ body {
     border-color: #089191;
 }
 /* Index page - body and cards */
+.index-hr {
+    background-color: #089191;
+    height: 1.0px;
+}
 body {
     padding-top: 56px;
 }
@@ -177,7 +181,6 @@ body {
     padding-left: 10px;
     padding-right: 10px;
 }
-
 /* footer */
 .fab {
     padding-top: 20px;
@@ -205,12 +208,10 @@ body {
 .social li a i:hover {
     color: #910808;
 }
-
 /* add recipe*/
 #top-field {
     padding-top: 0px;
 }
-
 /*navbar adaptions for 'add recipe' page*/
 @media (min-width:300px) and (max-width:496px) {            
     .nav-spacer {

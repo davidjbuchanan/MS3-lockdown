@@ -330,10 +330,11 @@ Other than the list above the app.py file was PEP8 compliant
 
 During development, I discovered two issues after committing to GitHub. For both of these bugs, I opened and *issue* on GitHub so I could come back and properly fix them.
 
-- **[Flaw when updating a recipe to database](https://github.com/TravelTimN/ci-milestone04-dcd/issues/1)**
-    - Found the bug, refactored my code, and pushed.
-- **[404 + 500 error handlers (fault)](https://github.com/TravelTimN/ci-milestone04-dcd/issues/8)**
-    - Helpful recommendation from my mentor to read about *Flask Blueprints + Error-Handlers*. Eventually I had to create a catch-all generic error handler.
+- **Flaw with cross-site resources for images and icons**
+    - http://fontawesome.com cookie is set with sameSite attribute.
+    - Images from http://itv.com and http://bbcgoodfood.com have cookies set with sameSite attribute.
+- **404 error**
+    - DevTools failed to load SourceMap: Could not load content for chrome-extension://dodmmooeoklaejobgleioelladacbeki/dist/gitpodify.bundle.js.map.
 
 ##### back to [top](#table-of-contents)
 
@@ -432,28 +433,11 @@ This site is currently deployed on [Heroku](https://www.heroku.com/) using the *
     - **MONGO_URI** : `<link to your Mongo DB>`
     - **SECRET_KEY** : `<your own secret key>`
     - **MONGO_DBNAME** : `<your Mongo DB's name>`
-5. Your app should be successfully deployed to Heroku at this point. :tada:
-
-**NOTE** : You might receive errors sending emails if you have your Google Account setup with **2-Factor Authentication**, **Less Secure Apps** disabled, or **DisplayUnlockCaptcha** disabled.
-
-**Plausible Fix** *(which has worked for me)*
-- Turn Off [2-Factor Authentication](https://myaccount.google.com/signinoptions/two-step-verification/enroll-welcome)
-- Turn On [Less Secure Apps](https://myaccount.google.com/lesssecureapps)
-- Turn On [DisplayUnlockCaptcha](https://accounts.google.com/DisplayUnlockCaptcha)
-
-I would recommend to create a secondary Google account for this purpose, instead of using your actual account (keep your actual account secure!). This is purely used for sending emails as a backup when new recipes are created or updated, in case the database somehow accidentally has an item deleted.
-
+5. Your app should be successfully deployed to Heroku at this point.
 
 ##### back to [top](#table-of-contents)
 
 ---
-
-
-
-
-
-
-
 
 ## Credits
 
@@ -502,7 +486,8 @@ Sources of the images used on this site:
 - **HTML template**
     - [David T. Miller - Start Bootstrap](https://startbootstrap.com/templates/modern-business/)
 
-- **README template**
+### README
+- **Template and content**
     - [TravelTimN](https://github.com/TravelTimN/ci-milestone04-dcd)
 
 ### Acknowledgements

@@ -1,7 +1,7 @@
 # [Lockdown and Thrive](https://herokuapp.com)
 
 
-<img src="FireShot Capture 001 - Multi Device Website Mockup Generator - techsini.com" style="margin: 0;" width="800">
+<img src="https://github.com/davidjbuchanan/lockdownagain/blob/master/static/images/Lockdown-Multi-Device-Website-Mockup.png" alt="lockdown multidevice views" width="800">
 
 Whilst we are in this time of uncertainty let us look after ourselves and our loved ones with this helpful website! [Lockdown and Thrive](https://herokuapp.com) is a place to find simple recipes; find ways to entertain younger ones and how to look after oneselves mental wellbeing. You can access the resources and contribute any number of resources to share with the world! 
 

@@ -411,10 +411,9 @@ edit_timestamp: <string>
 ```
 Note: that even after adding these fields they will not be populated with any recipes; as such, the app will be voide of content.
 
-
-- You should now be able to launch your app using the following command on your server:
+- You should now be able to launch your app using the following command on the Werzeug development server:
     - `python3 app.py`
-- The app should now be running on *localhost* on an address similar to `http://127.0.0.1:5000`. Simply copy/paste this into the browser of your choice!
+- The app should now be running on *localhost* and, when using Gitpod IDE, render an address similar to `https://8080-bce9ad25-9922-4648-b249-d83204aa0bf4.ws-eu01.gitpod.io/`.
 
 ### Remote Deployment
 
@@ -422,19 +421,17 @@ This site is currently deployed on [Heroku](https://www.heroku.com/) using the *
 
 1. Create a **requirements.txt** file so Heroku can install the required dependencies to run the app.
     - `sudo pip3 freeze --local > requirements.txt`
-    - My file can be found [here](https://github.com/TravelTimN/ci-milestone04-dcd/blob/master/requirements.txt).
+    - My file can be found [here](https://github.com/davidjbuchanan/lockdownagain/blob/master/requirements.txt).
 2. Create a **Procfile** to tell Heroku what type of application is being deployed, and how to run it.
     - `echo web: python run.py > Procfile`
-    - My file can be found [here](https://github.com/TravelTimN/ci-milestone04-dcd/blob/master/Procfile).
-3. Sign up for a free Heroku account, create your project app, and click the **Deploy** tab, at which point you can *Connect GitHub* as the Deployment Method, and select *Enable Automatic Deployment*.
+    - My file can be found [here](https://github.com/davidjbuchanan/lockdownagain/blob/master/Procfile).
+3. Sign up for a free Heroku account, create your project app, and click the **Deploy** tab, at which point you can *Connect GitHub* as the *Deployment Method*, and select *Enable Automatic Deployment*.
 4. In the Heroku **Settings** tab, click on the *Reveal Config Vars* button to configure environmental variables as follows:
     - **IP** : `0.0.0.0`
-    - **PORT** : `8080`
+    - **PORT** : `5000`
     - **MONGO_URI** : `<link to your Mongo DB>`
     - **SECRET_KEY** : `<your own secret key>`
-    - **MY_ADDRESS** : `<your own email address>`
-    - **SEND_TO** : `<recipient email address>`
-    - **PASSWORD** : `<you own email password>`
+    - **MONGO_DBNAME** : `<your Mongo DB's name>`
 5. Your app should be successfully deployed to Heroku at this point. :tada:
 
 **NOTE** : You might receive errors sending emails if you have your Google Account setup with **2-Factor Authentication**, **Less Secure Apps** disabled, or **DisplayUnlockCaptcha** disabled.

@@ -319,13 +319,6 @@ These errors incurred no impact on the rendered pages and were therefore ignored
         -   line 7, from os import path
 Other than the list above the app.py file was PEP8 compliant
 
-
-
-
-
-
-
-
 ### Known Issues
 
 During development, I discovered two issues after committing to GitHub. For both of these bugs, I opened and *issue* on GitHub so I could come back and properly fix them.
@@ -339,13 +332,6 @@ During development, I discovered two issues after committing to GitHub. For both
 ##### back to [top](#table-of-contents)
 
 ---
-
-
-
-
-
-
-
 
 ## Deployment
 
@@ -426,14 +412,16 @@ This site is currently deployed on [Heroku](https://www.heroku.com/) using the *
 2. Create a **Procfile** to tell Heroku what type of application is being deployed, and how to run it.
     - `echo web: python run.py > Procfile`
     - My file can be found [here](https://github.com/davidjbuchanan/lockdownagain/blob/master/Procfile).
-3. Sign up for a free Heroku account, create your project app, and click the **Deploy** tab, at which point you can *Connect GitHub* as the *Deployment Method*, and select *Enable Automatic Deployment*.
-4. In the Heroku **Settings** tab, click on the *Reveal Config Vars* button to configure environmental variables as follows:
+4. Sign up for a free Github account, create your project repository. From your IDE ommit and push to your Github repository.
+4. Sign up for a free Heroku account, create your project app.
+5. Push the code from your IDE to Heroku via Github. In Heroku click the **Deploy** tab, at which point you can *Connect GitHub* as the *Deployment Method*, and select *Enable Automatic Deployment*.
+6. In the Heroku **Settings** tab, click on the *Reveal Config Vars* button to configure environmental variables as follows:
     - **IP** : `0.0.0.0`
     - **PORT** : `5000`
     - **MONGO_URI** : `<link to your Mongo DB>`
     - **SECRET_KEY** : `<your own secret key>`
     - **MONGO_DBNAME** : `<your Mongo DB's name>`
-5. Your app should be successfully deployed to Heroku at this point.
+7. Your app should be successfully deployed to Heroku at this point.
 
 ##### back to [top](#table-of-contents)
 
@@ -451,6 +439,8 @@ This site is currently deployed on [Heroku](https://www.heroku.com/) using the *
     - [Simon Hopkinson - Steak and perfectly cooked chips](https://www.bbc.co.uk/food/recipes/steak_and_perfectly_77968)
     - [Mary Berry - Rack of lamb with salsa verde](https://www.bbc.co.uk/food/recipes/rack_of_lamb_with_salsa_86126)
     - [John Torode - Cheat Pizzas](https://www.itv.com/thismorning/food/john-torodes-cheats-pizzas)
+    - [James Martin - Mussels-in-a-cob](https://www.jamesmartinchef.co.uk/recipes/mussels-in-a-cob/)
+    - [James Martin - Chocolate and walnut fondant](https://www.jamesmartinchef.co.uk/recipes/chocolate-and-walnut-fondant/)
 - **Play - description** 
     - [Hasbro - Boardgames](https://www.amazon.co.uk/Hasbro-Gaming-Monopoly-Classic-Game/dp/B073FTR5VV)
     - [Apple - Augmented Reality](https://developer.apple.com/augmented-reality/)

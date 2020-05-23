@@ -249,31 +249,31 @@ Responsiveness tested on landscape viewport for the following viewports
 
 **Sign up form validation**
 - **Required input fields include:**
-    - Full name
-    - Occupation
-    - Phone number
-    - Email address: input field requires an '@' character
-- **The esential worker checkbox is not a required**
-- **On successful completion of the form the user is presented by a 'flash' feedback banner**
+    - :white_check_mark: Full name
+    - :white_check_mark: Occupation
+    - :white_check_mark: Phone number
+    - :white_check_mark: Email address: input field requires an '@' character
+- **:white_check_mark: The esential worker checkbox is not a required**
+- **:white_check_mark: On successful completion of the form the user is presented by a 'flash' feedback banner**
 
 **Search page / functionality:**
-    - search works for case sensitive searches of full dish names, partial dish names and usernames (i.e. recipe authors)
+    - :white_check_mark: case sensitive searches of full dish names, partial dish names and usernames (i.e. recipe authors)
 
 **Add category page / functionality:**
-    - categories can be added and rendered on the 'all categories' page
+    - :white_check_mark: add categories and render to 'all categories' page
 
 **Add recipe page / functionality:**
-    - recipes can be added and will be rendered on the 'all recipes' page. 
+    - :white_check_mark: add recipes and render to 'all recipes' page. 
 
 **Edit recipe page / functionality:**
-    - recipes can be edied and will be rendered on the 'all recipes' page. 
+    - :white_check_mark:  edit recipes and render to 'all recipes' page. 
 
 **Compatability**
-    - Internet Explorer (version 11.0.185):  Images within cards were found to be distorted on initial tsting, i.e. not in width but in height, where the height reverted to that of the original image. To rectify the distortion a .d-block class was added to the parent div i.e. div class="card d-block h-100 shadow". Credit jeroendesloovere @ https://github.com/twbs/bootstrap/issues/21885. 
-    - Mozilla (76.0.1):
-    - Safari (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx):
-    - Microsoft Edge ( 44.18362.449.0):
-    - Google Chrome (Version 81.0.4044.138):
+    - :white_check_mark: Internet Explorer (version 11.0.185):  Images within cards were found to be distorted on initial tsting, i.e. not in width but in height, where the height reverted to that of the original image. To rectify the distortion a .d-block class was added to the parent div i.e. div class="card d-block h-100 shadow". Credit jeroendesloovere @ https://github.com/twbs/bootstrap/issues/21885. 
+    - :white_check_mark: Mozilla (76.0.1):
+    - :white_check_mark: Safari (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx):
+    - :white_check_mark: Microsoft Edge ( 44.18362.449.0):
+    - :white_check_mark: Google Chrome (Version 81.0.4044.138):
 
 
 ### Validators
@@ -317,7 +317,14 @@ These errors incurred no impact on the rendered pages and were therefore ignored
         -   line 5, from bson.objectid import ObjectId
         -   line 6, from datetime import datetime
         -   line 7, from os import path
-Other than the list above the app.py file was completely PEP8 compliant!
+Other than the list above the app.py file was PEP8 compliant
+
+
+
+
+
+
+
 
 ### Known Issues
 
@@ -331,6 +338,13 @@ During development, I discovered two issues after committing to GitHub. For both
 ##### back to [top](#table-of-contents)
 
 ---
+
+
+
+
+
+
+
 
 ## Deployment
 
@@ -395,7 +409,7 @@ fibre: <string>
 timestamp: <string>
 edit_timestamp: <string>
 ```
-Note: that even after adding these fields they will not be populated with any recipes; as such, the app will devoide of content.
+Note: that even after adding these fields they will not be populated with any recipes; as such, the app will be voide of content.
 
 
 - You should now be able to launch your app using the following command on your server:

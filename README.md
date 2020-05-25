@@ -287,7 +287,7 @@ Responsiveness tested on landscape viewport for the following viewports
         -   line 7, from os import path
 Other than the list above the app.py file was PEP8 compliant
 
-### Compatability
+### Compatibility
 - :white_check_mark: Internet Explorer (version 11.0.185):  Images within cards were found to be distorted on initial tsting, i.e. not in width but in height, where the height reverted to that of the original image. To rectify the distortion a .d-block class was added to the parent div i.e. div class="card d-block h-100 shadow". Credit jeroendesloovere @ https://github.com/twbs/bootstrap/issues/21885. 
 - :white_check_mark: Mozilla (Version 76.0.1):
 - :white_check_mark: Safari (Version 14):

@@ -1,9 +1,9 @@
-# [Lockdown and Thrive](https://herokuapp.com)
+# [Lockdown and Thrive](https://lockdown-data-centric.herokuapp.com/)
 
 
-<img src="https://github.com/davidjbuchanan/lockdownagain/blob/master/static/images/Lockdown-Multi-Device-Website-Mockup.png" alt="lockdown multidevice views" width="800">
+<img src="https://github.com/davidjbuchanan/lockdownagain/blob/master/static/images/Lockdown-Multi-Device-Website-Mockup.png" alt="lockdown multidevice views" width="100%">
 
-Whilst we are in this time of uncertainty let us look after ourselves and our loved ones with this helpful website! [Lockdown and Thrive](https://herokuapp.com) is a place to find simple recipes; find ways to entertain younger ones and how to look after oneselves mental wellbeing. You can access the resources and contribute any number of resources to share with the world! 
+Whilst we are in this time of uncertainty let us look after ourselves and our loved ones with this helpful website! [Lockdown and Thrive](https://lockdown-data-centric.herokuapp.com/) is a place to find simple recipes; find ways to entertain younger ones and how to look after oneselves mental wellbeing. You can access the resources and contribute any number of resources to share with the world! 
 
 This website was produced to forfill a coursework assignment for the [Code Institute](https://codeinstitute.net/) Full Stack Software Development course, specifically the **Data Centric Development** module. The objective for this milestone project is to "*Create a web application that allows users to store and easily access cooking recipes*", using the **CRUD** operations of **C**reate, **R**ead, **U**pdate, and **D**elete for their recipes. As such the recipes presented within should not be followed without referring to the source site [**Credits**](#Credits).
 
@@ -83,7 +83,7 @@ A modern business design was chosen for this site. Inspired by the Sky.com websi
 
 #### Color Scheme
 
-In keeping with the overall *sweet* theme, I have opted for a bright and colorful color scheme. These standard [Materialize Colors](https://materializecss.com/color.html) work quite well for my project.
+In keeping with the overall *simple/clean* theme, I have opted for a muted color scheme. 
   
 - ![#089191](https://placehold.it/15/089191/089191) `#089191` **dark cyan** - navbar, footer and button background
 - ![#ffffff](https://placehold.it/15/ffffff/ffffff) `#ffffff` **white** - text colour
@@ -182,14 +182,14 @@ The addition of a timestamp that records the date of the record's creation.
 
 - **Flask**
     - [Flask 1.1.1](http://flask.pocoo.org/) - Used as a microframework.
-    - [Werkzeug 1.0.1](https://werkzeug.palletsprojects.com/en/0.16.x/) 
+    - [Werkzeug 1.0.1](https://werkzeug.palletsprojects.com/en/0.16.x/) - Tool used to facilitate developer's local deployment
     - [Jinja 2.11.1](http://jinja.pocoo.org/docs/2.10/) - Used for templating with Flask.
     - [Flask-PyMongo 2.3.0](https://flask-pymongo.readthedocs.io/en/latest/) - an open source database that stores flexible JSON-like “documents”.
 <!-- Note: to check for which version of Jinja you are using type 'pip3 show jinja2; into cli -->
 - **Heroku**
     - [Heroku](https://www.heroku.com) - Used for app hosting.
 - **Python**    
-    - [PyMongo 3.10.1](https://api.mongodb.com/python/current/) - Used as the Python API for MongoDB.
+    - [PyMongo 3.10.1](https://pymongo.readthedocs.io/en/stable/) - Used as the Python API for MongoDB.
     - [MongoDB Atlas](https://www.mongodb.com/) - Used to store my database in the 'cloud'.
     - [Python 3.7.7](https://www.python.org/) - Used as the back-end programming language.
 
@@ -247,14 +247,6 @@ Responsiveness tested on landscape viewport for the following viewports
 **Edit recipe page / functionality:**
     - :white_check_mark:  edit recipes and render to 'all recipes' page. 
 
-**Compatability**
-    - :white_check_mark: Internet Explorer (version 11.0.185):  Images within cards were found to be distorted on initial tsting, i.e. not in width but in height, where the height reverted to that of the original image. To rectify the distortion a .d-block class was added to the parent div i.e. div class="card d-block h-100 shadow". Credit jeroendesloovere @ https://github.com/twbs/bootstrap/issues/21885. 
-    - :white_check_mark: Mozilla (76.0.1):
-    - :white_check_mark: Safari (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx):
-    - :white_check_mark: Microsoft Edge ( 44.18362.449.0):
-    - :white_check_mark: Google Chrome (Version 81.0.4044.138):
-
-
 ### Validators
 
 **HTML**
@@ -262,17 +254,15 @@ Responsiveness tested on landscape viewport for the following viewports
     -   img class="img-fluid rounded" src="{{item.picture}}" alt="image of food"        (from all_recipes.html)
     -   value="{{cat.category_name}}">{{cat.category_name}}                             (from recipe.html)
 
-IO Error: HTTP resource not retrievable. The HTTP status from the remote server was: 405.           from found_recipe.html
-
-Aside from these errors, all of the remaining code is perfectly validating. 
+- IO Error: HTTP resource not retrievable. The HTTP status from the remote server was: 405.           (from found_recipe.html)
+- Aside from these errors, all of the remaining code is perfectly validating. 
 
 **CSS**
-- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) - I am using `:root{}` variables in my CSS, which isn't [yet?] recognized by the validator. This is causing several **Parsing Errors**, when in fact they are not errors, and work perfectly fine.
+- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) - I am using `:root{}` variables in my CSS, which isn't recognized by the validator. This is causing several **Parsing Errors**, when in fact they are not errors, and work perfectly fine.
 - **Property Errors**
     -   *abbr[data-original-title], abbr[title]* - Property text-decoration-skip-ink doesn't exist : none
     -   *.toast* - Property backdrop-filter doesn't exist : blur(10px) 
-
-These errors incurred no impact on the rendered pages and were therefore ignored.
+- These errors incurred no impact on the rendered pages and were therefore ignored.
 
 **JavaScript**
 - [JShint](https://jshint.com/)
@@ -290,13 +280,19 @@ These errors incurred no impact on the rendered pages and were therefore ignored
 
 **Python**
 - [PEP8 Online](http://pep8online.com/)
-
     -  E402 errors (module level import not at top of file) did not impact the functionality of the app. They were left in place due to the app comprising a single py file and listing the imports at the top seemed tidy.  
         -   line 4, from flask_pymongo import PyMongo
         -   line 5, from bson.objectid import ObjectId
         -   line 6, from datetime import datetime
         -   line 7, from os import path
 Other than the list above the app.py file was PEP8 compliant
+
+### Compatability
+- :white_check_mark: Internet Explorer (version 11.0.185):  Images within cards were found to be distorted on initial tsting, i.e. not in width but in height, where the height reverted to that of the original image. To rectify the distortion a .d-block class was added to the parent div i.e. div class="card d-block h-100 shadow". Credit jeroendesloovere @ https://github.com/twbs/bootstrap/issues/21885. 
+- :white_check_mark: Mozilla (Version 76.0.1):
+- :white_check_mark: Safari (Version 14):
+- :white_check_mark: Microsoft Edge (Version 44.18362.449.0):
+- :white_check_mark: Google Chrome (Version 81.0.4044.138):
 
 ### Known Issues
 
@@ -444,7 +440,7 @@ Sources of the images used on this site:
     - [Suzy Hazelwood - Monopoly](https://www.pexels.com/photo/hotrod-die-cast-model-on-board-1422673/)
     - [Jessica Lewis - gaming](https://www.pexels.com/photo/two-boy-and-girl-holding-game-controllers-1103563/)
     - [Valeria Boltneva - fish dish](https://www.pexels.com/photo/fried-fish-with-vegetables-dish-on-teal-plate-1516415/)
-    - [Valeria Boltneva - burger](https://www.pexels.com/photo/fried-fish-with-vegetables-dish-on-teal-plate-1516415/)
+    - [Valeria Boltneva - burger](https://www.pexels.com/photo/close-up-photo-of-burger-1639562/)
     - [Anton Porsche - sandwhich](https://www.pexels.com/photo/vegetale-and-meat-sandwhich-133578/)
     - [Sharon McCutcheon - painted hands](https://www.pexels.com/photo/4k-wallpaper-adorable-blur-boy-1148998/)
     - [Daria Obymaha - girl cooking](https://www.pexels.com/photo/little-girl-cooking-1684032/)
@@ -464,4 +460,5 @@ Sources of the images used on this site:
     - My Code Institute mentor.
 - Code Institute Tutors
 <img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+
 ##### back to [top](#table-of-contents)

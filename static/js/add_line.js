@@ -1,18 +1,3 @@
-/*-------------------------------- Strike through steps as completed --------------------------------*/
-/*function myFunction() {
-    var ele = document.getElementById("strike");                    
-ele.style.setProperty("text-decoration", "line-through");             works   
-}*/
-
-/*var ele = document.getElementsByClassName("strike");            no dice */
-/*var ele = document.getElementsByName("strike");                 no dice */
-/*var ele = document.getElementById("{{ procedure[0] }}");        no dice */
-
-$(".myFunction").click(function(){
-  $(this).parent().next("div").children("p.card-text").css({"text-decoration": "line-through", "text-decoration-color": "#077979", "text-decoration-style": "wavy"});
-});
-/*--------------------------------          /           --------------------------------*/
-
 /*-------------------------------- Add an ingredient buttons --------------------------------*/
 $("#add_row_ingredient").click(function() {
   var counter=document.getElementsByClassName("new-ingredients").length + 1;
@@ -22,7 +7,6 @@ $("#add_row_ingredient").click(function() {
   var the_input=document.createElement("input");
   outer_div.className="form-group row new-ingredients";
   outer_div.setAttribute("id","ingredients-item" + counter);
-  /*the_label.setAttribute("for","ingredients" + counter);*/
   the_label.className="col-md-2 col-form-label";
   the_label.innerHTML="ingredient " + counter;
   the_label.setAttribute("id","ingredient-test" + counter);
@@ -37,21 +21,6 @@ $("#add_row_ingredient").click(function() {
   outer_div.appendChild(inner_div);
   document.getElementById("new-ingredients").appendChild(outer_div);
 });
-
-/*$("#add_row_ingredient").click(function() {
-  var counter=document.getElementsByClassName("new-ingredients").length;
-  var the_input=document.createElement("input");
-  the_input.className="new-ingredients form-control";
-  the_input.setAttribute("name","ingredients" + counter);
-  the_input.setAttribute("id","ingredients" + counter);
-  the_input.setAttribute("placeholder","add an ingredient here, use the carrot above to add more ingredients");
-  document.getElementById("ingredient-test").appendChild(the_input);
-});*/   /*Stephen_CI*/
-
-/*
-$("#add_row_ingredient").click(function() {
-  $("#ingredients-item").clone().insertAfter($(".new-ingredients:last")).find("input[type='text']").val("");
-});*/   /**Tim_CI*/
 
 $("#add_edit_row_ingredient").click(function() {
   var counter=document.getElementsByClassName("new-ingredients").length + 1;
@@ -76,21 +45,6 @@ $("#add_edit_row_ingredient").click(function() {
   outer_div.appendChild(inner_div);
   document.getElementById("index_enabler_ingredient").appendChild(outer_div);
 });
-
-/*$("#edit_add_row_ingredient").click(function() {
-  $("#ingredients-item").clone().insertAfter($(".new-ingredients:last")).find("input[type='text']").val("");
-});
-
-$("#edit_delete_row_ingredient").click(function () {
-   var div = $('.new-ingredients');
-   if (div.length > 1)
-    $(".new-ingredients:last").remove();
-});
-
-$("#edit_add_row_ingredient").click(function() {
-  $(".new-ingredients").append("test").insertAfter($("#ingredient-{{ingredient[0]}}:last")).find("input[type='text']").val("");
-});*/
-/*--------------------------------          /           --------------------------------*/
 /*-------------------------------- Add a step buttons --------------------------------*/
 $("#add_row_procedure").click(function() {
   var counter=document.getElementsByClassName("new-procedures").length + 1;
@@ -116,9 +70,6 @@ $("#add_row_procedure").click(function() {
   document.getElementById("new-procedures").appendChild(outer_div);
 });
 
-/*$("#add_row_procedure").click(function() {
-   $("#procedures-item").clone().insertAfter($(".new-procedures:last")).find("input[type='text']").val("");
-});*/
 $("#add_edit_row_procedure").click(function() {
   var counter=document.getElementsByClassName("new-procedures").length + 1;
   var outer_div=document.createElement("div");
@@ -142,7 +93,6 @@ $("#add_edit_row_procedure").click(function() {
   outer_div.appendChild(inner_div);
 document.getElementById("index_enabler_procedure").appendChild(outer_div);
 });
-/*--------------------------------          /           --------------------------------*/
 /*-------------------------------- delete a step or ingredient buttons --------------------------------*/
 $("#delete_row_ingredient").click(function () {
    var div = $('.new-ingredients');
@@ -155,5 +105,4 @@ $("#delete_row_procedure").click(function () {
    if (div.length > 1)
     $(".new-procedures:last").remove();
 });
-/*--------------------------------          /           --------------------------------*/
 

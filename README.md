@@ -1,7 +1,7 @@
 # [Lockdown and Thrive](https://lockdown-data-centric.herokuapp.com/)
 
 
-<img src="https://github.com/davidjbuchanan/lockdownagain/blob/master/static/images/Lockdown-Multi-Device-Website-Mockup.png" alt="lockdown multidevice views" width="100%">
+<img src="https://github.com/davidjbuchanan/lockdownagain/blob/master/static/images/mockups/Lockdown-Multi-Device-Website-Mockup.png" alt="lockdown multidevice views" width="100%">
 
 Whilst we are in this time of uncertainty let us look after ourselves and our loved ones with this helpful website! [Lockdown and Thrive](https://lockdown-data-centric.herokuapp.com/) is a place to find simple recipes; find ways to entertain younger ones and how to look after oneselves mental wellbeing. You can access the resources and contribute any number of resources to share with the world! 
 
@@ -110,7 +110,15 @@ In keeping with the overall *simple/clean* theme, I have opted for a muted color
 
 [Balsamiq Wireframes](https://balsamiq.com/) have been used due to their eases of use:
 
-All of my wireframes for this project can be found [here](https://github.com/) in the *wireframes* sub-directory.
+The index page was designed to show 3 sections. On top a carousel of images; in the middle a callout to the apps' subscription service; and in the lower part the features section. The lower, features, section is disproportionately larger due to the desire to advertise the full range of the business' services. As you can see as the viewport narrows the detail and number of features is reduced:
+
+<img src="https://github.com/davidjbuchanan/lockdownagain/blob/master/static/images/mockups/Lockdown_Data_Centric_Development_Project_Index_page.png" alt="lockdown index page views" width="100%">
+
+The page most populated with elemnents is for the 'add a recipe' page where users can add their recipes. This required a lot of input fields and therefore a simple clear display. Again as the width of the viewport decreases the elements are listed more vertically.
+
+<img src="https://github.com/davidjbuchanan/lockdownagain/blob/master/static/images/mockups/Lockdown_Data_Centric_Development_Project_add_recipe_page.png" alt="lockdown add recipe page views" width="100%">
+
+The complete set of wireframes for this project can be found [here](https://github.com/davidjbuchanan/lockdownagain/blob/master/static/images/mockups) in the *wireframes* sub-directory.
 
 ##### back to [top](#table-of-contents)
 

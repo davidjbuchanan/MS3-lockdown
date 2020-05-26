@@ -1,4 +1,4 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 {% block content %}
 <header>
 </header>
@@ -28,7 +28,7 @@
         <div class="col-lg-8 mb-4">
             <img class="img-fluid rounded" src="static/images/adult-cutting-daylight-facial-expression-1153369.jpg" alt="image of adult preparing food">
         </div>
-        <!-- Contact Details Column -->
+        <!-- Contact Details Column  - contents are ficticious-->
         <div class="col-lg-4 mb-4">
             <h3>Customer Services</h3>
             <p>
@@ -55,17 +55,7 @@
     <div class="row">
         <!-- Form -->
         <div class="col-lg-8 mb-4">
-            <!--{% with messages = get_flashed_messages() %} 
-            {% if messages %}
-            <ul class="notification">
-                {% for message in messages %}
-                <p>{{ message }}</p>
-                {% endfor %}
-            </ul>
-            {% endif %} 
-            {% endwith %}-->
             <h3>Sign up</h3>
-            <!-- <form name="sentMessage" onsubmit="return sendMail(this);" id="contactForm"  class="needs-validation" novalidate> -->
             <form name="sentMessage" method="POST" id="contactForm"  class="needs-validation" novalidate>
                 <div class="form-row">
                     <div class="col-12">

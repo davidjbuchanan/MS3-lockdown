@@ -3,9 +3,9 @@
 
 <img src="https://github.com/davidjbuchanan/lockdownagain/blob/master/static/images/mockups/Lockdown-Multi-Device-Website-Mockup.png" alt="lockdown multidevice views" width="100%">
 
-Whilst we are in this time of uncertainty let us look after ourselves and our loved ones with this helpful website! [Lockdown and Thrive](https://lockdown-data-centric.herokuapp.com/) is a place to find simple recipes; find ways to entertain younger ones and how to look after oneselves mental wellbeing. You can access the resources and contribute any number of resources to share with the world! 
+Whilst we are enduring Covid-10 let us look after ourselves and our loved ones with this helpful app! [Lockdown and Thrive](https://lockdown-data-centric.herokuapp.com/) is a place to find simple recipes; find ways to entertain younger ones and how to look after oneselves mental wellbeing. You can access the resources and contribute any number of resources to share with the world! 
 
-This website was produced to forfill a coursework assignment for the [Code Institute](https://codeinstitute.net/) Full Stack Software Development course, specifically the **Data Centric Development** module. The objective for this milestone project is to "*Create a web application that allows users to store and easily access cooking recipes*", using the **CRUD** operations of **C**reate, **R**ead, **U**pdate, and **D**elete for their recipes. As such the recipes presented within should not be followed without referring to the source site [**Credits**](#Credits).
+This website was produced to forfill a coursework assignment for the [Code Institute](https://codeinstitute.net/) Full Stack Software Development course, specifically the **Data Centric Development** module. The objective for this milestone project is to "*Create a web application that allows users to store and easily access cooking recipes*", using the **CRUD** operations of **C**reate, **R**ead, **U**pdate, and **D**elete for their recipes. As such the contents are fictisuous and the recipes presented within should not be followed without referring to the source : see [**Credits**](#Credits).
 
 ---
 
@@ -52,9 +52,11 @@ The commercial aspect is minimal with a link to a 'store' (which is under constr
 
 As it contains three topics (feeding, playing and mindfulness) it was important to partition these topics clearly for ease of use. To acheive this the navbar displayed each of these topics in its own discrete, but essentially identical, dropdown menus. Likewise the homepage's body presents three uniform rows, one for each topic. Please note that the 'Eat and Feed' topic is the only topic which has been elaborated, the other two are for future development.
 
-Each page displays an identical navbar and footer and similar body for each page, this was deliberate to aid users' navigation of the site. The navbar is elaborated for the pages where you add or edit a recipe . This was to allow the user to have rapid access to buttons that allow you to add and delete input fields; as this is a floating navbar this is a useful tool for the author/editor of recipes.  
+Each page displays an identical navbar and footer and similar body for each page, this was deliberate to aid users' navigation of the site. The navbar is elaborated for the pages where you add or edit a recipe. This was to allow the user to have rapid access to buttons that allow them to add and delete input fields; as this is a floating navbar this is an accessible and useful tool for the author/editor of recipes.  
 
 ### User Stories
+
+Who is the user? Essentially this could be anyone enduring a form of lockdown but is principally aimed at those with a young family with children aged 3 to 16; thus there is a facility for food making, entertainment and hobbies. All of which is designed to nourish the dody and minds of children and adults.
 
 "**_As a user, I would like to_** _____________________________"
 
@@ -73,7 +75,7 @@ Each page displays an identical navbar and footer and similar body for each page
 
 ### Design
 
-A modern business design was chosen for this site. Inspired by the Sky.com website bootstrap cards were used to comparmentalise each unit of information wether that be a call-out or a specific recipe. Each card was styled with subtle shadow attributes and muted colours to draw focus to the card contents and not the background. As such Bootstrap components were utilised heavily due to their simplistic muted styling which were elaborated upon during development.
+A modern business design was chosen for this site. Inspired by the Sky.com website and bootstrap's card feature the items were discretly comparmentalised. This enabled each item, whether it be a subscription service or a specific recipe, to feature as a call-out. Each card was styled with subtle shadow attributes and muted colours to draw focus to the card contents and not the background. As such Bootstrap components were utilised heavily due to their simplistic muted styling which were elaborated upon during development.
 
 #### Framework
 
@@ -110,7 +112,7 @@ In keeping with the overall *simple/clean* theme, I have opted for a muted color
 
 [Balsamiq Wireframes](https://balsamiq.com/) have been used due to their eases of use:
 
-The index page was designed to show 3 sections. On top a carousel of images; in the middle a callout to the apps' subscription service; and in the lower part the features section. The lower, features, section is disproportionately larger due to the desire to advertise the full range of the business' services. As you can see as the viewport narrows the detail and number of features is reduced:
+The index page was designed to show 3 main sections. On top a carousel of images; in the middle a callout to the apps' subscription service; and in the lower part the features section. The lower, features, section is disproportionately larger due to the desire to advertise the full range of the business' services. As you can see as the viewport narrows the detail and number of features is reduced:
 
 <img src="https://github.com/davidjbuchanan/lockdownagain/blob/master/static/images/mockups/Lockdown_Data_Centric_Development_Project_Index_page.png" alt="lockdown index page views" width="100%">
 
@@ -129,32 +131,32 @@ The complete set of wireframes for this project can be found [here](https://gith
 ### Existing Features
 
 **Dashboard page**
-- Page presents a full overview of the site's content enabling rapid movement around site. Here the user can find featured recipes which they can access for scrutiny.
+- Page presents a full overview of the site's content enabling rapid movement around site. Here the user can find featured recipes which they can access for more detail.
 
 **View all recipes**
-- On the *All Recipes* page, all recipes are displayed in the chronological order of production. Each record has a photo, dish name and a timestamp for the date of production.
+- C**R**UD On the *All Recipes* page, all recipes are displayed in the chronological order of production. Each record has a photo, dish name and a timestamp for the date of production.
 
 **Search the database**
 - If a user would like to search for a particular dish or by the name of a particular chef, then they can acces the *Search Recipe* page from the navbar. This results in the display of a 'Found Recipes' page to the user, this is a truncated version of the 'All Recipes' page.
 
 **Add a Recipe**
-- **C**RUD Create a new recipe. The 'Add Recipe' page has an adapted navbar that allows the addition of extra input fields for ingredients and procedures. This was installed to assist the user when systematically additing lists and is particularly beneficial whilst working on small viewports. This list is enumerated to aid the recipe author.
-The addition of a timestamp that records the date of the record's creation.
+- **C**RUD Create a new recipe. The 'Add Recipe' page has an adapted navbar that allows the addition of extra input fields for ingredients and steps. This was installed to assist the user when systematically adding lists and is particularly beneficial whilst working on small viewports. This list is enumerated to aid the recipe's author.
+The addition of a timestamp records the date of the record's creation.
 
 **Update a Recipe**
-- CR**U**D Update an existing recipe. The 'Edit Recipe' page has the same features as the 'Add Recipe' page and is pre-populated with existing values. Again the adapted navbar has great utility allowing individual ingredients and procedures to be deleted without impact to the rest of the document. The list has also been enumerated with the ability to add further fields.
+- CR**U**D Update an existing recipe. The 'Edit Recipe' page has the same features as the 'Add Recipe' page and is pre-populated with existing values. Again the adapted navbar has great utility allowing individual ingredients and steps to be added and deleted without impact to the rest of the document. The list has also been enumerated for the user's satisfaction.
 
 **View a Recipe**
 - C**R**UD Read recipes, either from the main page, the 'Found Recipes' or the 'All Recipes' pages. From here, users also have additional options:
     - CR**U**D Update the recipe.
     - CRU**D** Delete the recipe.
-    - Strikethrough completed recipe steps i.e. an onclick event has been added to enable the user to score-off completed tasks.
+    - **Strikethrough** completed recipe steps i.e. an onclick event has been added to enable the user to score-off completed tasks.
 
 **Delete a Recipe**
-- CRU**D** Delete a recipe. 
+- CRU**D** Delete a recipe from the 'All recipres' or 'edit recipes' page. 
 
 **View all categories**
-- Similar to *All Recipes* there is an *All Categories* page, where users can view all food categories e.g. lunch, dinner, snack etc. From this page they can also:
+- C**R**UD Similar to *All Recipes* there is an *All Categories* page, where users can view all food categories e.g. lunch, dinner, snack etc. From this page they can also:
     - **C**RUD Create a new category
     - CRU**D** Delete a category
 
@@ -304,7 +306,7 @@ Other than the list above the app.py file was PEP8 compliant
 
 ### Known Issues
 
-During development, I discovered two issues after committing to GitHub. For both of these bugs, I opened and *issue* on GitHub so I could come back and properly fix them.
+During development, I discovered two issues after committing to GitHub. 
 
 - **Flaw with cross-site resources for images and icons**
     - http://fontawesome.com cookie is set with sameSite attribute.
@@ -331,14 +333,15 @@ Next, there's a series of steps to take in order to proceed with local deploymen
 
 - Clone this GitHub repository by either clicking the green *Clone or download* button and downloading the project as a zip-file (remember to unzip it first), or by entering the following into the Git CLI terminal:
     - `git clone https://github.com/davidjbuchanan/lockdownagain.git'.
+    - Note: when using Gitpod IDE it may be advantageous to goto Code Instute's Github page and clone their [template](https://github.com/Code-Institute-Org/gitpod-full-template). This will give the developer admin rights 
 - Navigate to the correct file location after unpacking the files.
     - `cd <path to folder>`
 - Create a `.env` file with your credentials. Be sure to include your *MONGO_URI* and *SECRET_KEY* values.
-- Create a `Procfile` :
+- Ensure a `Procfile` has been cloned, if not create a `Procfile`:
     - `echo web:python app.py > Procfile`
-- Install all requirements from the [requirements.txt](https://github.com/davidjbuchanan/lockdownagain/blob/master/requirements.txt) file using this command:
-    - `pip3 freeze --local> requirements.txt`
-- Sign up for a free account on [MongoDB](https://www.mongodb.com) and create a new Database called **lockdownDB**. The *Collections* in that database should be as follows:
+- Ensure a `requirements.txt` has been cloned, if not install all requirements from the [requirements.txt](https://github.com/davidjbuchanan/lockdownagain/blob/master/requirements.txt) file using this command:
+    - `pip3 freeze --local> requirements.txt`. This may require a prefix of `sudo` if you do not have administration rights on your IDE.
+- Sign up for an account on [MongoDB](https://www.mongodb.com) and create a new Database called **lockdownDB**. The *Collections* in that database should be as follows:
 
 **CATEGORIES**
 ```
@@ -382,20 +385,20 @@ edit_timestamp: <string>
 Note: that even after adding these fields they will not be populated with any recipes; as such, the app will be voide of content.
 
 - You should now be able to launch your app using the following command on the Werzeug development server:
-    - `python3 app.py`
+    - `python3 app.py`. This may require a prefix of `sudo` if you do not have administration rights on your IDE.
 - The app should now be running on *localhost* and, when using Gitpod IDE, render an address similar to `https://8080-bce9ad25-9922-4648-b249-d83204aa0bf4.ws-eu01.gitpod.io/`.
 
 ### Remote Deployment
 
 This site is currently deployed on [Heroku](https://www.heroku.com/) using the **master** branch on GitHub. To implement this project on Heroku, the following steps were taken:
 
-1. Create a **requirements.txt** file so Heroku can install the required dependencies to run the app.
-    - `sudo pip3 freeze --local > requirements.txt`
+1. Created a **requirements.txt** file so Heroku can install the required dependencies to run the app.
+    - `pip3 freeze --local > requirements.txt` add a `sudo` prefix if you do not have admin. rights to your IDE
     - My file can be found [here](https://github.com/davidjbuchanan/lockdownagain/blob/master/requirements.txt).
-2. Create a **Procfile** to tell Heroku what type of application is being deployed, and how to run it.
+2. Created a **Procfile** to tell Heroku what type of application is being deployed, and how to run it.
     - `echo web: python run.py > Procfile`
     - My file can be found [here](https://github.com/davidjbuchanan/lockdownagain/blob/master/Procfile).
-4. Sign up for a free Github account, create your project repository. From your IDE ommit and push to your Github repository.
+4. Sign up for a free Github account, create your project repository. From your IDE commit and push to your Github repository.
 4. Sign up for a free Heroku account, create your project app.
 5. Push the code from your IDE to Heroku via Github. In Heroku click the **Deploy** tab, at which point you can *Connect GitHub* as the *Deployment Method*, and select *Enable Automatic Deployment*.
 6. In the Heroku **Settings** tab, click on the *Reveal Config Vars* button to configure environmental variables as follows:

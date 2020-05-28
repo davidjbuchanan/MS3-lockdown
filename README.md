@@ -134,6 +134,9 @@ The complete set of wireframes for this project can be found [here](https://gith
 **Dashboard page**
 - Page presents a full overview of the site's content enabling rapid movement around site. Here the user can find featured recipes which they can access for more detail.
 
+**Breadcrumb**
+- Added to aid user's navigation of the site and ability to toggle betwen current and previous pages without the need of the browser back button.
+
 **View all recipes**
 - C**R**UD On the *All Recipes* page, all recipes are displayed in the chronological order of production. Each record has a photo, dish name and a timestamp for the date of production.
 

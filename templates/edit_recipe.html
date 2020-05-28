@@ -84,34 +84,50 @@
 				</div>    
                 <hr class="recipe-hr">          
                 <div id="index_enabler_ingredient">
-                {% for ingredient in ingredients %}
-                    <div class="new-ingredients" id="new-ingredients">
-                        <div class="form-group row" id="ingredient-item{{ingredient[0]}}">
-                            <label for="ingredient{{ingredient[0]}}" class="col-md-2 col-form-label">
-                                Ingredient {{ingredient[0]}}
-                            </label>
-                            <div class="col-md-10">
-                                <input type="text" class="form-control" name="ingredients{{ingredient[0]}}" required value="{{ ingredient[1] }}" id="ingredients{{ingredient[0]}}" placeholder="add an ingredient here, use the carrot above to add more ingredients">
-                            </div>
+                    <div class="form-group row">
+                        <div class="col-md-2">
+                            <p>Ingredients</p>
+                        </div>
+                        <div class="col-md-10">
+                            <p>Use the <i class="fas fa-carrot"></i> to add or delete ingredients</p>
                         </div>
                     </div>
-                {% endfor %}
+                    {% for ingredient in ingredients %}
+                        <div class="new-ingredients" id="new-ingredients">
+                            <div class="form-group row" id="ingredient-item{{ingredient[0]}}">
+                                <label for="ingredient{{ingredient[0]}}" class="col-md-2 col-form-label">
+                                    Ingredient {{ingredient[0]}}
+                                </label>
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" name="ingredients{{ingredient[0]}}" required value="{{ ingredient[1] }}" id="ingredients{{ingredient[0]}}" placeholder="add an ingredient here, use the carrot above to add more ingredients">
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
                 <hr class="recipe-hr">
                 <div id="index_enabler_procedure">
-                {% for procedure in procedures %}
-                    <div class="new-procedures" id="new-procedures">
-                        <div class="form-group row" id="procedure-item{{procedure[0]}}">
-                            <label for="procedures{{procedure[0]}}" class="col-md-2 col-form-label">
-                                Step {{procedure[0]}}
-                            </label>
-                            <div class="col-md-10">
-                                <textarea class="form-control" name="procedures{{procedure[0]}}" required id="procedures{{procedure[0]}}" placeholder="add a step here, use the spoon above to add more steps" rows="2">{{ procedure [1]}}
-                                </textarea>
-                            </div>
+                    <div class="form-group row">
+                        <div class="col-md-2">
+                            <p>Steps</p>
+                        </div>
+                        <div class="col-md-10">
+                            <p>Use the <i class="fas fa-utensil-spoon"></i> to add or delete steps</p>
                         </div>
                     </div>
-                {% endfor %}
+                    {% for procedure in procedures %}
+                        <div class="new-procedures" id="new-procedures">
+                            <div class="form-group row" id="procedure-item{{procedure[0]}}">
+                                <label for="procedures{{procedure[0]}}" class="col-md-2 col-form-label">
+                                    Step {{procedure[0]}}
+                                </label>
+                                <div class="col-md-10">
+                                    <textarea class="form-control" name="procedures{{procedure[0]}}" required id="procedures{{procedure[0]}}" placeholder="add a step here, use the spoon above to add more steps" rows="2">{{ procedure [1]}}
+                                    </textarea>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
                 <hr class="recipe-hr">
 				<div class="form-group row">

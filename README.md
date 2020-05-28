@@ -5,7 +5,7 @@
 
 Whilst we are enduring Covid-10 let us look after ourselves and our loved ones with this helpful app! [Lockdown and Thrive](https://lockdown-data-centric.herokuapp.com/) is a place to find simple recipes; find ways to entertain younger ones and how to look after oneselves mental wellbeing. You can access the resources and contribute any number of resources to share with the world! 
 
-This website was produced to forfill a coursework assignment for the [Code Institute](https://codeinstitute.net/) Full Stack Software Development course, specifically the **Data Centric Development** module. The objective for this milestone project is to "*Create a web application that allows users to store and easily access cooking recipes*", using the **CRUD** operations of **C**reate, **R**ead, **U**pdate, and **D**elete for their recipes. As such the contents are fictisuous and the recipes presented within should not be followed without referring to the source : see [**Credits**](#Credits).
+This website was produced to fulfill a coursework assignment for the [Code Institute](https://codeinstitute.net/) Full Stack Software Development course, specifically the **Data Centric Development** module. The objective for this milestone project is to "*Create a web application that allows users to store and easily access cooking recipes*", using the **CRUD** operations of **C**reate, **R**ead, **U**pdate, and **D**elete for their recipes. As such the contents are fictisuous and the recipes presented within should not be followed without referring to the source : see [**Credits**](#Credits).
 
 ---
 
@@ -56,16 +56,17 @@ Each page displays an identical navbar and footer and similar body for each page
 
 ### User Stories
 
-Who is the user? Essentially this could be anyone enduring a form of lockdown but is principally aimed at those with a young family with children aged 3 to 16; thus there is a facility for food making, entertainment and hobbies. All of which is designed to nourish the dody and minds of children and adults.
+Who is the user? Essentially this could be anyone enduring a form of lockdown but is principally aimed at those with a young family with children aged 3 to 16; thus there is a facility for food making, entertainment and hobbies. All of which is designed to nourish the body and minds of children and adults.
 
 "**_As a user, I would like to_** _____________________________"
 
 :white_check_mark: *denotes items that have been successfully implemented*
 
 - :white_check_mark: *view the site* from **any device** *(mobile, tablet, desktop)*.
-- :white_check_mark: *view all recipes* as an **authenticated user**.
+- :white_check_mark: *view all recipes* as a **user**.
 - :white_check_mark: *search recipes* by **recipe name**.
 - :white_check_mark: *search recipes* by **partial recipe name**.
+- :white_check_mark: *search recipes* by **recipe author name**.
 - :white_check_mark: *add* a **recipe**.
 - :white_check_mark: *edit* a **recipe**.
 - :white_check_mark: *delete* a **recipe**.
@@ -75,7 +76,7 @@ Who is the user? Essentially this could be anyone enduring a form of lockdown bu
 
 ### Design
 
-A modern business design was chosen for this site. Inspired by the Sky.com website and bootstrap's card feature the items were discretly comparmentalised. This enabled each item, whether it be a subscription service or a specific recipe, to feature as a call-out. Each card was styled with subtle shadow attributes and muted colours to draw focus to the card contents and not the background. As such Bootstrap components were utilised heavily due to their simplistic muted styling which were elaborated upon during development.
+A modern business design was chosen for this site. Inspired by the Sky.com website and bootstrap's card feature where items are discretly comparmentalised. This enabled each item, whether it be a subscription service or a specific recipe, to feature as a call-out. Each card was styled with subtle shadow attributes and muted colours to draw focus to the card contents and not the background. As such Bootstrap components were utilised heavily due to their simplistic muted styling which were elaborated upon during development.
 
 #### Framework
 
@@ -116,11 +117,11 @@ The index page was designed to show 3 main sections. On top a carousel of images
 
 <img src="https://github.com/davidjbuchanan/lockdownagain/blob/master/static/images/mockups/Lockdown_Data_Centric_Development_Project_Index_page.png" alt="lockdown index page views" width="100%">
 
-The page most populated with elemnents is for the 'add a recipe' page where users can add their recipes. This required a lot of input fields and therefore a simple clear display. Again as the width of the viewport decreases the elements are listed more vertically.
+The page most populated with elements is for the 'add a recipe' page where users can add their recipes. This required a lot of input fields and therefore a simple clear display. Again as the width of the viewport decreases the elements are listed more vertically.
 
 <img src="https://github.com/davidjbuchanan/lockdownagain/blob/master/static/images/mockups/Lockdown_Data_Centric_Development_Project_add_recipe_page.png" alt="lockdown add recipe page views" width="100%">
 
-The complete set of wireframes for this project can be found [here](https://github.com/davidjbuchanan/lockdownagain/blob/master/static/images/mockups) in the *wireframes* sub-directory.
+The complete set of wireframes for this project can be found [here](https://github.com/davidjbuchanan/lockdownagain/blob/master/static/images/mockups) in the *mockups* sub-directory.
 
 ##### back to [top](#table-of-contents)
 
@@ -137,7 +138,7 @@ The complete set of wireframes for this project can be found [here](https://gith
 - C**R**UD On the *All Recipes* page, all recipes are displayed in the chronological order of production. Each record has a photo, dish name and a timestamp for the date of production.
 
 **Search the database**
-- If a user would like to search for a particular dish or by the name of a particular chef, then they can acces the *Search Recipe* page from the navbar. This results in the display of a 'Found Recipes' page to the user, this is a truncated version of the 'All Recipes' page.
+- If a user would like to search for a particular dish or by the name of a particular chef, then they can access the *Search Recipe* page from the navbar. This results in the display of a 'Found Recipes' page to the user, this is a truncated version of the 'All Recipes' page.
 
 **Add a Recipe**
 - **C**RUD Create a new recipe. The 'Add Recipe' page has an adapted navbar that allows the addition of extra input fields for ingredients and steps. This was installed to assist the user when systematically adding lists and is particularly beneficial whilst working on small viewports. This list is enumerated to aid the recipe's author.
@@ -153,7 +154,7 @@ The addition of a timestamp records the date of the record's creation.
     - **Strikethrough** completed recipe steps i.e. an onclick event has been added to enable the user to score-off completed tasks.
 
 **Delete a Recipe**
-- CRU**D** Delete a recipe from the 'All recipres' or 'edit recipes' page. 
+- CRU**D** Delete a recipe from the 'All recipes' or 'edit recipes' page. 
 
 **View all categories**
 - C**R**UD Similar to *All Recipes* there is an *All Categories* page, where users can view all food categories e.g. lunch, dinner, snack etc. From this page they can also:
@@ -334,7 +335,7 @@ Please note - in order to run this project locally on your own system, you will 
 - [GIT](https://www.atlassian.com/git/tutorials/install-git) for cloning and version control.
 - [MongoDB](https://www.mongodb.com) to develop your own database either locally or remotely on MongoDB Atlas.
 
-Next, there's a series of steps to take in order to proceed with local deployment:
+Now, there is a series of steps to take in order to proceed with local deployment:
 
 - Clone this GitHub repository by either clicking the green *Clone or download* button and downloading the project as a zip-file (remember to unzip it first), or by entering the following into the Git CLI terminal:
     - `git clone https://github.com/davidjbuchanan/lockdownagain.git'.
@@ -467,12 +468,18 @@ Sources of the images used on this site:
 - **HTML template**
     - [David T. Miller - Start Bootstrap](https://startbootstrap.com/templates/modern-business/)
 
+- **Java Script and Query**
+    - Code Institute Tutors for fine tuning of code
+
+- **Python**
+    - Code Institue course material was the basis for all Python code
+
 ### README
 - **Template and content**
     - [TravelTimN](https://github.com/TravelTimN/ci-milestone04-dcd)
 
 ### Acknowledgements
-- Victor Miclovich
+- Victor Miclovich 
     - My Code Institute mentor.
 - Code Institute Tutors
 <img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">

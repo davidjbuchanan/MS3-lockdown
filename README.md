@@ -31,6 +31,7 @@ This website was produced to fulfill a coursework assignment for the [Code Insti
     - [**Validators**](#validators)
     - [**Compatibility**](#compatibility)
     - [**Known Issues**](#known-issues)
+    - [**User Testing**](#User-testing)
 
 5. [**Deployment**](#deployment)
     - [**Local Deployment**](#local-deployment)
@@ -329,6 +330,15 @@ During development, I discovered two issues after committing to GitHub.
     - Images from http://itv.com and http://bbcgoodfood.com have cookies set with sameSite attribute.
 - **404 error**
     - DevTools failed to load SourceMap: Could not load content for chrome-extension://dodmmooeoklaejobgleioelladacbeki/dist/gitpodify.bundle.js.map.
+
+### User-testing
+- Testing to select group of targeted users and a development professional highlighted these 5 points:
+    -   Alert text was not vertically centered. This was rectified
+    -   The 'subsrcibe' link on the navbar was identified as potentially premature and that a "give away" should be offered to the user prior promotion of a subscription servive.
+    -   Images uploaded by user's should be hamdled ny a third party in order to give the user greater autonomy over the image used and not reliant on web available images.
+    - Edit buttons allowing addition and deletion of fields in the 'add recipe' and 'edit recipe' should be "more available" to the user i.e. at the bottom or side of a growing list.
+    - The footer is not at the bottom of the page which some test users highlighted but did not seem bothered about.
+
 
 ##### back to [top](#table-of-contents)
 

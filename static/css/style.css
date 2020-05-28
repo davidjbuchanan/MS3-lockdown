@@ -82,6 +82,7 @@ body {
 
 .alert-warning p {
     color: #ffffff;
+    margin-bottom: 0px;
 }
 
 .alert-warning p a {

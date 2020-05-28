@@ -50,7 +50,7 @@ I decided to build a website that had a utility for helping people cope with the
 
 The commercial aspect is minimal with a link to a 'store' (which is under construction) but has been included to indicate that the site could be used commercially. Similarly the home page's 'call-out' is primarily to enable users to subscribe to the site's **CRUD** operations, this could also be commercialised to enable a subscription fee to be collected.
 
-As it contains three topics (feeding, playing and mindfulness) it was important to partition these topics clearly for ease of use. To acheive this the navbar displayed each of these topics in its own discrete, but essentially identical, dropdown menus. Likewise the homepage's body presents three uniform rows, one for each topic. Please note that the 'Eat and Feed' topic is the only topic which has been elaborated, the other two are for future development.
+The vision for this site is to have three topics (feeding, playing and mindfulness) The playing and mindfulness sections are for future development, so I have left a placeholder for them. It was important to partition these topics clearly for ease of use. To acheive this the navbar displayed each of these topics in its own discrete, but essentially identical, dropdown menus. Likewise the homepage's body presents three uniform rows, one for each topic. 
 
 Each page displays an identical navbar and footer and similar body for each page, this was deliberate to aid users' navigation of the site. The navbar is elaborated for the pages where you add or edit a recipe. This was to allow the user to have rapid access to buttons that allow them to add and delete input fields; as this is a floating navbar this is an accessible and useful tool for the author/editor of recipes.  
 
@@ -174,6 +174,15 @@ The addition of a timestamp records the date of the record's creation.
 **Confirmation modals**
 - An essential addition for inadvertant deletion of records
 
+**Sticky footer**
+- The addition of a 'sticky footer' is for future consideration.
+
+**Use of a hosting site**
+- The use of a 3rd party image hosting site (e.g. Cloudinary and Amazon S3) would allow users to upload their own images rather than relying existing web images.
+
+**Improved button location**
+- The 'add recipe' and 'edit recipe' pages have the facility to add and delete input boxes. The buttons for this are located in the navbar. Future improvements may include the situation of these buttons at a better location for user experience. 
+
 ##### back to [top](#table-of-contents)
 
 ## Technologies Used
@@ -260,12 +269,8 @@ Responsiveness tested on landscape viewport for the following viewports
 ### Validators
 
 **HTML**
-- [W3C HTML Validator](https://validator.w3.org) - Unfortunately the W3C Validator for HTML does not understand the Jinja templating syntax, so it therefore shows a lot of errors with regards to `{{ variables }}`, e.g.:
-    -   img class="img-fluid rounded" src="{{item.picture}}" alt="image of food"        (from all_recipes.html)
-    -   value="{{cat.category_name}}">{{cat.category_name}}                             (from recipe.html)
-
-- IO Error: HTTP resource not retrievable. The HTTP status from the remote server was: 405.           (from found_recipe.html)
-- Aside from these errors, all of the remaining code is perfectly validating. 
+- [W3C HTML Validator](https://validator.w3.org) 
+    - All code is perfectly validating. 
 
 **CSS**
 - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) - I am using `:root{}` variables in my CSS, which isn't recognized by the validator. This is causing several **Parsing Errors**, when in fact they are not errors, and work perfectly fine.

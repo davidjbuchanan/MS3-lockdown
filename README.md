@@ -78,6 +78,10 @@ Who is the user? Essentially this could be anyone enduring a form of lockdown bu
 
 A modern business design was chosen for this site. Inspired by the Sky.com website and bootstrap's card feature where items are discretly comparmentalised. This enabled each item, whether it be a subscription service or a specific recipe, to feature as a call-out. Each card was styled with subtle shadow attributes and muted colours to draw focus to the card contents and not the background. As such Bootstrap components were utilised heavily due to their simplistic muted styling which were elaborated upon during development.
 
+For the index page the 'rule of thirds' was loosely adhered to : carousel, callout and features. However the features 'third' was disproportionately last for the purposes of increasing user's awareness of the app's utility.
+
+The remainder of the site is essentially forms and blogs, with the standard Bootstrap HTMl styled to give lists of items for input or reading.
+
 #### Framework
 
 - [Bootstrap Grid v4.3.1](https://getbootstrap.com/)
@@ -186,6 +190,9 @@ The addition of a timestamp records the date of the record's creation.
 
 **Improved button location**
 - The 'add recipe' and 'edit recipe' pages have the facility to add and delete input boxes. The buttons for this are located in the navbar. Future improvements may include the situation of these buttons at a better location for user experience. 
+
+**Elaboration of search facility**
+- User feedback in the event of 'no results found' required and more sophisticated Python code required to deal remove case sensitivity in user's input.
 
 ##### back to [top](#table-of-contents)
 

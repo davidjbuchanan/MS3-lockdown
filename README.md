@@ -496,7 +496,7 @@ Sources of the images used on this site:
 
 ### README
 - **Template and content**
-    - [TravelTimN](https://github.com/TravelTimN/ci-milestone04-dcd)
+    - Influenced heavily by the work of [Tim Nelson - TravelTimN](https://github.com/TravelTimN/ci-milestone04-dcd)
 
 ### Acknowledgements
 - Victor Miclovich 

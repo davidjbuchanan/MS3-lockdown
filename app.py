@@ -131,7 +131,7 @@ def update_recipe(recipe_id):
             procedures_counter += 1
         else:
             found_procedures = False
-    recipe.update({'_id': ObjectId(recipe_id)},
+    recipe.updateOne({'_id': ObjectId(recipe_id)},
                   {
         "ingredients": ingredients,
         "procedures": procedures,
@@ -190,7 +190,7 @@ def recipe(recipe_id):
 
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
-    mongo.db.recipe.remove({'_id': ObjectId(recipe_id)})
+    mongo.db.recipe.deleteOne({'_id': ObjectId(recipe_id)})
     return redirect(url_for('all_recipes'))
 
 

@@ -131,7 +131,7 @@ def update_recipe(recipe_id):
             procedures_counter += 1
         else:
             found_procedures = False
-    recipe.update_one({'_id': ObjectId(recipe_id)},
+    recipe.update_one({$set: {'_id': ObjectId(recipe_id)}},
                   {
         "ingredients": ingredients,
         "procedures": procedures,

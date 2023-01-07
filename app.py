@@ -131,7 +131,7 @@ def update_recipe(recipe_id):
             procedures_counter += 1
         else:
             found_procedures = False
-    recipe.updateOne({'_id': ObjectId(recipe_id)},
+    recipe.update_one({'_id': ObjectId(recipe_id)},
                   {
         "ingredients": ingredients,
         "procedures": procedures,
@@ -220,7 +220,7 @@ def insert_category():
 
 @app.route('/delete_category/<category_id>')
 def delete_category(category_id):
-    mongo.db.categories.remove({'_id': ObjectId(category_id)})
+    mongo.db.categories.delete_one({'_id': ObjectId(category_id)})
     return redirect(url_for('all_categories'))
 
 

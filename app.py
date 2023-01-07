@@ -190,7 +190,7 @@ def recipe(recipe_id):
 
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
-    mongo.db.recipe.deleteOne({'_id': ObjectId(recipe_id)})
+    mongo.db.recipe.delete_one({'_id': ObjectId(recipe_id)})
     return redirect(url_for('all_recipes'))
 
 

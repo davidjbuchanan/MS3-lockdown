@@ -154,7 +154,6 @@ def update_recipe(recipe_id):
         "carbs": request.form.get("carbs"),
         "fibre": request.form.get("fibre"),
         "timestamp": request.form.get("timestamp"),
-        "edit_timestamp": now,
     })
     return redirect(url_for('all_recipes'))
 

@@ -131,8 +131,8 @@ def update_recipe(recipe_id):
             procedures_counter += 1
         else:
             found_procedures = False
-    recipe.update_one({"$set": {'_id': ObjectId(recipe_id)}},
-                  {
+    recipe.update_one({'_id': ObjectId(recipe_id)},
+                  {"$set": {
         "ingredients": ingredients,
         "procedures": procedures,
         "username": request.form.get("username"),
@@ -154,7 +154,8 @@ def update_recipe(recipe_id):
         "carbs": request.form.get("carbs"),
         "fibre": request.form.get("fibre"),
         "timestamp": request.form.get("timestamp"),
-    })
+        "edit_timestamp": now,
+    }})
     return redirect(url_for('all_recipes'))
 
 

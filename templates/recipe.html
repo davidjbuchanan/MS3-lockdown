@@ -40,21 +40,27 @@
                                     <p>Gluten free</p>
                                 </div>
                                 {% else %}
-                                <p class="card-text">Contains Gluten</p>
+                                <div class="custom-control custom-switch">
+                                    <p>Contains Gluten</p>
+                                </div>
                                 {% endif %}
                                 {% if recipe.is_nut_free %}
                                 <div class="custom-control custom-switch">
                                     <p>Nut free</p>
                                 </div>
                                 {% else %}
-                                <p class="card-text">Contains Nuts</p>
+                                <div class="custom-control custom-switch">
+                                    <p>Contains Nuts</p>
+                                </div>
                                 {% endif %}
                                 {% if recipe.is_dairy_free %}
                                 <div class="custom-control custom-switch">
                                     <p>Dairy free</p>
                                 </div>
                                 {% else %}
-                                <p class="card-text">Contains Dairy</p>
+                                <div class="custom-control custom-switch">
+                                    <p>Contains Dairy</p>
+                                </div>
                                 {% endif %}
                             </div>
                         </div>
